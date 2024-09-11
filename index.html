@@ -1,109 +1,276 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="HRInsights - Empowering HR professionals in Saudi Arabia with resources for recruitment, training, compensation, and more.">
     <title>HRInsights - Empowering HR Professionals in Saudi Arabia</title>
-    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
-    <link href="https://cdn.jsdelivr.net/npm/daisyui@1.14.0/dist/full.css" rel="stylesheet">
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
     <style>
+        :root {
+            --primary-color: #00843D;
+            --secondary-color: #8CC63F;
+            --accent-color: #FFC72C;
+            --text-color: #333;
+            --bg-color: #F4F4F4;
+            --header-bg-color: #004225;
+            --footer-bg-color: #004225;
+        }
+
         body {
-            background: light-blue;
+            font-family: 'Tajawal', Arial, sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            line-height: 1.6;
         }
-        .bg-custom-pattern {
-            background-image: url('./assets/background-pattern.png');
-            background-repeat: no-repeat;
-            background-size: cover;
-        }
-        .cta-button {
-            background-color: #2ecc71;
+
+        /* Header */
+        header {
+            background-color: var(--header-bg-color);
             color: white;
-            padding: 0.75rem 1.5rem;
-            border-radius: 0.5rem;
-            transition: background-color 0.2s;
+            padding: 10px 0;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
         }
+
+        .navbar-nav .nav-link {
+            color: white !important;
+            font-weight: 600;
+        }
+
+        .navbar-brand {
+            font-weight: bold;
+            font-size: 24px;
+        }
+
+        /* Hero Section */
+        .hero {
+            height: 100vh;
+            background: url('https://images.unsplash.com/photo-1577962917302-cd874c4e31d2?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1920&q=80') no-repeat center center;
+            background-size: cover;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+        }
+
+        .hero-overlay {
+            background: rgba(0, 0, 0, 0.5);
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 2;
+            color: white;
+            text-align: center;
+            max-width: 800px;
+        }
+
+        .hero h1 {
+            font-size: 48px;
+            margin-bottom: 20px;
+        }
+
+        .hero p {
+            font-size: 20px;
+            margin-bottom: 30px;
+        }
+
+        .cta-button {
+            padding: 12px 30px;
+            background-color: var(--accent-color);
+            color: var(--text-color);
+            border: none;
+            border-radius: 5px;
+            font-weight: bold;
+            text-transform: uppercase;
+            transition: background-color 0.3s ease, box-shadow 0.3s ease;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+        }
+
         .cta-button:hover {
-            background-color: #27ae60;
+            background-color: #E6B325;
+            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
+        }
+
+        /* Section Styling */
+        .section {
+            padding: 80px 0;
+        }
+
+        .section-title {
+            text-align: center;
+            font-size: 36px;
+            margin-bottom: 40px;
+            color: var(--primary-color);
+        }
+
+        .features {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+        }
+
+        .feature {
+            background-color: white;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            transition: transform 0.3s ease;
+        }
+
+        .feature:hover {
+            transform: translateY(-10px);
+        }
+
+        .feature h3 {
+            font-size: 24px;
+            margin-bottom: 15px;
+        }
+
+        /* Footer */
+        footer {
+            background-color: var(--footer-bg-color);
+            color: white;
+            text-align: center;
+            padding: 20px 0;
         }
     </style>
 </head>
-<body class="bg-custom-pattern font-sans">
-    <header class="p-6 bg-blue-700 text-white text-center">
-        <h1 class="text-4xl font-bold">HRInsights</h1>
-        <p class="mt-2 text-lg">Empowering HR Professionals in Saudi Arabia</p>
+
+<body>
+
+    <!-- Header -->
+    <header>
+        <nav class="navbar navbar-expand-lg navbar-dark container">
+            <a class="navbar-brand" href="#">HRInsights</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+                <ul class="navbar-nav">
+                    <li class="nav-item">
+                        <a class="nav-link" href="#recruitment-hiring">Recruitment</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#training-development">Training</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#compensation-benefits">Compensation</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#employee-relations">Relations</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#diversity-inclusion">Diversity</a>
+                    </li>
+                </ul>
+            </div>
+        </nav>
     </header>
-    <nav class="bg-blue-600 text-white">
-        <ul class="flex justify-around p-4">
-            <li><a href="#recruitment-hiring" class="hover:underline">Recruitment & Hiring</a></li>
-            <li><a href="#training-development" class="hover:underline">Training & Development</a></li>
-            <li><a href="#compensation-benefits" class="hover:underline">Compensation & Benefits</a></li>
-            <li><a href="#employee-relations" class="hover:underline">Employee Relations</a></li>
-            <li><a href="#diversity-inclusion" class="hover:underline">Diversity & Inclusion</a></li>
-            <li><a href="#community-discussions" class="hover:underline">Community Discussions</a></li>
-            <li><a href="#user-area" class="hover:underline">User Area</a></li>
-        </ul>
-    </nav>
-    <main class="p-6 max-w-7xl mx-auto">
-        <section id="recruitment-hiring" class="mb-10">
-            <h2 class="text-3xl font-bold text-blue-600">Recruitment and Hiring</h2>
-            <ul class="mt-4 list-disc ml-5">
-                <li><a href="Writing Effective Job Descriptions.html" class="text-blue-800 hover:underline">Writing Job Descriptions</a></li>
-                <li><a href="onboarding best practices.html" class="text-blue-800 hover:underline">Onboarding Best Practices</a></li>
-                <li><a href="Interviewing Techniques.html" class="text-blue-800 hover:underline">Interviewing Techniques</a></li>
-                <li><a href="Recruitment Resources.html" class="text-blue-800 hover:underline">Recruitment Strategies</a></li>
-            </ul>
-        </section>
-        <section id="training-development" class="mb-10">
-            <h2 class="text-3xl font-bold text-blue-600">Training and Development</h2>
-            <ul class="mt-4 list-disc ml-5">
-                <li><a href="Understanding Leadership Development.html" class="text-blue-800 hover:underline">Leadership Development</a></li>
-                <li><a href="Training Needs Assessment.html" class="text-blue-800 hover:underline">Training Needs Assessment</a></li>
-                <li><a href="Effective Approaches for Digital Training and Development.html" class="text-blue-800 hover:underline">Digital Training Approaches</a></li>
-            </ul>
-        </section>
-        <section id="compensation-benefits" class="mb-10">
-            <h2 class="text-3xl font-bold text-blue-600">Compensation and Benefits</h2>
-            <ul class="mt-4 list-disc ml-5">
-                <li><a href="salary structure.html" class="text-blue-800 hover:underline">Designing Salary Structures</a></li>
-                <li><a href="Competitive Benefits Packages.html" class="text-blue-800 hover:underline">Competitive Benefits Packages</a></li>
-                <li><a href="Equity Compensation.html" class="text-blue-800 hover:underline">Equity Compensation</a></li>
-            </ul>
-        </section>
-        <section id="employee-relations" class="mb-10">
-            <h2 class="text-3xl font-bold text-blue-600">Employee Relations</h2>
-            <ul class="mt-4 list-disc ml-5">
-                <li><a href="Performance Management.html" class="text-blue-800 hover:underline">Performance Management</a></li>
-                <li><a href="conflict_resolution.html" class="text-blue-800 hover:underline">Conflict Resolution</a></li>
-                <li><a href="employee_engagment_strategies.html" class="text-blue-800 hover:underline">Employee Engagement Strategies</a></li>
-            </ul>
-        </section>
-        <section id="diversity-inclusion" class="mb-10">
-            <h2 class="text-3xl font-bold text-blue-600">Diversity and Inclusion</h2>
-            <ul class="mt-4 list-disc ml-5">
-                <li><a href="Addressing Unconscious Bias.html" class="text-blue-800 hover:underline">Unconscious Bias</a></li>
-            </ul>
-        </section>
-        <section id="community-discussions" class="mb-10">
-            <h2 class="text-3xl font-bold text-blue-600">Community Discussions</h2>
-            <p class="ml-5">A place for interactive HR-related discussions.</p>
-            <ul class="mt-4 list-disc ml-5">
-                <li><a href="discussions.html" class="text-blue-800 hover:underline">Open Discussions</a></li>
-            </ul>
-        </section>
-        <section id="user-area" class="mb-10">
-            <h2 class="text-3xl font-bold text-blue-600">User Area</h2>
-            <ul class="mt-4 list-disc ml-5">
-                <li><a href="signup.html" class="text-blue-800 hover:underline">Sign Up</a></li>
-                <li><a href="Profile.html" class="text-blue-800 hover:underline">User Profile</a></li>
-                <li><a href="categories.html" class="text-blue-800 hover:underline">Knowledge Base Categories</a></li>
-            </ul>
-        </section>
-        <div class="text-center">
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-overlay"></div>
+        <div class="hero-content">
+            <h1>Empowering HR Professionals in Saudi Arabia</h1>
+            <p>Your one-stop resource for HR best practices, recruitment, and employee relations.</p>
             <a href="#contact" class="cta-button">Join the Community</a>
         </div>
+    </section>
+
+    <!-- Main Content -->
+    <main class="container">
+        <section id="recruitment-hiring" class="section">
+            <h2 class="section-title">Recruitment & Hiring</h2>
+            <div class="features row">
+                <div class="col-md-4 feature">
+                    <h3>Writing Job Descriptions</h3>
+                    <p>Learn how to create compelling and accurate job descriptions.</p>
+                </div>
+                <div class="col-md-4 feature">
+                    <h3>Onboarding Best Practices</h3>
+                    <p>Strategies for successful employee onboarding.</p>
+                </div>
+                <div class="col-md-4 feature">
+                    <h3>Interview Techniques</h3>
+                    <p>Master the art of interviewing candidates effectively.</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="training-development" class="section">
+            <h2 class="section-title">Training & Development</h2>
+            <div class="features row">
+                <div class="col-md-4 feature">
+                    <h3>Leadership Development</h3>
+                    <p>Strategies to cultivate future leaders within your organization.</p>
+                </div>
+                <div class="col-md-4 feature">
+                    <h3>Digital Training</h3>
+                    <p>Explore effective approaches to online training.</p>
+                </div>
+                <div class="col-md-4 feature">
+                    <h3>Training Needs Assessment</h3>
+                    <p>Identify skill gaps and develop the right training programs.</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="compensation-benefits" class="section">
+            <h2 class="section-title">Compensation & Benefits</h2>
+            <div class="features row">
+                <div class="col-md-4 feature">
+                    <h3>Salary Structures</h3>
+                    <p>Design competitive and fair salary structures for employees.</p>
+                </div>
+                <div class="col-md-4 feature">
+                    <h3>Benefits Packages</h3>
+                    <p>Explore how to create benefits packages that attract top talent.</p>
+                </div>
+                <div class="col-md-4 feature">
+                    <h3>Equity Compensation</h3>
+                    <p>Learn about offering equity compensation to employees.</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="employee-relations" class="section">
+            <h2 class="section-title">Employee Relations</h2>
+            <div class="features row">
+                <div class="col-md-4 feature">
+                    <h3>Conflict Resolution</h3>
+                    <p>Discover techniques to resolve workplace conflicts.</p>
+                </div>
+                <div class="col-md-4 feature">
+                    <h3>Performance Management</h3>
+                    <p>How to implement effective performance management systems.</p>
+                </div>
+                <div class="col-md-4 feature">
+                    <h3>Engagement Strategies</h3>
+                    <p>Increase employee engagement with these proven strategies.</p>
+                </div>
+            </div>
+        </section>
     </main>
-    <footer class="bg-blue-700 text-white text-center p-5">
+
+    <!-- Footer -->
+    <footer>
         <p>&copy; 2023 HRInsights. All Rights Reserved.</p>
     </footer>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
 </body>
+
 </html>
