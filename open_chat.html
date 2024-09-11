@@ -1,0 +1,248 @@
+<html><head><base href="/insights/home/insights/open-chat">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>HRInsights - Open Chat</title>
+<style>
+    :root {
+        --primary-color: #3498db;
+        --secondary-color: #2ecc71;
+        --background-color: #ecf0f1;
+        --text-color: #34495e;
+        --border-color: #bdc3c7;
+    }
+
+    body {
+        font-family: 'Arial', sans-serif;
+        margin: 0;
+        padding: 0;
+        background-color: var(--background-color);
+        color: var(--text-color);
+        line-height: 1.6;
+    }
+
+    header {
+        background-color: var(--primary-color);
+        color: white;
+        text-align: center;
+        padding: 1rem;
+    }
+
+    nav {
+        background-color: #2980b9;
+        padding: 0.5rem;
+    }
+
+    nav ul {
+        list-style-type: none;
+        padding: 0;
+        margin: 0;
+        display: flex;
+        justify-content: center;
+    }
+
+    nav ul li {
+        margin: 0 1rem;
+    }
+
+    nav ul li a {
+        color: white;
+        text-decoration: none;
+    }
+
+    main {
+        max-width: 800px;
+        margin: 2rem auto;
+        padding: 2rem;
+        background-color: white;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        border-radius: 5px;
+    }
+
+    h1, h2 {
+        color: var(--primary-color);
+    }
+
+    .chat-container {
+        height: 400px;
+        overflow-y: auto;
+        border: 1px solid var(--border-color);
+        padding: 1rem;
+        margin-bottom: 1rem;
+        background-color: #f9f9f9;
+    }
+
+    .message {
+        margin-bottom: 1rem;
+        padding: 0.5rem;
+        border-radius: 5px;
+    }
+
+    .message.user {
+        background-color: #e1f5fe;
+        text-align: right;
+    }
+
+    .message.other {
+        background-color: #f0f4c3;
+    }
+
+    .message .author {
+        font-weight: bold;
+        margin-bottom: 0.25rem;
+    }
+
+    .message .content {
+        word-wrap: break-word;
+    }
+
+    .message .timestamp {
+        font-size: 0.8rem;
+        color: #7f8c8d;
+        margin-top: 0.25rem;
+    }
+
+    .flagged {
+        border-left: 4px solid #e74c3c;
+        padding-left: 0.5rem;
+    }
+
+    #chat-form {
+        display: flex;
+        flex-direction: column;
+    }
+
+    #message-input {
+        width: 100%;
+        padding: 0.5rem;
+        margin-bottom: 0.5rem;
+        border: 1px solid var(--border-color);
+        border-radius: 3px;
+        font-size: 1rem;
+        resize: vertical;
+    }
+
+    .form-actions {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    button {
+        background-color: var(--primary-color);
+        color: white;
+        border: none;
+        padding: 0.75rem 1rem;
+        border-radius: 3px;
+        cursor: pointer;
+        font-size: 1rem;
+        transition: background-color 0.3s ease;
+    }
+
+    button:hover {
+        background-color: #2980b9;
+    }
+
+    #flag-question {
+        margin-right: 0.5rem;
+    }
+</style>
+</head>
+<body>
+    <header>
+        <h1>HRInsights</h1>
+        <p>Open Chat</p>
+    </header>
+
+    <nav>
+        <ul>
+            <li><a href="/insights/home">Home</a></li>
+            <li><a href="/insights/knowledge-base">Knowledge Base</a></li>
+            <li><a href="/insights/discussions">Discussions</a></li>
+            <li><a href="/insights/open-chat">Open Chat</a></li>
+            <li><a href="/insights/profile">My Profile</a></li>
+        </ul>
+    </nav>
+
+    <main>
+        <h1>Open HR Discussion Space</h1>
+        <p>Welcome to our open discussion forum. Here you can ask questions, share insights, and engage with fellow HR professionals. Flag your questions until they're resolved!</p>
+
+        <div id="chat-container" class="chat-container">
+            <!-- Chat messages will be dynamically added here -->
+        </div>
+
+        <form id="chat-form">
+            <textarea id="message-input" placeholder="Type your message or question here..." required></textarea>
+            <div class="form-actions">
+                <button type="submit">Send</button>
+                <label for="flag-question">
+                    <input type="checkbox" id="flag-question"> Flag as unresolved question
+                </label>
+            </div>
+        </form>
+    </main>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const chatContainer = document.getElementById('chat-container');
+            const chatForm = document.getElementById('chat-form');
+            const messageInput = document.getElementById('message-input');
+            const flagCheckbox = document.getElementById('flag-question');
+
+            // Simulated user data
+            const currentUser = {
+                id: 1,
+                name: 'John Doe'
+            };
+
+            // Simulated chat messages
+            const initialMessages = [
+                { id: 1, author: { id: 2, name: 'Jane Smith' }, content: 'Has anyone implemented a new performance review system recently?', timestamp: new Date(Date.now() - 3600000), flagged: true },
+                { id: 2, author: { id: 3, name: 'Bob Johnson' }, content: 'We switched to a continuous feedback model last year. It\'s been working well for us.', timestamp: new Date(Date.now() - 3000000) },
+                { id: 3, author: { id: 1, name: 'John Doe' }, content: 'That sounds interesting, Bob. How did you handle the transition?', timestamp: new Date(Date.now() - 2400000) },
+                { id: 4, author: { id: 3, name: 'Bob Johnson' }, content: 'We started with a pilot program in one department and gradually rolled it out to others. It took about 6 months to fully implement.', timestamp: new Date(Date.now() - 1800000) },
+                { id: 5, author: { id: 2, name: 'Jane Smith' }, content: 'Thanks for sharing! Did you use any specific software for this?', timestamp: new Date(Date.now() - 1200000), flagged: true },
+            ];
+
+            // Function to add a message to the chat
+            function addMessageToChat(message) {
+                const messageElement = document.createElement('div');
+                messageElement.classList.add('message');
+                messageElement.classList.add(message.author.id === currentUser.id ? 'user' : 'other');
+                if (message.flagged) {
+                    messageElement.classList.add('flagged');
+                }
+
+                messageElement.innerHTML = `
+                    <div class="author">${message.author.name}</div>
+                    <div class="content">${message.content}</div>
+                    <div class="timestamp">${message.timestamp.toLocaleString()}</div>
+                `;
+
+                chatContainer.appendChild(messageElement);
+                chatContainer.scrollTop = chatContainer.scrollHeight;
+            }
+
+            // Initialize chat with existing messages
+            initialMessages.forEach(addMessageToChat);
+
+            // Handle form submission
+            chatForm.addEventListener('submit', (e) => {
+                e.preventDefault();
+                const content = messageInput.value.trim();
+                if (content) {
+                    const newMessage = {
+                        id: initialMessages.length + 1,
+                        author: currentUser,
+                        content: content,
+                        timestamp: new Date(),
+                        flagged: flagCheckbox.checked
+                    };
+                    addMessageToChat(newMessage);
+                    messageInput.value = '';
+                    flagCheckbox.checked = false;
+                }
+            });
+        });
+    </script>
+</body></html>

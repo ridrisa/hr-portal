@@ -1,0 +1,322 @@
+<html><head><base href="/insights/home/insights/discussions">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>HRInsights - Discussions</title>
+<style>
+    :root {
+        --primary-color: #3498db;
+        --secondary-color: #2ecc71;
+        --background-color: #ecf0f1;
+        --text-color: #34495e;
+        --border-color: #bdc3c7;
+    }
+
+    body {
+        font-family: 'Arial', sans-serif;
+        margin: 0;
+        padding: 0;
+        background-color: var(--background-color);
+        color: var(--text-color);
+    }
+
+    header {
+        background-color: var(--primary-color);
+        color: white;
+        text-align: center;
+        padding: 1rem;
+    }
+
+    nav {
+        background-color: #2980b9;
+        padding: 0.5rem;
+    }
+
+    nav ul {
+        list-style-type: none;
+        padding: 0;
+        margin: 0;
+        display: flex;
+        justify-content: center;
+    }
+
+    nav ul li {
+        margin: 0 1rem;
+    }
+
+    nav ul li a {
+        color: white;
+        text-decoration: none;
+    }
+
+    main {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 2rem;
+    }
+
+    .discussion-container {
+        display: flex;
+        gap: 2rem;
+    }
+
+    .discussion-list {
+        flex: 2;
+    }
+
+    .sidebar {
+        flex: 1;
+    }
+
+    .discussion-card {
+        background-color: white;
+        border-radius: 10px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        padding: 1.5rem;
+        margin-bottom: 1.5rem;
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .discussion-card:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+    }
+
+    .discussion-card h2 {
+        color: var(--primary-color);
+        margin-top: 0;
+    }
+
+    .discussion-meta {
+        display: flex;
+        justify-content: space-between;
+        color: #7f8c8d;
+        font-size: 0.9rem;
+        margin-bottom: 1rem;
+    }
+
+    .discussion-tags {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 0.5rem;
+        margin-top: 1rem;
+    }
+
+    .tag {
+        background-color: var(--secondary-color);
+        color: white;
+        padding: 0.2rem 0.5rem;
+        border-radius: 5px;
+        font-size: 0.8rem;
+    }
+
+    .sidebar-card {
+        background-color: white;
+        border-radius: 10px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        padding: 1.5rem;
+        margin-bottom: 1.5rem;
+    }
+
+    .sidebar-card h3 {
+        color: var(--primary-color);
+        margin-top: 0;
+    }
+
+    .search-bar {
+        display: flex;
+        margin-bottom: 2rem;
+    }
+
+    .search-bar input {
+        flex-grow: 1;
+        padding: 0.5rem;
+        border: 1px solid var(--border-color);
+        border-radius: 5px 0 0 5px;
+    }
+
+    .search-bar button {
+        background-color: var(--primary-color);
+        color: white;
+        border: none;
+        padding: 0.5rem 1rem;
+        border-radius: 0 5px 5px 0;
+        cursor: pointer;
+    }
+
+    .create-discussion {
+        background-color: var(--secondary-color);
+        color: white;
+        border: none;
+        padding: 0.5rem 1rem;
+        border-radius: 5px;
+        cursor: pointer;
+        font-size: 1rem;
+        margin-bottom: 1rem;
+    }
+
+    @keyframes fadeIn {
+        from { opacity: 0; }
+        to { opacity: 1; }
+    }
+
+    .fade-in {
+        animation: fadeIn 0.5s ease-in;
+    }
+</style>
+</head>
+<body>
+    <header>
+        <h1>HRInsights Discussions</h1>
+        <p>Join the Conversation on HR Topics</p>
+    </header>
+
+    <nav>
+        <ul>
+            <li><a href="/insights/home">Home</a></li>
+            <li><a href="/insights/knowledge-base">Knowledge Base</a></li>
+            <li><a href="/insights/discussions">Discussions</a></li>
+            <li><a href="/insights/ask-question">Ask a Question</a></li>
+            <li><a href="/insights/profile">My Profile</a></li>
+        </ul>
+    </nav>
+
+    <main>
+        <div class="search-bar">
+            <input type="text" placeholder="Search discussions...">
+            <button>Search</button>
+        </div>
+
+        <div class="discussion-container">
+            <div class="discussion-list">
+                <button class="create-discussion">Start a New Discussion</button>
+
+                <div class="discussion-card fade-in">
+                    <h2>Best Practices for Remote Employee Onboarding</h2>
+                    <div class="discussion-meta">
+                        <span>Started by: Jane Doe</span>
+                        <span>2 days ago</span>
+                    </div>
+                    <p>With the rise of remote work, how are you adapting your onboarding processes? I'd love to hear about successful strategies and tools you're using.</p>
+                    <div class="discussion-tags">
+                        <span class="tag">Remote Work</span>
+                        <span class="tag">Onboarding</span>
+                        <span class="tag">Best Practices</span>
+                    </div>
+                </div>
+
+                <div class="discussion-card fade-in">
+                    <h2>Implementing a Four-Day Work Week</h2>
+                    <div class="discussion-meta">
+                        <span>Started by: John Smith</span>
+                        <span>1 week ago</span>
+                    </div>
+                    <p>Has anyone successfully implemented a four-day work week? I'm interested in the pros and cons, and how it affected productivity and employee satisfaction.</p>
+                    <div class="discussion-tags">
+                        <span class="tag">Work-Life Balance</span>
+                        <span class="tag">Productivity</span>
+                        <span class="tag">Employee Satisfaction</span>
+                    </div>
+                </div>
+
+                <div class="discussion-card fade-in">
+                    <h2>AI in Recruitment: Ethical Considerations</h2>
+                    <div class="discussion-meta">
+                        <span>Started by: Emily Chen</span>
+                        <span>3 days ago</span>
+                    </div>
+                    <p>As AI becomes more prevalent in recruitment processes, what ethical considerations should HR professionals be aware of? How can we ensure fairness and reduce bias?</p>
+                    <div class="discussion-tags">
+                        <span class="tag">AI</span>
+                        <span class="tag">Recruitment</span>
+                        <span class="tag">Ethics</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="sidebar">
+                <div class="sidebar-card">
+                    <h3>Popular Tags</h3>
+                    <div class="discussion-tags">
+                        <span class="tag">Remote Work</span>
+                        <span class="tag">Employee Engagement</span>
+                        <span class="tag">Diversity & Inclusion</span>
+                        <span class="tag">Leadership</span>
+                        <span class="tag">HR Tech</span>
+                    </div>
+                </div>
+
+                <div class="sidebar-card">
+                    <h3>Active Contributors</h3>
+                    <ul>
+                        <li>Jane Doe</li>
+                        <li>John Smith</li>
+                        <li>Emily Chen</li>
+                        <li>Michael Johnson</li>
+                        <li>Sarah Williams</li>
+                    </ul>
+                </div>
+
+                <div class="sidebar-card">
+                    <h3>Upcoming HR Events</h3>
+                    <ul>
+                        <li>Annual HR Tech Conference - Sept 15-17</li>
+                        <li>Diversity in the Workplace Webinar - Aug 5</li>
+                        <li>Employee Wellness Summit - Oct 10-11</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const searchInput = document.querySelector('.search-bar input');
+            const searchButton = document.querySelector('.search-bar button');
+            const discussionCards = document.querySelectorAll('.discussion-card');
+            const createDiscussionButton = document.querySelector('.create-discussion');
+
+            searchButton.addEventListener('click', () => {
+                const searchTerm = searchInput.value.toLowerCase().trim();
+                if (searchTerm) {
+                    discussionCards.forEach(card => {
+                        const cardContent = card.textContent.toLowerCase();
+                        if (cardContent.includes(searchTerm)) {
+                            card.style.display = 'block';
+                        } else {
+                            card.style.display = 'none';
+                        }
+                    });
+                } else {
+                    discussionCards.forEach(card => {
+                        card.style.display = 'block';
+                    });
+                }
+            });
+
+            createDiscussionButton.addEventListener('click', () => {
+                alert('Creating a new discussion... This feature is coming soon!');
+            });
+
+            // Simulate loading new discussion
+            setTimeout(() => {
+                const newDiscussionCard = document.createElement('div');
+                newDiscussionCard.className = 'discussion-card fade-in';
+                newDiscussionCard.innerHTML = `
+                    <h2>Managing Burnout in High-Stress Environments</h2>
+                    <div class="discussion-meta">
+                        <span>Started by: Alex Turner</span>
+                        <span>Just now</span>
+                    </div>
+                    <p>In industries with high burnout rates, what strategies have you found effective for managing employee stress and preventing burnout? Let's share our experiences and best practices.</p>
+                    <div class="discussion-tags">
+                        <span class="tag">Employee Wellness</span>
+                        <span class="tag">Stress Management</span>
+                        <span class="tag">Work-Life Balance</span>
+                    </div>
+                `;
+                document.querySelector('.discussion-list').appendChild(newDiscussionCard);
+            }, 3000);
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,277 @@
+<html><head><base href="/insights/home/insights/knowledge-base/compensation/equity-compensation">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>HRInsights - Equity Compensation</title>
+<style>
+    :root {
+        --primary-color: #3498db;
+        --secondary-color: #2ecc71;
+        --background-color: #ecf0f1;
+        --text-color: #34495e;
+        --border-color: #bdc3c7;
+    }
+
+    body {
+        font-family: 'Arial', sans-serif;
+        margin: 0;
+        padding: 0;
+        background-color: var(--background-color);
+        color: var(--text-color);
+        line-height: 1.6;
+    }
+
+    header {
+        background-color: var(--primary-color);
+        color: white;
+        text-align: center;
+        padding: 1rem;
+    }
+
+    nav {
+        background-color: #2980b9;
+        padding: 0.5rem;
+    }
+
+    nav ul {
+        list-style-type: none;
+        padding: 0;
+        margin: 0;
+        display: flex;
+        justify-content: center;
+    }
+
+    nav ul li {
+        margin: 0 1rem;
+    }
+
+    nav ul li a {
+        color: white;
+        text-decoration: none;
+    }
+
+    main {
+        max-width: 800px;
+        margin: 0 auto;
+        padding: 2rem;
+        background-color: white;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    }
+
+    .breadcrumb {
+        margin-bottom: 1rem;
+    }
+
+    .breadcrumb a {
+        color: var(--primary-color);
+        text-decoration: none;
+    }
+
+    .breadcrumb a:hover {
+        text-decoration: underline;
+    }
+
+    h1, h2, h3 {
+        color: var(--primary-color);
+    }
+
+    .content-section {
+        margin-bottom: 2rem;
+    }
+
+    .equity-types {
+        display: flex;
+        justify-content: space-between;
+        flex-wrap: wrap;
+    }
+
+    .equity-type {
+        flex-basis: calc(50% - 1rem);
+        margin-bottom: 1rem;
+        padding: 1rem;
+        background-color: #f7f9fa;
+        border-radius: 5px;
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    }
+
+    .pros-cons {
+        display: flex;
+        justify-content: space-between;
+    }
+
+    .pros, .cons {
+        flex-basis: calc(50% - 1rem);
+    }
+
+    ul {
+        padding-left: 1.5rem;
+    }
+
+    .calculator {
+        background-color: #f7f9fa;
+        padding: 1rem;
+        border-radius: 5px;
+        margin-top: 2rem;
+    }
+
+    .calculator input {
+        width: 100%;
+        padding: 0.5rem;
+        margin-bottom: 1rem;
+    }
+
+    .calculator button {
+        background-color: var(--primary-color);
+        color: white;
+        border: none;
+        padding: 0.5rem 1rem;
+        border-radius: 5px;
+        cursor: pointer;
+    }
+
+    #result {
+        margin-top: 1rem;
+        font-weight: bold;
+    }
+
+    @keyframes fadeIn {
+        from { opacity: 0; }
+        to { opacity: 1; }
+    }
+
+    .fade-in {
+        animation: fadeIn 0.5s ease-in;
+    }
+</style>
+</head>
+<body>
+    <header>
+        <h1>HRInsights Knowledge Base</h1>
+        <p>Equity Compensation</p>
+    </header>
+
+    <nav>
+        <ul>
+            <li><a href="/insights/home">Home</a></li>
+            <li><a href="/insights/knowledge-base">Knowledge Base</a></li>
+            <li><a href="/insights/discussions">Discussions</a></li>
+            <li><a href="/insights/ask-question">Ask a Question</a></li>
+            <li><a href="/insights/profile">My Profile</a></li>
+        </ul>
+    </nav>
+
+    <main>
+        <div class="breadcrumb">
+            <a href="/insights/home">Home</a> &gt;
+            <a href="/insights/knowledge-base">Knowledge Base</a> &gt;
+            <a href="/insights/knowledge-base/compensation">Compensation</a> &gt;
+            Equity Compensation
+        </div>
+
+        <h1>Understanding Equity Compensation</h1>
+
+        <div class="content-section fade-in">
+            <p>Equity compensation is a non-cash pay that represents ownership in a company. It's often used by startups and growth-stage companies to attract and retain top talent, align employee interests with company success, and conserve cash.</p>
+        </div>
+
+        <div class="content-section fade-in">
+            <h2>Types of Equity Compensation</h2>
+            <div class="equity-types">
+                <div class="equity-type">
+                    <h3>Stock Options</h3>
+                    <p>The right to purchase company stock at a predetermined price (strike price) within a specific timeframe.</p>
+                </div>
+                <div class="equity-type">
+                    <h3>Restricted Stock Units (RSUs)</h3>
+                    <p>A promise to give shares of company stock to employees at a future date, subject to vesting conditions.</p>
+                </div>
+                <div class="equity-type">
+                    <h3>Employee Stock Purchase Plans (ESPPs)</h3>
+                    <p>Programs allowing employees to purchase company stock at a discounted price through payroll deductions.</p>
+                </div>
+                <div class="equity-type">
+                    <h3>Stock Appreciation Rights (SARs)</h3>
+                    <p>The right to receive the increase in the value of a specified number of shares over a specified period of time.</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="content-section fade-in">
+            <h2>Pros and Cons of Equity Compensation</h2>
+            <div class="pros-cons">
+                <div class="pros">
+                    <h3>Pros</h3>
+                    <ul>
+                        <li>Aligns employee and company interests</li>
+                        <li>Potential for significant financial upside</li>
+                        <li>Attracts top talent in competitive markets</li>
+                        <li>Conserves company cash</li>
+                    </ul>
+                </div>
+                <div class="cons">
+                    <h3>Cons</h3>
+                    <ul>
+                        <li>Complex tax implications</li>
+                        <li>Risk of stock price decline</li>
+                        <li>Potential for dilution of existing shareholders</li>
+                        <li>May be illiquid for private companies</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="content-section fade-in">
+            <h2>Key Considerations for HR Professionals</h2>
+            <ul>
+                <li>Understand the company's equity pool and dilution impact</li>
+                <li>Develop clear communication strategies to explain equity offers</li>
+                <li>Stay informed about tax implications and regulatory requirements</li>
+                <li>Regularly review and update equity compensation programs</li>
+                <li>Consider the impact of equity on total compensation packages</li>
+            </ul>
+        </div>
+
+        <div class="calculator fade-in">
+            <h2>Stock Option Value Calculator</h2>
+            <p>Estimate the potential value of stock options:</p>
+            <input type="number" id="numShares" placeholder="Number of shares">
+            <input type="number" id="strikePrice" placeholder="Strike price">
+            <input type="number" id="marketPrice" placeholder="Current market price">
+            <button onclick="calculateOptionValue()">Calculate</button>
+            <div id="result"></div>
+        </div>
+    </main>
+
+    <script>
+        function calculateOptionValue() {
+            const numShares = parseFloat(document.getElementById('numShares').value);
+            const strikePrice = parseFloat(document.getElementById('strikePrice').value);
+            const marketPrice = parseFloat(document.getElementById('marketPrice').value);
+
+            if (isNaN(numShares) || isNaN(strikePrice) || isNaN(marketPrice)) {
+                document.getElementById('result').innerText = "Please enter valid numbers for all fields.";
+                return;
+            }
+
+            const optionValue = Math.max(0, (marketPrice - strikePrice) * numShares);
+            document.getElementById('result').innerText = `Estimated option value: $${optionValue.toFixed(2)}`;
+        }
+
+        // Simulating dynamic content loading
+        setTimeout(() => {
+            const newSection = document.createElement('div');
+            newSection.className = 'content-section fade-in';
+            newSection.innerHTML = `
+                <h2>Best Practices for Equity Compensation</h2>
+                <ul>
+                    <li>Tailor equity packages to individual roles and levels</li>
+                    <li>Implement clear vesting schedules to encourage retention</li>
+                    <li>Provide education and resources to help employees understand their equity</li>
+                    <li>Regularly benchmark against industry standards</li>
+                    <li>Consider offering liquidity options for long-term employees</li>
+                </ul>
+            `;
+            document.querySelector('main').insertBefore(newSection, document.querySelector('.calculator'));
+        }, 2000);
+    </script>
+</body>
+</html>

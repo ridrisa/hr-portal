@@ -1,0 +1,258 @@
+<html><head><base href="/insights/home/insights/knowledge-base/compensation/salary-structures">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>HRInsights - Designing Salary Structures</title>
+<style>
+    :root {
+        --primary-color: #3498db;
+        --secondary-color: #2ecc71;
+        --background-color: #ecf0f1;
+        --text-color: #34495e;
+        --border-color: #bdc3c7;
+    }
+
+    body {
+        font-family: 'Arial', sans-serif;
+        margin: 0;
+        padding: 0;
+        background-color: var(--background-color);
+        color: var(--text-color);
+        line-height: 1.6;
+    }
+
+    header {
+        background-color: var(--primary-color);
+        color: white;
+        text-align: center;
+        padding: 1rem;
+    }
+
+    nav {
+        background-color: #2980b9;
+        padding: 0.5rem;
+    }
+
+    nav ul {
+        list-style-type: none;
+        padding: 0;
+        margin: 0;
+        display: flex;
+        justify-content: center;
+    }
+
+    nav ul li {
+        margin: 0 1rem;
+    }
+
+    nav ul li a {
+        color: white;
+        text-decoration: none;
+    }
+
+    main {
+        max-width: 800px;
+        margin: 0 auto;
+        padding: 2rem;
+        background-color: white;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    }
+
+    .breadcrumb {
+        margin-bottom: 1rem;
+    }
+
+    .breadcrumb a {
+        color: var(--primary-color);
+        text-decoration: none;
+    }
+
+    .breadcrumb a:hover {
+        text-decoration: underline;
+    }
+
+    h1, h2, h3 {
+        color: var(--primary-color);
+    }
+
+    .content-section {
+        margin-bottom: 2rem;
+    }
+
+    .interactive-element {
+        background-color: #f7f9fa;
+        border: 1px solid var(--border-color);
+        border-radius: 5px;
+        padding: 1rem;
+        margin-bottom: 1rem;
+    }
+
+    .interactive-element h3 {
+        margin-top: 0;
+    }
+
+    #salary-calculator {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 1rem;
+    }
+
+    #salary-calculator input, #salary-calculator button {
+        padding: 0.5rem;
+        font-size: 1rem;
+    }
+
+    #salary-calculator button {
+        background-color: var(--primary-color);
+        color: white;
+        border: none;
+        cursor: pointer;
+        transition: background-color 0.3s ease;
+    }
+
+    #salary-calculator button:hover {
+        background-color: #2980b9;
+    }
+
+    #result {
+        font-weight: bold;
+        margin-top: 1rem;
+    }
+
+    .tip {
+        background-color: #e8f6fd;
+        border-left: 4px solid var(--primary-color);
+        padding: 1rem;
+        margin-bottom: 1rem;
+    }
+
+    @keyframes fadeIn {
+        from { opacity: 0; }
+        to { opacity: 1; }
+    }
+
+    .fade-in {
+        animation: fadeIn 0.5s ease-in;
+    }
+</style>
+</head>
+<body>
+    <header>
+        <h1>Designing Salary Structures</h1>
+    </header>
+
+    <nav>
+        <ul>
+            <li><a href="/insights/home">Home</a></li>
+            <li><a href="/insights/knowledge-base">Knowledge Base</a></li>
+            <li><a href="/insights/discussions">Discussions</a></li>
+            <li><a href="/insights/ask-question">Ask a Question</a></li>
+            <li><a href="/insights/profile">My Profile</a></li>
+        </ul>
+    </nav>
+
+    <main>
+        <div class="breadcrumb">
+            <a href="/insights/home">Home</a> &gt;
+            <a href="/insights/knowledge-base">Knowledge Base</a> &gt;
+            <a href="/insights/knowledge-base/categories">Categories</a> &gt;
+            <a href="/insights/knowledge-base/compensation">Compensation and Benefits</a> &gt;
+            Designing Salary Structures
+        </div>
+
+        <div class="content-section fade-in">
+            <h2>Introduction to Salary Structures</h2>
+            <p>Designing effective salary structures is crucial for attracting, retaining, and motivating employees. A well-designed salary structure ensures internal equity and external competitiveness while aligning with the organization's overall compensation philosophy.</p>
+        </div>
+
+        <div class="content-section fade-in">
+            <h2>Key Components of Salary Structures</h2>
+            <ul>
+                <li>Job evaluation and grading</li>
+                <li>Pay grades and ranges</li>
+                <li>Salary bands</li>
+                <li>Midpoint management</li>
+                <li>Progression rules</li>
+            </ul>
+        </div>
+
+        <div class="interactive-element fade-in">
+            <h3>Salary Range Calculator</h3>
+            <p>Use this calculator to determine the minimum and maximum salary for a given pay grade based on the midpoint and range spread.</p>
+            <div id="salary-calculator">
+                <input type="number" id="midpoint" placeholder="Midpoint Salary">
+                <input type="number" id="spread" placeholder="Range Spread (%)" min="0" max="100">
+                <button onclick="calculateSalaryRange()">Calculate</button>
+            </div>
+            <div id="result"></div>
+        </div>
+
+        <div class="content-section fade-in">
+            <h2>Best Practices for Designing Salary Structures</h2>
+            <ol>
+                <li>Conduct regular market salary surveys</li>
+                <li>Ensure internal equity through job evaluation</li>
+                <li>Define clear progression criteria</li>
+                <li>Implement a consistent review process</li>
+                <li>Communicate transparently with employees</li>
+            </ol>
+        </div>
+
+        <div class="tip fade-in">
+            <h3>Pro Tip</h3>
+            <p>When designing salary structures, consider the total rewards package, including benefits and non-monetary compensation, to create a holistic and competitive offering.</p>
+        </div>
+
+        <div class="content-section fade-in">
+            <h2>Common Challenges and Solutions</h2>
+            <ul>
+                <li><strong>Challenge:</strong> Dealing with salary compression<br>
+                    <strong>Solution:</strong> Regularly review and adjust salary ranges, consider implementing broadbands</li>
+                <li><strong>Challenge:</strong> Balancing internal equity and market competitiveness<br>
+                    <strong>Solution:</strong> Use a combination of internal job evaluation and external market data</li>
+                <li><strong>Challenge:</strong> Managing employee expectations<br>
+                    <strong>Solution:</strong> Provide clear communication about the salary structure and progression opportunities</li>
+            </ul>
+        </div>
+    </main>
+
+    <script>
+        function calculateSalaryRange() {
+            const midpoint = parseFloat(document.getElementById('midpoint').value);
+            const spread = parseFloat(document.getElementById('spread').value) / 100;
+
+            if (isNaN(midpoint) || isNaN(spread)) {
+                document.getElementById('result').innerHTML = 'Please enter valid numbers for both fields.';
+                return;
+            }
+
+            const minimum = midpoint / (1 + (spread / 2));
+            const maximum = midpoint * (1 + (spread / 2));
+
+            document.getElementById('result').innerHTML = `
+                Salary Range:<br>
+                Minimum: $${minimum.toFixed(2)}<br>
+                Midpoint: $${midpoint.toFixed(2)}<br>
+                Maximum: $${maximum.toFixed(2)}
+            `;
+        }
+
+        // Simulate loading additional content
+        setTimeout(() => {
+            const mainElement = document.querySelector('main');
+            const newSection = document.createElement('div');
+            newSection.className = 'content-section fade-in';
+            newSection.innerHTML = `
+                <h2>Emerging Trends in Salary Structures</h2>
+                <ul>
+                    <li>Skill-based pay structures</li>
+                    <li>Broadbanding</li>
+                    <li>Flexible pay ranges</li>
+                    <li>Pay transparency initiatives</li>
+                </ul>
+                <p>Stay informed about these trends to ensure your organization's salary structure remains competitive and aligned with industry best practices.</p>
+            `;
+            mainElement.appendChild(newSection);
+        }, 2000);
+    </script>
+</body>
+</html>
