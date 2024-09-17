@@ -1,274 +1,192 @@
+
 <!DOCTYPE html>
 <html lang="en">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="HRInsights - Empowering HR professionals in Saudi Arabia with resources for recruitment, training, compensation, and more.">
-    <title>HRInsights - Empowering HR Professionals in Saudi Arabia</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
-    <style>
-        :root {
-            --primary-color: #00843D;
-            --secondary-color: #8CC63F;
-            --accent-color: #FFC72C;
-            --text-color: #333;
-            --bg-color: #F4F4F4;
-            --header-bg-color: #004225;
-            --footer-bg-color: #004225;
-        }
+    <meta name="description" content="HR Portal - Comprehensive resources for HR professionals including recruitment, training, compensation, and more.">
+    <title>HR Portal</title>
 
-        body {
-            font-family: 'Tajawal', Arial, sans-serif;
-            background-color: var(--bg-color);
-            color: var(--text-color);
-            line-height: 1.6;
-        }
+    <!-- Tailwind CSS & DaisyUI -->
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/daisyui@2.3.3/dist/full.css" rel="stylesheet">
 
-        /* Header */
-        header {
-            background-color: var(--header-bg-color);
-            color: white;
-            padding: 10px 0;
-            position: fixed;
-            width: 100%;
-            top: 0;
-            z-index: 1000;
-        }
-
-        .navbar-nav .nav-link {
-            color: white !important;
-            font-weight: 600;
-        }
-
-        .navbar-brand {
-            font-weight: bold;
-            font-size: 24px;
-        }
-
-        /* Hero Section */
-        .hero {
-            height: 100vh;
-            background: url('https://images.unsplash.com/photo-1577962917302-cd874c4e31d2?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1920&q=80') no-repeat center center;
-            background-size: cover;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            position: relative;
-        }
-
-        .hero-overlay {
-            background: rgba(0, 0, 0, 0.5);
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-        }
-
-        .hero-content {
-            position: relative;
-            z-index: 2;
-            color: white;
-            text-align: center;
-            max-width: 800px;
-        }
-
-        .hero h1 {
-            font-size: 48px;
-            margin-bottom: 20px;
-        }
-
-        .hero p {
-            font-size: 20px;
-            margin-bottom: 30px;
-        }
-
-        .cta-button {
-            padding: 12px 30px;
-            background-color: var(--accent-color);
-            color: var(--text-color);
-            border: none;
-            border-radius: 5px;
-            font-weight: bold;
-            text-transform: uppercase;
-            transition: background-color 0.3s ease, box-shadow 0.3s ease;
-            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
-        }
-
-        .cta-button:hover {
-            background-color: #E6B325;
-            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
-        }
-
-        /* Section Styling */
-        .section {
-            padding: 80px 0;
-        }
-
-        .section-title {
-            text-align: center;
-            font-size: 36px;
-            margin-bottom: 40px;
-            color: var(--primary-color);
-        }
-
-        .features {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 20px;
-        }
-
-        .feature {
-            background-color: white;
-            padding: 30px;
-            border-radius: 10px;
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
-            text-align: center;
-            transition: transform 0.3s ease;
-        }
-
-        .feature:hover {
-            transform: translateY(-10px);
-        }
-
-        .feature h3 {
-            font-size: 24px;
-            margin-bottom: 15px;
-        }
-
-        /* Footer */
-        footer {
-            background-color: var(--footer-bg-color);
-            color: white;
-            text-align: center;
-            padding: 20px 0;
-        }
-    </style>
+    <!-- External Libraries -->
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.6.14/dist/vue.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/scrollreveal@4.0.9/dist/scrollreveal.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@7/swiper-bundle.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.9.1/dist/gsap.min.js"></script>
 </head>
 
-<body>
+<body class="bg-gray-100 font-sans">
 
-    <!-- Header -->
-    <header>
-        <nav class="navbar navbar-expand-lg navbar-dark container">
-            <a class="navbar-brand" href="#">HRInsights</a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
-                <ul class="navbar-nav">
-                    <li class="nav-item">
-                        <a class="nav-link" href="#recruitment-hiring">Recruitment</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#training-development">Training</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#compensation-benefits">Compensation</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#employee-relations">Relations</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#diversity-inclusion">Diversity</a>
-                    </li>
-                </ul>
-            </div>
-        </nav>
+    <!-- Navbar -->
+    <header class="bg-gradient-to-r from-blue-600 to-green-500 text-white py-4">
+        <div class="container mx-auto flex justify-between items-center">
+            <a class="text-3xl font-bold" href="#">HR Portal</a>
+            <nav class="space-x-4">
+                <a href="#recruitment" class="hover:underline">Recruitment</a>
+                <a href="#training" class="hover:underline">Training</a>
+                <a href="#compensation" class="hover:underline">Compensation</a>
+                <a href="#relations" class="hover:underline">Relations</a>
+                <a href="#diversity" class="hover:underline">Diversity</a>
+            </nav>
+        </div>
     </header>
 
     <!-- Hero Section -->
-    <section class="hero">
-        <div class="hero-overlay"></div>
-        <div class="hero-content">
-            <h1>Empowering HR Professionals in Saudi Arabia</h1>
-            <p>Your one-stop resource for HR best practices, recruitment, and employee relations.</p>
-            <a href="#contact" class="cta-button">Join the Community</a>
+    <section class="hero bg-cover bg-center h-screen text-center flex flex-col justify-center" style="background-image: url('relative/path/to/your-image.jpg');">
+        <div class="bg-black bg-opacity-50 p-10 text-white">
+            <h1 class="text-6xl font-bold">Empowering HR Professionals</h1>
+            <p class="mt-4 text-2xl">Your ultimate resource for HR best practices, recruitment, and employee relations.</p>
+            <a href="#signup" class="mt-6 btn btn-primary btn-lg">Join Now</a>
         </div>
     </section>
 
-    <!-- Main Content -->
-    <main class="container">
-        <section id="recruitment-hiring" class="section">
-            <h2 class="section-title">Recruitment & Hiring</h2>
-            <div class="features row">
-                <div class="col-md-4 feature">
-                    <a href="Writing Effective Job Descriptions.html"><h3>Writing Job Descriptions</h3></a>
-                    <p>Learn how to create compelling and accurate job descriptions.</p>
+    <!-- Main Sections -->
+    <main class="container mx-auto my-12">
+
+        <!-- Recruitment & Hiring -->
+        <section id="recruitment" class="py-12">
+            <h2 class="text-4xl font-bold text-center mb-8">Recruitment & Hiring</h2>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div class="card">
+                    <h3 class="text-xl font-semibold mb-4">Writing Job Descriptions</h3>
+                    <p>Learn how to craft compelling job descriptions.</p>
+                    <a href="Writing Effective Job Descriptions.html" class="btn btn-outline mt-4">Read More</a>
                 </div>
-                <div class="col-md-4 feature">
-                    <a href="Onboarding Best Practices.html"><h3>Onboarding Best Practices</h3></a>
-                    <p>Strategies for successful employee onboarding.</p>
+                <div class="card">
+                    <h3 class="text-xl font-semibold mb-4">Onboarding Best Practices</h3>
+                    <p>Best strategies for employee onboarding.</p>
+                    <a href="onboarding_best_practices.html" class="btn btn-outline mt-4">Learn More</a>
                 </div>
-                <div class="col-md-4 feature">
-                    <a href="Interviewing Techniques.html"><h3>Interview Techniques</h3></a>
-                    <p>Master the art of interviewing candidates effectively.</p>
+                <div class="card">
+                    <h3 class="text-xl font-semibold mb-4">Interview Techniques</h3>
+                    <p>Master the art of conducting interviews.</p>
+                    <a href="interview_techniques.html" class="btn btn-outline mt-4">Discover More</a>
                 </div>
             </div>
         </section>
 
-        <section id="training-development" class="section">
-            <h2 class="section-title">Training & Development</h2>
-            <div class="features row">
-                <div class="col-md-4 feature">
-                    <a href="Understanding Leadership Development.html"><h3>Leadership Development</h3></a>
-                    <p>Strategies to cultivate future leaders within your organization.</p>
+        <!-- Training & Development -->
+        <section id="training" class="py-12 bg-gray-200">
+            <h2 class="text-4xl font-bold text-center mb-8">Training & Development</h2>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div class="card">
+                    <h3 class="text-xl font-semibold mb-4">Leadership Development</h3>
+                    <p>Develop future leaders within your organization.</p>
+                    <a href="leadership_development.html" class="btn btn-outline mt-4">Read More</a>
                 </div>
-                <div class="col-md-4 feature">
-                    <a href="Effective Approaches for Digital Training and Development .html"><h3>Digital Training</h3></a>
-                    <p>Explore effective approaches to online training.</p>
+                <div class="card">
+                    <h3 class="text-xl font-semibold mb-4">Digital Training</h3>
+                    <p>Explore digital and online training strategies.</p>
+                    <a href="digital_training.html" class="btn btn-outline mt-4">Discover</a>
                 </div>
-                <div class="col-md-4 feature">
-                    <a href="Training Needs Assessment.html"><h3>Training Needs Assessment</h3></a>
-                    <p>Identify skill gaps and develop the right training programs.</p>
-                </div>
-            </div>
-        </section>
-
-        <section id="compensation-benefits" class="section">
-            <h2 class="section-title">Compensation & Benefits</h2>
-            <div class="features row">
-                <div class="col-md-4 feature">
-                    <a href="Salary Structure.html"><h3>Salary Structures</h3></a>
-                    <p>Design competitive and fair salary structures for employees.</p>
-                </div>
-                <div class="col-md-4 feature">
-                    <a href="Competitive Benefits Packages.html"><h3>Benefits Packages</h3></a>
-                    <p>Explore how to create benefits packages that attract top talent.</p>
-                </div>
-                <div class="col-md-4 feature">
-                    <a href="Equity Compensation.html"><h3>Equity Compensation</h3></a>
-                    <p>Learn about offering equity compensation to employees.</p>
+                <div class="card">
+                    <h3 class="text-xl font-semibold mb-4">Training Needs Assessment</h3>
+                    <p>Identify training needs and skill gaps effectively.</p>
+                    <a href="training_needs_assessment.html" class="btn btn-outline mt-4">Assess Now</a>
                 </div>
             </div>
         </section>
 
-        <section id="employee-relations" class="section">
-            <h2 class="section-title">Employee Relations</h2>
-            <div class="features row">
-                <div class="col-md-4 feature">
-                    <a href="Conflict Resolution.html"><h3>Conflict Resolution</h3></a>
-                    <p>Discover techniques to resolve workplace conflicts.</p>
+        <!-- Compensation & Benefits -->
+        <section id="compensation" class="py-12">
+            <h2 class="text-4xl font-bold text-center mb-8">Compensation & Benefits</h2>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div class="card">
+                    <h3 class="text-xl font-semibold mb-4">Salary Structures</h3>
+                    <p>Design competitive salary structures.</p>
+                    <a href="salary_structures.html" class="btn btn-outline mt-4">Explore</a>
                 </div>
-                <div class="col-md-4 feature">
-                    <a href="Performance Management.html"><h3>Performance Management</h3></a>
-                    <p>How to implement effective performance management systems.</p>
+                <div class="card">
+                    <h3 class="text-xl font-semibold mb-4">Benefits Packages</h3>
+                    <p>Attract talent with top benefits.</p>
+                    <a href="benefits_packages.html" class="btn btn-outline mt-4">Learn More</a>
                 </div>
-                <div class="col-md-4 feature">
-                    <a href="Employee Engagement Strategies.html"><h3>Engagement Strategies</h3></a>
-                    <p>Increase employee engagement with these proven strategies.</p>
+                <div class="card">
+                    <h3 class="text-xl font-semibold mb-4">Equity Compensation</h3>
+                    <p>Learn about offering equity to employees.</p>
+                    <a href="equity_compensation.html" class="btn btn-outline mt-4">Find Out More</a>
                 </div>
             </div>
         </section>
+
+        <!-- Employee Relations -->
+        <section id="relations" class="py-12 bg-gray-200">
+            <h2 class="text-4xl font-bold text-center mb-8">Employee Relations</h2>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div class="card">
+                    <h3 class="text-xl font-semibold mb-4">Conflict Resolution</h3>
+                    <p>Resolve workplace conflicts effectively.</p>
+                    <a href="conflict_resolution.html" class="btn btn-outline mt-4">Read More</a>
+                </div>
+                <div class="card">
+                    <h3 class="text-xl font-semibold mb-4">Performance Management</h3>
+                    <p>Implement successful performance management systems.</p>
+                    <a href="performance_management.html" class="btn btn-outline mt-4">Learn More</a>
+                </div>
+                <div class="card">
+                    <h3 class="text-xl font-semibold mb-4">Engagement Strategies</h3>
+                    <p>Boost employee engagement with proven strategies.</p>
+                    <a href="employee_engagement.html" class="btn btn-outline mt-4">Discover</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Diversity & Inclusion -->
+        <section id="diversity" class="py-12">
+            <h2 class="text-4xl font-bold text-center mb-8">Diversity & Inclusion</h2>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div class="card">
+                    <h3 class="text-xl font-semibold mb-4">Addressing Unconscious Bias</h3>
+                    <p>Mitigate unconscious bias in your workplace.</p>
+                    <a href="unconscious-bias.html" class="btn btn-outline mt-4">Explore Now</a>
+                </div>
+                <div class="card">
+                    <h3 class="text-xl font-semibold mb-4">Diversity Hiring</h3>
+                    <p>Implement diversity-focused recruitment strategies.</p>
+                    <a href="diversity_hiring.html" class="btn btn-outline mt-4">Learn More</a>
+                </div>
+                <div class="card">
+                    <h3 class="text-xl font-semibold mb-4">Inclusion Programs</h3>
+                    <p>Foster an inclusive work environment.</p>
+                    <a href="inclusion_programs.html" class="btn btn-outline mt-4">Find Out More</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Signup Section -->
+        <section id="signup" class="py-12 bg-gray-800 text-white">
+            <h2 class="text-4xl font-bold text-center mb-8">Join the HR Community</h2>
+            <form action="signup.html" method="post" class="max-w-xl mx-auto">
+                <div class="mb-4">
+                    <input type="text" placeholder="Full Name" class="input input-bordered w-full">
+                </div>
+                <div class="mb-4">
+                    <input type="email" placeholder="Email" class="input input-bordered w-full">
+                </div>
+                <div class="mb-4">
+                    <input type="password" placeholder="Password" class="input input-bordered w-full">
+                </div>
+                <div class="text-center">
+                    <button class="btn btn-primary btn-lg w-full">Sign Up</button>
+                </div>
+            </form>
+        </section>
+
     </main>
 
     <!-- Footer -->
-    <footer>
-        <p>&copy; 2023 HRInsights. All Rights Reserved.</p>
+    <footer class="bg-gray-900 text-white text-center py-6">
+        <p>&copy; 2024 HR Portal. All Rights Reserved.</p>
     </footer>
 
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
-</body>
+    <script>
+        ScrollReveal().reveal('.card', { interval: 200 });
+    </script>
 
+</body>
 </html>
