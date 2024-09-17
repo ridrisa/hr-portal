@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="HR Portal - Comprehensive resources for HR professionals including recruitment, training, compensation, and more.">
-    <title>HR Portal</title>
+    <title>HR Portal - Saudi Style</title>
 
     <!-- Tailwind CSS & DaisyUI -->
     <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
@@ -17,30 +17,33 @@
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/swiper@7/swiper-bundle.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/gsap@3.9.1/dist/gsap.min.js"></script>
+
+    <!-- Font for Arabic Style (Google Fonts) -->
+    <link href="https://fonts.googleapis.com/css2?family=Amiri&display=swap" rel="stylesheet">
 </head>
 
-<body class="bg-gray-100 font-sans">
+<body class="bg-gray-50 font-Amiri text-gray-900">
 
     <!-- Navbar -->
-    <header class="bg-gradient-to-r from-blue-600 to-green-500 text-white py-4">
+    <header class="bg-green-800 text-white py-4">
         <div class="container mx-auto flex justify-between items-center">
-            <a class="text-3xl font-bold" href="#">HR Portal</a>
+            <a class="text-4xl font-bold" href="#" style="font-family: 'Amiri', serif;">بوابة الموارد البشرية</a>
             <nav class="space-x-4">
-                <a href="#recruitment" class="hover:underline">Recruitment</a>
-                <a href="#training" class="hover:underline">Training</a>
-                <a href="#compensation" class="hover:underline">Compensation</a>
-                <a href="#relations" class="hover:underline">Relations</a>
-                <a href="#diversity" class="hover:underline">Diversity</a>
+                <a href="#recruitment" class="hover:underline">التوظيف</a>
+                <a href="#training" class="hover:underline">التدريب</a>
+                <a href="#compensation" class="hover:underline">التعويضات</a>
+                <a href="#relations" class="hover:underline">العلاقات</a>
+                <a href="#diversity" class="hover:underline">التنوع</a>
             </nav>
         </div>
     </header>
 
     <!-- Hero Section -->
-    <section class="hero bg-cover bg-center h-screen text-center flex flex-col justify-center" style="background-image: url('relative/path/to/your-image.jpg');">
+    <section class="hero bg-cover bg-center h-screen text-center flex flex-col justify-center" style="background-image: url('relative/path/to/saudi-theme-image.jpg');">
         <div class="bg-black bg-opacity-50 p-10 text-white">
-            <h1 class="text-6xl font-bold">Empowering HR Professionals</h1>
-            <p class="mt-4 text-2xl">Your ultimate resource for HR best practices, recruitment, and employee relations.</p>
-            <a href="#signup" class="mt-6 btn btn-primary btn-lg">Join Now</a>
+            <h1 class="text-6xl font-bold" style="font-family: 'Amiri', serif;">تمكين محترفي الموارد البشرية</h1>
+            <p class="mt-4 text-2xl">مصدر شامل لممارسات التوظيف والتطوير والعلاقات بين الموظفين</p>
+            <a href="#signup" class="mt-6 btn btn-primary btn-lg bg-green-600 hover:bg-green-700">انضم الآن</a>
         </div>
     </section>
 
@@ -49,129 +52,85 @@
 
         <!-- Recruitment & Hiring -->
         <section id="recruitment" class="py-12">
-            <h2 class="text-4xl font-bold text-center mb-8">Recruitment & Hiring</h2>
+            <h2 class="text-4xl font-bold text-center text-green-700 mb-8">التوظيف والاختيار</h2>
             <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-                <div class="card">
-                    <h3 class="text-xl font-semibold mb-4">Writing Job Descriptions</h3>
-                    <p>Learn how to craft compelling job descriptions.</p>
-                    <a href="Writing Effective Job Descriptions.html" class="btn btn-outline mt-4">Read More</a>
+                <div class="card bg-white shadow-md p-6 rounded-md">
+                    <h3 class="text-xl font-semibold mb-4">كتابة أوصاف الوظائف</h3>
+                    <p>تعلم كيفية صياغة أوصاف وظائف مقنعة.</p>
+                    <a href="Writing Effective Job Descriptions.html" class="btn btn-outline mt-4 border-green-700 text-green-700">اقرأ المزيد</a>
                 </div>
-                <div class="card">
-                    <h3 class="text-xl font-semibold mb-4">Onboarding Best Practices</h3>
-                    <p>Best strategies for employee onboarding.</p>
-                    <a href="onboarding best practices.html" class="btn btn-outline mt-4">Learn More</a>
+                <div class="card bg-white shadow-md p-6 rounded-md">
+                    <h3 class="text-xl font-semibold mb-4">أفضل ممارسات التوظيف</h3>
+                    <p>أفضل استراتيجيات لتوظيف الموظفين الجدد.</p>
+                    <a href="onboarding best practices.html" class="btn btn-outline mt-4 border-green-700 text-green-700">تعرف على المزيد</a>
                 </div>
-                <div class="card">
-                    <h3 class="text-xl font-semibold mb-4">Interview Techniques</h3>
-                    <p>Master the art of conducting interviews.</p>
-                    <a href="Interviewing Techniques.html" class="btn btn-outline mt-4">Discover More</a>
+                <div class="card bg-white shadow-md p-6 rounded-md">
+                    <h3 class="text-xl font-semibold mb-4">تقنيات المقابلة</h3>
+                    <p>اتقن فن إجراء المقابلات بنجاح.</p>
+                    <a href="Interviewing Techniques.html" class="btn btn-outline mt-4 border-green-700 text-green-700">اكتشف المزيد</a>
                 </div>
             </div>
         </section>
 
         <!-- Training & Development -->
-        <section id="training" class="py-12 bg-gray-200">
-            <h2 class="text-4xl font-bold text-center mb-8">Training & Development</h2>
+        <section id="training" class="py-12 bg-gray-100">
+            <h2 class="text-4xl font-bold text-center text-green-700 mb-8">التدريب والتطوير</h2>
             <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-                <div class="card">
-                    <h3 class="text-xl font-semibold mb-4">Leadership Development</h3>
-                    <p>Develop future leaders within your organization.</p>
-                    <a href="Understanding Leadership Development.html" class="btn btn-outline mt-4">Read More</a>
+                <div class="card bg-white shadow-md p-6 rounded-md">
+                    <h3 class="text-xl font-semibold mb-4">تطوير القيادة</h3>
+                    <p>تطوير قادة المستقبل داخل منظمتك.</p>
+                    <a href="Understanding Leadership Development.html" class="btn btn-outline mt-4 border-green-700 text-green-700">اقرأ المزيد</a>
                 </div>
-                <div class="card">
-                    <h3 class="text-xl font-semibold mb-4">Digital Training</h3>
-                    <p>Explore digital and online training strategies.</p>
-                    <a href="Effective Approaches for Digital Training and Development.html" class="btn btn-outline mt-4">Discover</a>
+                <div class="card bg-white shadow-md p-6 rounded-md">
+                    <h3 class="text-xl font-semibold mb-4">التدريب الرقمي</h3>
+                    <p>استكشاف استراتيجيات التدريب الرقمي.</p>
+                    <a href="Effective Approaches for Digital Training and Development.html" class="btn btn-outline mt-4 border-green-700 text-green-700">استكشف</a>
                 </div>
-                <div class="card">
-                    <h3 class="text-xl font-semibold mb-4">Training Needs Assessment</h3>
-                    <p>Identify training needs and skill gaps effectively.</p>
-                    <a href="Training Needs Assessment.html" class="btn btn-outline mt-4">Assess Now</a>
+                <div class="card bg-white shadow-md p-6 rounded-md">
+                    <h3 class="text-xl font-semibold mb-4">تقييم احتياجات التدريب</h3>
+                    <p>تحديد احتياجات التدريب والفجوات في المهارات.</p>
+                    <a href="Training Needs Assessment.html" class="btn btn-outline mt-4 border-green-700 text-green-700">قيم الآن</a>
                 </div>
             </div>
         </section>
 
         <!-- Compensation & Benefits -->
         <section id="compensation" class="py-12">
-            <h2 class="text-4xl font-bold text-center mb-8">Compensation & Benefits</h2>
+            <h2 class="text-4xl font-bold text-center text-green-700 mb-8">التعويضات والمزايا</h2>
             <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-                <div class="card">
-                    <h3 class="text-xl font-semibold mb-4">Salary Structures</h3>
-                    <p>Design competitive salary structures.</p>
-                    <a href="salary structure.html" class="btn btn-outline mt-4">Explore</a>
+                <div class="card bg-white shadow-md p-6 rounded-md">
+                    <h3 class="text-xl font-semibold mb-4">هياكل الرواتب</h3>
+                    <p>تصميم هياكل الرواتب التنافسية.</p>
+                    <a href="salary structure.html" class="btn btn-outline mt-4 border-green-700 text-green-700">استكشاف</a>
                 </div>
-                <div class="card">
-                    <h3 class="text-xl font-semibold mb-4">Benefits Packages</h3>
-                    <p>Attract talent with top benefits.</p>
-                    <a href="Equity Compensation.html" class="btn btn-outline mt-4">Learn More</a>
+                <div class="card bg-white shadow-md p-6 rounded-md">
+                    <h3 class="text-xl font-semibold mb-4">حزم المزايا</h3>
+                    <p>جذب المواهب مع المزايا التنافسية.</p>
+                    <a href="Equity Compensation.html" class="btn btn-outline mt-4 border-green-700 text-green-700">تعرف على المزيد</a>
                 </div>
-                <div class="card">
-                    <h3 class="text-xl font-semibold mb-4">Equity Compensation</h3>
-                    <p>Learn about offering equity to employees.</p>
-                    <a href="Equity Compensation.html" class="btn btn-outline mt-4">Find Out More</a>
-                </div>
-            </div>
-        </section>
-
-        <!-- Employee Relations -->
-        <section id="relations" class="py-12 bg-gray-200">
-            <h2 class="text-4xl font-bold text-center mb-8">Employee Relations</h2>
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-                <div class="card">
-                    <h3 class="text-xl font-semibold mb-4">Conflict Resolution</h3>
-                    <p>Resolve workplace conflicts effectively.</p>
-                    <a href="discussions.html" class="btn btn-outline mt-4">Read More</a>
-                </div>
-                <div class="card">
-                    <h3 class="text-xl font-semibold mb-4">Performance Management</h3>
-                    <p>Implement successful performance management systems.</p>
-                    <a href="Performance Management.html" class="btn btn-outline mt-4">Learn More</a>
-                </div>
-                <div class="card">
-                    <h3 class="text-xl font-semibold mb-4">Engagement Strategies</h3>
-                    <p>Boost employee engagement with proven strategies.</p>
-                    <a href="insights.html" class="btn btn-outline mt-4">Discover</a>
-                </div>
-            </div>
-        </section>
-
-        <!-- Diversity & Inclusion -->
-        <section id="diversity" class="py-12">
-            <h2 class="text-4xl font-bold text-center mb-8">Diversity & Inclusion</h2>
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-                <div class="card">
-                    <h3 class="text-xl font-semibold mb-4">Addressing Unconscious Bias</h3>
-                    <p>Mitigate unconscious bias in your workplace.</p>
-                    <a href="addressing unconscious bias.html" class="btn btn-outline mt-4">Explore Now</a>
-                </div>
-                <div class="card">
-                    <h3 class="text-xl font-semibold mb-4">Diversity Hiring</h3>
-                    <p>Implement diversity-focused recruitment strategies.</p>
-                    <a href="categories.html" class="btn btn-outline mt-4">Learn More</a>
-                </div>
-                <div class="card">
-                    <h3 class="text-xl font-semibold mb-4">Inclusion Programs</h3>
-                    <p>Foster an inclusive work environment.</p>
-                    <a href="categories.html" class="btn btn-outline mt-4">Find Out More</a>
+                <div class="card bg-white shadow-md p-6 rounded-md">
+                    <h3 class="text-xl font-semibold mb-4">التعويض العادل</h3>
+                    <p>تعرف على كيفية تقديم التعويض العادل للموظفين.</p>
+                    <a href="Equity Compensation.html" class="btn btn-outline mt-4 border-green-700 text-green-700">اعرف المزيد</a>
                 </div>
             </div>
         </section>
 
         <!-- Signup Section -->
-        <section id="signup" class="py-12 bg-gray-800 text-white">
-            <h2 class="text-4xl font-bold text-center mb-8">Join the HR Community</h2>
+        <section id="signup" class="py-12 bg-green-800 text-white">
+            <h2 class="text-4xl font-bold text-center mb-8">انضم إلى مجتمع الموارد البشرية</h2>
             <form action="signup.html" method="post" class="max-w-xl mx-auto">
                 <div class="mb-4">
-                    <input type="text" placeholder="Full Name" class="input input-bordered w-full">
+                    <input type="text" placeholder="الاسم الكامل" class="input input-bordered w-full">
                 </div>
                 <div class="mb-4">
-                    <input type="email" placeholder="Email" class="input input-bordered w-full">
+                    <input type="email" placeholder="البريد الإلكتروني" class="input input-bordered w-full">
                 </div>
                 <div class="mb-4">
-                    <input type="password" placeholder="Password" class="input input-bordered w-full">
+                    <input type="password" placeholder="كلمة المرور" class="input input-bordered w-full">
                 </div>
                 <div class="text-center">
-                    <button class="btn btn-primary btn-lg w-full">Sign Up</button>
+                    <button class="btn btn-primary btn-lg w-full bg-white text-green-800">سجل الآن</button>
                 </div>
             </form>
         </section>
@@ -179,8 +138,8 @@
     </main>
 
     <!-- Footer -->
-    <footer class="bg-gray-900 text-white text-center py-6">
-        <p>&copy; 2024 HR Portal. All Rights Reserved.</p>
+    <footer class="bg-green-900 text-white text-center py-6">
+        <p>&copy; 2024 بوابة الموارد البشرية. جميع الحقوق محفوظة.</p>
     </footer>
 
     <script>
