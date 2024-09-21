@@ -1,0 +1,24 @@
+@import url('https://fonts.googleapis.com/css2?family=Tajawal:wght@400;700&display=swap');
+
+/* Basic Document Styling */
+body {
+    font-family: 'Tajawal', sans-serif;
+    color: #444;
+    background-color: #f5f5dc; /* Soft beige background */
+}
+/* Header and Hero Section Styling */
+header, .hero {
+    background-color: #006400; /* Dark green */
+    color: #FFD700; /* Gold */
+}
+
+/* Footer and Marketing Section Styling */
+footer, .marketing {
+    background-color: #F0E68C; /* Complementary khaki tone */
+    color: #006400; /* Text in dark green */
+}
+
+/* Font Awesome Integration */
+i {
+    font-family: 'Font Awesome 5 Free';
+}
