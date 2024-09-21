@@ -1,237 +1,119 @@
-<html><head><base href="/insights/home/insights/knowledge-base/recruitment/onboarding">
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>HRInsights - Onboarding Best Practices</title>
-<style>
-    :root {
-        --primary-color: #3498db;
-        --secondary-color: #2ecc71;
-        --background-color: #ecf0f1;
-        --text-color: #34495e;
-        --border-color: #bdc3c7;
-    }
-
-    body {
-        font-family: 'Arial', sans-serif;
-        margin: 0;
-        padding: 0;
-        background-color: var(--background-color);
-        color: var(--text-color);
-        line-height: 1.6;
-    }
-
-    header {
-        background-color: var(--primary-color);
-        color: white;
-        text-align: center;
-        padding: 1rem;
-    }
-
-    nav {
-        background-color: #2980b9;
-        padding: 0.5rem;
-    }
-
-    nav ul {
-        list-style-type: none;
-        padding: 0;
-        margin: 0;
-        display: flex;
-        justify-content: center;
-    }
-
-    nav ul li {
-        margin: 0 1rem;
-    }
-
-    nav ul li a {
-        color: white;
-        text-decoration: none;
-    }
-
-    main {
-        max-width: 800px;
-        margin: 0 auto;
-        padding: 2rem;
-        background-color: white;
-        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-        border-radius: 5px;
-    }
-
-    .breadcrumb {
-        margin-bottom: 1rem;
-        font-size: 0.9rem;
-    }
-
-    .breadcrumb a {
-        color: var(--primary-color);
-        text-decoration: none;
-    }
-
-    .breadcrumb a:hover {
-        text-decoration: underline;
-    }
-
-    h1, h2, h3 {
-        color: var(--primary-color);
-    }
-
-    .onboarding-checklist {
-        background-color: #f9f9f9;
-        border: 1px solid var(--border-color);
-        border-radius: 5px;
-        padding: 1rem;
-        margin-top: 1rem;
-    }
-
-    .onboarding-checklist h3 {
-        margin-top: 0;
-    }
-
-    .onboarding-checklist ul {
-        padding-left: 1.5rem;
-    }
-
-    .best-practice {
-        margin-bottom: 2rem;
-        border-left: 4px solid var(--secondary-color);
-        padding-left: 1rem;
-    }
-
-    .interactive-element {
-        background-color: #f0f8ff;
-        border: 1px solid var(--primary-color);
-        border-radius: 5px;
-        padding: 1rem;
-        margin-top: 1rem;
-    }
-
-    button {
-        background-color: var(--primary-color);
-        color: white;
-        border: none;
-        padding: 0.5rem 1rem;
-        border-radius: 5px;
-        cursor: pointer;
-        font-size: 1rem;
-        transition: background-color 0.3s ease;
-    }
-
-    button:hover {
-        background-color: #2980b9;
-    }
-
-    #feedback-form {
-        display: none;
-        margin-top: 1rem;
-    }
-
-    #feedback-form textarea {
-        width: 100%;
-        padding: 0.5rem;
-        margin-bottom: 0.5rem;
-        border: 1px solid var(--border-color);
-        border-radius: 5px;
-    }
-
-    .progress-bar-container {
-        width: 100%;
-        background-color: #e0e0e0;
-        border-radius: 5px;
-        margin-top: 1rem;
-    }
-
-    .progress-bar {
-        width: 0;
-        height: 20px;
-        background-color: var(--secondary-color);
-        border-radius: 5px;
-        transition: width 0.5s ease-in-out;
-    }
-</style>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HRInsights - Onboarding Best Practices</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/2.2.19/tailwind.min.css" rel="stylesheet">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/alpinejs/2.3.0/alpine.js" defer></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.7.0/chart.min.js"></script>
+    <style>
+        :root {
+            --primary-color: #3498db;
+            --secondary-color: #2ecc71;
+            --background-color: #ecf0f1;
+            --text-color: #34495e;
+            --border-color: #bdc3c7;
+        }
+        body {
+            font-family: 'Poppins', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: var(--background-color);
+            color: var(--text-color);
+            line-height: 1.6;
+        }
+        .fade-in {
+            animation: fadeIn 1s ease-out;
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+    </style>
 </head>
-<body>
-    <header>
-        <h1>HRInsights Knowledge Base</h1>
-        <p>Onboarding Best Practices</p>
+<body class="bg-gray-50 font-sans">
+    <header class="bg-white shadow-md sticky top-0 z-50">
+        <nav class="container mx-auto px-6 py-3">
+            <div class="flex justify-between items-center">
+                <a href="index.html" class="text-2xl font-bold text-indigo-600">HRInsights</a>
+                <div class="hidden lg:flex space-x-6">
+                    <a href="/insights/home" class="text-gray-700 hover:text-indigo-600 transition duration-300">Home</a>
+                    <a href="/insights/knowledge-base" class="text-gray-700 hover:text-indigo-600 transition duration-300">Knowledge Base</a>
+                    <a href="/insights/discussions" class="text-gray-700 hover:text-indigo-600 transition duration-300">Discussions</a>
+                    <a href="/insights/ask-question" class="text-gray-700 hover:text-indigo-600 transition duration-300">Ask a Question</a>
+                    <a href="/insights/profile" class="text-gray-700 hover:text-indigo-600 transition duration-300">My Profile</a>
+                </div>
+            </div>
+        </nav>
     </header>
 
-    <nav>
-        <ul>
-            <li><a href="/insights/home">Home</a></li>
-            <li><a href="/insights/knowledge-base">Knowledge Base</a></li>
-            <li><a href="/insights/discussions">Discussions</a></li>
-            <li><a href="/insights/ask-question">Ask a Question</a></li>
-            <li><a href="/insights/profile">My Profile</a></li>
-        </ul>
-    </nav>
-
-    <main>
-        <div class="breadcrumb">
-            <a href="/insights/home">Home</a> &gt;
-            <a href="/insights/knowledge-base">Knowledge Base</a> &gt;
-            <a href="/insights/knowledge-base/categories">Categories</a> &gt;
-            <a href="/insights/knowledge-base/recruitment">Recruitment and Hiring</a> &gt;
+    <main class="max-w-4xl mx-auto py-10 px-6 bg-white shadow-md rounded-lg">
+        <div class="breadcrumb text-sm text-gray-500 mb-4">
+            <a href="/insights/home" class="hover:underline">Home</a> &gt;
+            <a href="/insights/knowledge-base" class="hover:underline">Knowledge Base</a> &gt;
+            <a href="/insights/knowledge-base/categories" class="hover:underline">Categories</a> &gt;
+            <a href="/insights/knowledge-base/recruitment" class="hover:underline">Recruitment and Hiring</a> &gt;
             Onboarding
         </div>
 
-        <h1>Onboarding Best Practices</h1>
+        <h1 class="text-3xl font-bold text-indigo-600 mb-6">Onboarding Best Practices</h1>
 
-        <p>Effective onboarding is crucial for new employee success and retention. Here are some best practices to ensure a smooth onboarding process:</p>
+        <p class="mb-6">Effective onboarding is crucial for new employee success and retention. Here are some best practices to ensure a smooth onboarding process:</p>
 
-        <div class="best-practice">
-            <h2>1. Pre-boarding</h2>
+        <div class="best-practice mb-6 p-4 border-l-4 border-green-500">
+            <h2 class="text-2xl font-semibold mb-2">1. Pre-boarding</h2>
             <p>Start the onboarding process before the new hire's first day. Send welcome emails, necessary paperwork, and provide access to relevant company information.</p>
         </div>
 
-        <div class="best-practice">
-            <h2>2. First Day Experience</h2>
+        <div class="best-practice mb-6 p-4 border-l-4 border-green-500">
+            <h2 class="text-2xl font-semibold mb-2">2. First Day Experience</h2>
             <p>Make the first day special. Prepare their workspace, schedule a team lunch, and plan a mix of orientation activities and job-specific tasks.</p>
         </div>
 
-        <div class="best-practice">
-            <h2>3. Structured Program</h2>
+        <div class="best-practice mb-6 p-4 border-l-4 border-green-500">
+            <h2 class="text-2xl font-semibold mb-2">3. Structured Program</h2>
             <p>Develop a structured onboarding program that spans the first 30, 60, and 90 days, covering company culture, job responsibilities, and performance expectations.</p>
         </div>
 
-        <div class="best-practice">
-            <h2>4. Assign a Buddy or Mentor</h2>
+        <div class="best-practice mb-6 p-4 border-l-4 border-green-500">
+            <h2 class="text-2xl font-semibold mb-2">4. Assign a Buddy or Mentor</h2>
             <p>Pair new hires with experienced employees who can provide guidance, answer questions, and help them navigate the organization.</p>
         </div>
 
-        <div class="best-practice">
-            <h2>5. Regular Check-ins</h2>
+        <div class="best-practice mb-6 p-4 border-l-4 border-green-500">
+            <h2 class="text-2xl font-semibold mb-2">5. Regular Check-ins</h2>
             <p>Schedule frequent check-ins with new employees to address concerns, provide feedback, and ensure they're adjusting well to their new role.</p>
         </div>
 
-        <div class="onboarding-checklist">
-            <h3>Onboarding Checklist</h3>
-            <ul id="onboarding-checklist">
-                <li><input type="checkbox"> Prepare workstation and equipment</li>
-                <li><input type="checkbox"> Send welcome email with first-day instructions</li>
-                <li><input type="checkbox"> Provide access to necessary systems and tools</li>
-                <li><input type="checkbox"> Schedule team introduction meeting</li>
-                <li><input type="checkbox"> Assign onboarding buddy or mentor</li>
-                <li><input type="checkbox"> Review job responsibilities and expectations</li>
-                <li><input type="checkbox"> Conduct company culture and values presentation</li>
-                <li><input type="checkbox"> Schedule check-ins for 30, 60, and 90 days</li>
+        <div class="onboarding-checklist bg-gray-100 p-4 rounded-lg mb-6">
+            <h3 class="text-xl font-semibold mb-2">Onboarding Checklist</h3>
+            <ul id="onboarding-checklist" class="list-disc pl-5">
+                <li><input type="checkbox" class="mr-2"> Prepare workstation and equipment</li>
+                <li><input type="checkbox" class="mr-2"> Send welcome email with first-day instructions</li>
+                <li><input type="checkbox" class="mr-2"> Provide access to necessary systems and tools</li>
+                <li><input type="checkbox" class="mr-2"> Schedule team introduction meeting</li>
+                <li><input type="checkbox" class="mr-2"> Assign onboarding buddy or mentor</li>
+                <li><input type="checkbox" class="mr-2"> Review job responsibilities and expectations</li>
+                <li><input type="checkbox" class="mr-2"> Conduct company culture and values presentation</li>
+                <li><input type="checkbox" class="mr-2"> Schedule check-ins for 30, 60, and 90 days</li>
             </ul>
         </div>
 
-        <div class="interactive-element">
-            <h3>Track Your Onboarding Progress</h3>
-            <div class="progress-bar-container">
-                <div id="progress-bar" class="progress-bar"></div>
+        <div class="interactive-element bg-blue-50 p-4 rounded-lg mb-6">
+            <h3 class="text-xl font-semibold mb-2">Track Your Onboarding Progress</h3>
+            <div class="progress-bar-container bg-gray-200 rounded-full h-4 mb-2">
+                <div id="progress-bar" class="progress-bar bg-green-500 h-4 rounded-full" style="width: 0%;"></div>
             </div>
-            <p id="progress-text">0% Complete</p>
+            <p id="progress-text" class="text-sm text-gray-600">0% Complete</p>
         </div>
 
-        <div class="interactive-element">
-            <h3>Share Your Onboarding Experience</h3>
-            <button id="share-experience-btn">Share Your Experience</button>
-            <div id="feedback-form">
-                <textarea id="experience-feedback" rows="4" placeholder="Tell us about your onboarding experience..."></textarea>
-                <button id="submit-feedback-btn">Submit Feedback</button>
+        <div class="interactive-element bg-blue-50 p-4 rounded-lg">
+            <h3 class="text-xl font-semibold mb-2">Share Your Onboarding Experience</h3>
+            <button id="share-experience-btn" class="bg-indigo-600 text-white px-4 py-2 rounded hover:bg-indigo-700 transition duration-300">Share Your Experience</button>
+            <div id="feedback-form" class="mt-4 hidden">
+                <textarea id="experience-feedback" rows="4" class="w-full p-2 border border-gray-300 rounded mb-2" placeholder="Tell us about your onboarding experience..."></textarea>
+                <button id="submit-feedback-btn" class="bg-indigo-600 text-white px-4 py-2 rounded hover:bg-indigo-700 transition duration-300">Submit Feedback</button>
             </div>
         </div>
     </main>
