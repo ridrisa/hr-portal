@@ -1,879 +1,365 @@
-<html><head><base disabled-href="knowledge-base/compensation/pay-for-performance">
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>HRInsights - Your Gateway to HR Excellence</title>
-<meta name="description" content="HRInsights: Your gateway to HR excellence in the Kingdom of Saudi Arabia. Expert resources, discussions, and personalized learning for HR professionals.">
-<meta name="keywords" content="HR, Human Resources, Saudi Arabia, KSA, Vision 2030, Saudization, HR Knowledge">
-<style>
-    :root {
-        --primary-color: #006747;
-        --secondary-color: #8D734A;
-        --background-color: #F7F7F7;
-        --text-color: #333333;
-        --border-color: #E0E0E0;
-        --hover-color: #004D35;
-    }
-
-    body {
-        font-family: 'Tahoma', 'Arial', sans-serif;
-        margin: 0;
-        padding: 0;
-        background-color: var(--background-color);
-        color: var(--text-color);
-        line-height: 1.6;
-        direction: ltr;
-        text-align: left;
-    }
-
-    header {
-        background-color: var(--primary-color);
-        color: white;
-        text-align: left;
-        padding: 1rem 2rem;
-        box-shadow: 0 2px 4px rgba(0,0,0,0.1);
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-    }
-
-    header h1 {
-        margin: 0;
-        font-size: 1.8rem;
-    }
-
-    .language-button {
-        background-color: var(--secondary-color);
-        color: white;
-        border: none;
-        padding: 0.5rem 1rem;
-        border-radius: 4px;
-        cursor: pointer;
-        transition: background-color 0.3s ease;
-        font-size: 0.9rem;
-    }
-
-    .language-button:hover {
-        background-color: #7A6440;
-    }
-
-    nav {
-        background-color: white;
-        padding: 0.5rem 2rem;
-        border-bottom: 1px solid var(--border-color);
-    }
-
-    nav ul {
-        list-style-type: none;
-        padding: 0;
-        margin: 0;
-        display: flex;
-        justify-content: flex-start;
-    }
-
-    nav ul li {
-        margin-right: 2rem;
-    }
-
-    nav ul li a {
-        color: var(--text-color);
-        text-decoration: none;
-        font-weight: bold;
-        transition: color 0.3s ease;
-    }
-
-    nav ul li a:hover {
-        color: var(--primary-color);
-    }
-
-    main {
-        max-width: 1200px;
-        margin: 2rem auto;
-        padding: 0 2rem;
-        background-color: white;
-        border-radius: 8px;
-        box-shadow: 0 0 10px rgba(0,0,0,0.1);
-    }
-
-    .breadcrumb {
-        margin-bottom: 1.5rem;
-        font-size: 0.9rem;
-        padding: 1rem 0;
-    }
-
-    .breadcrumb a {
-        color: var(--primary-color);
-        text-decoration: none;
-    }
-
-    .breadcrumb span {
-        margin: 0 0.5rem;
-        color: var(--text-color);
-    }
-
-    h1, h2, h3 {
-        color: var(--primary-color);
-    }
-
-    h1 {
-        font-size: 2.5rem;
-        margin-bottom: 1.5rem;
-        border-bottom: 2px solid var(--secondary-color);
-        padding-bottom: 0.5rem;
-    }
-
-    h2 {
-        font-size: 1.8rem;
-        margin-top: 2rem;
-        margin-bottom: 1rem;
-    }
-
-    h3 {
-        font-size: 1.3rem;
-        margin-top: 1.5rem;
-        margin-bottom: 0.5rem;
-    }
-
-    p, ul, ol {
-        margin-bottom: 1rem;
-    }
-
-    ul, ol {
-        padding-left: 2rem;
-    }
-
-    .info-box {
-        background-color: #E6F3F0;
-        border-left: 4px solid var(--primary-color);
-        padding: 1rem;
-        margin: 1rem 0;
-        border-radius: 4px;
-    }
-
-    .warning-box {
-        background-color: #FFF3CD;
-        border-left: 4px solid #FFC107;
-        padding: 1rem;
-        margin: 1rem 0;
-        border-radius: 4px;
-    }
-
-    table {
-        width: 100%;
-        border-collapse: collapse;
-        margin-bottom: 1rem;
-    }
-
-    th, td {
-        border: 1px solid var(--border-color);
-        padding: 0.75rem;
-        text-align: left;
-    }
-
-    th {
-        background-color: var(--primary-color);
-        color: white;
-    }
-
-    tr:nth-child(even) {
-        background-color: #f2f2f2;
-    }
-
-    .hero {
-        background: linear-gradient(45deg, var(--primary-color), var(--secondary-color));
-        color: white;
-        text-align: center;
-        padding: 4rem 2rem;
-        position: relative;
-        overflow: hidden;
-    }
-
-    .hero h1 {
-        font-size: 3rem;
-        margin-bottom: 1rem;
-        color: white;
-    }
-
-    .hero p {
-        font-size: 1.2rem;
-        max-width: 600px;
-        margin: 0 auto 2rem;
-    }
-
-    .cta-button {
-        background-color: white;
-        color: var(--primary-color);
-        padding: 0.75rem 1.5rem;
-        border-radius: 25px;
-        text-decoration: none;
-        font-weight: bold;
-        transition: all 0.3s ease;
-    }
-
-    .cta-button:hover {
-        background-color: var(--secondary-color);
-        color: white;
-    }
-
-    .feature-showcase {
-        display: flex;
-        justify-content: space-around;
-        flex-wrap: wrap;
-        padding: 4rem 2rem;
-        background-color: #f9f9f9;
-    }
-
-    .feature-card {
-        background-color: white;
-        border-radius: 8px;
-        box-shadow: 0 4px 6px rgba(0,0,0,0.1);
-        padding: 2rem;
-        margin: 1rem;
-        flex-basis: calc(33.333% - 2rem);
-        text-align: center;
-        transition: all 0.3s ease;
-    }
-
-    .feature-card:hover {
-        transform: translateY(-10px);
-    }
-
-    .feature-icon {
-        font-size: 3rem;
-        color: var(--primary-color);
-        margin-bottom: 1rem;
-    }
-
-    .testimonial-slider {
-        background-color: var(--primary-color);
-        color: white;
-        padding: 4rem 2rem;
-        text-align: center;
-    }
-
-    .testimonial {
-        max-width: 800px;
-        margin: 0 auto;
-    }
-
-    .testimonial-text {
-        font-size: 1.2rem;
-        font-style: italic;
-        margin-bottom: 1rem;
-    }
-
-    .testimonial-author {
-        font-weight: bold;
-    }
-
-    .cta-section {
-        background-color: var(--secondary-color);
-        color: white;
-        text-align: center;
-        padding: 4rem 2rem;
-    }
-
-    .cta-section h2 {
-        font-size: 2.5rem;
-        margin-bottom: 1rem;
-        color: white;
-    }
-
-    .marketing-highlights {
-        background-color: #f0f8f6;
-        padding: 2rem;
-        margin: 2rem 0;
-        border-radius: 8px;
-    }
-
-    .marketing-highlights ul {
-        list-style-type: none;
-        padding-left: 0;
-    }
-
-    .marketing-highlights li {
-        margin-bottom: 1rem;
-        padding-left: 2rem;
-        position: relative;
-    }
-
-    .marketing-highlights li:before {
-        content: '✓';
-        color: var(--primary-color);
-        position: absolute;
-        left: 0;
-    }
-
-    .lead-capture {
-        background-color: var(--secondary-color);
-        color: white;
-        padding: 2rem;
-        border-radius: 8px;
-        margin: 2rem 0;
-    }
-
-    .lead-capture form {
-        display: flex;
-        flex-direction: column;
-        gap: 1rem;
-    }
-
-    .lead-capture input {
-        padding: 0.5rem;
-        border: none;
-        border-radius: 4px;
-    }
-
-    .social-proof {
-        text-align: center;
-        margin: 2rem 0;
-    }
-
-    .logo-container {
-        display: flex;
-        justify-content: space-around;
-        align-items: center;
-        flex-wrap: wrap;
-    }
-
-    .social-share {
-        margin: 2rem 0;
-    }
-
-    .share-button {
-        display: inline-block;
-        padding: 0.5rem 1rem;
-        margin-right: 1rem;
-        border-radius: 4px;
-        color: white;
-        text-decoration: none;
-    }
-
-    .share-button.twitter { background-color: #1DA1F2; }
-    .share-button.linkedin { background-color: #0077B5; }
-    .share-button.whatsapp { background-color: #25D366; }
-
-    .blog-preview {
-        margin: 2rem 0;
-    }
-
-    .blog-posts {
-        display: flex;
-        gap: 2rem;
-    }
-
-    .blog-post {
-        flex: 1;
-        background-color: #f9f9f9;
-        padding: 1rem;
-        border-radius: 8px;
-    }
-
-    footer {
-        background-color: var(--primary-color);
-        color: white;
-        padding: 2rem;
-        margin-top: 2rem;
-    }
-
-    .newsletter-signup form {
-        display: flex;
-        gap: 1rem;
-    }
-
-    .newsletter-signup input {
-        flex: 1;
-        padding: 0.5rem;
-        border: none;
-        border-radius: 4px;
-    }
-
-    @keyframes fadeIn {
-        from { opacity: 0; }
-        to { opacity: 1; }
-    }
-
-    .fade-in {
-        animation: fadeIn 1s ease-out;
-    }
-
-    @keyframes slideIn {
-        from { transform: translateY(50px); opacity: 0; }
-        to { transform: translateY(0); opacity: 1; }
-    }
-
-    .slide-in {
-        animation: slideIn 0.5s ease-out;
-    }
-
-    @media (max-width: 768px) {
-        nav ul {
-            flex-direction: column;
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HRInsights KSA - Empowering HR Professionals</title>
+    <meta name="description" content="HRInsights KSA: Empowering HR professionals in Saudi Arabia with knowledge, resources, and community support.">
+    <meta name="keywords" content="HR, Human Resources, Saudi Arabia, Vision 2030, HR Resources, HR Community, HR Events, HR Jobs">
+    <style>
+        :root {
+            --primary-color: #006747;
+            --secondary-color: #8D734A;
+            --background-color: #F7F7F7;
+            --text-color: #333333;
+            --border-color: #E0E0E0;
+            --hover-color: #004D35;
         }
 
-        nav ul li {
-            margin-right: 0;
-            margin-bottom: 0.5rem;
+        body {
+            font-family: 'Tahoma', 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: var(--background-color);
+            color: var(--text-color);
+            line-height: 1.6;
+            text-align: left;
         }
 
         header {
-            flex-direction: column;
-            align-items: flex-start;
+            background-color: var(--primary-color);
+            color: white;
+            padding: 1rem 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        header h1 {
+            font-size: 1.8rem;
         }
 
         .language-button {
-            margin-top: 1rem;
+            background-color: var(--secondary-color);
+            color: white;
+            padding: 0.5rem 1rem;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+
+        nav {
+            background-color: white;
+            padding: 0.5rem 2rem;
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        nav ul {
+            display: flex;
+            list-style: none;
+            padding: 0;
+        }
+
+        nav ul li {
+            margin-right: 2rem;
+        }
+
+        nav ul li a {
+            color: var(--text-color);
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        .cta-button {
+            background-color: var(--primary-color);
+            color: white;
+            padding: 0.75rem 1.5rem;
+            text-decoration: none;
+            border-radius: 25px;
+            display: inline-block;
+        }
+
+        .cta-button:hover {
+            background-color: var(--hover-color);
+        }
+
+        main {
+            max-width: 1200px;
+            margin: 2rem auto;
+            padding: 0 2rem;
+            background-color: white;
+            border-radius: 8px;
+        }
+
+        h2 {
+            font-size: 2rem;
+            color: var(--primary-color);
+            margin-bottom: 1rem;
+        }
+
+        .feature-showcase {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 2rem;
         }
 
         .feature-card {
-            flex-basis: calc(100% - 2rem);
+            background-color: #f9f9f9;
+            padding: 2rem;
+            flex: 1;
+            margin: 0 1rem;
+            text-align: center;
+            border-radius: 8px;
         }
-    }
 
-    .back-to-top {
-      position: fixed;
-      bottom: 20px;
-      right: 20px;
-      background-color: var(--primary-color);
-      color: white;
-      padding: 10px;
-      border-radius: 50%;
-      display: none;
-      cursor: pointer;
-    }
+        .feature-card h3 {
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+        }
 
-    #cookie-consent {
-      position: fixed;
-      bottom: 0;
-      left: 0;
-      right: 0;
-      background-color: var(--secondary-color);
-      color: white;
-      padding: 10px;
-      text-align: center;
-      display: none;
-    }
-    
-    .sr-only {
-      position: absolute;
-      width: 1px;
-      height: 1px;
-      padding: 0;
-      margin: -1px;
-      overflow: hidden;
-      clip: rect(0, 0, 0, 0);
-      white-space: nowrap;
-      border: 0;
-    }
-</style>
-<link rel="stylesheet" type="text/css" href="saudi_theme.css">
+        .marketing-highlights ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        .marketing-highlights li {
+            margin-bottom: 1rem;
+        }
+
+        .hero {
+            background: linear-gradient(45deg, var(--primary-color), var(--secondary-color));
+            color: white;
+            text-align: center;
+            padding: 4rem 2rem;
+        }
+
+        .hero h1 {
+            font-size: 3rem;
+        }
+
+        footer {
+            background-color: var(--primary-color);
+            color: white;
+            padding: 2rem;
+            margin-top: 2rem;
+            text-align: center;
+        }
+
+        footer .quick-links ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        footer .quick-links ul li {
+            margin-bottom: 1rem;
+        }
+
+        footer .quick-links ul li a {
+            color: white;
+            text-decoration: none;
+        }
+
+        .job-board, .events, .community, .numbers-section {
+            margin-top: 2rem;
+        }
+
+        .numbers-section h2 {
+            font-size: 2.5rem;
+            text-align: center;
+            margin-bottom: 2rem;
+        }
+
+        .numbers {
+            display: flex;
+            justify-content: space-between;
+            text-align: center;
+        }
+
+        .numbers div {
+            flex: 1;
+            padding: 1rem;
+            background-color: #f9f9f9;
+            margin: 0 1rem;
+            border-radius: 8px;
+        }
+
+        .numbers div h3 {
+            font-size: 1.5rem;
+        }
+    </style>
 </head>
 <body>
     <header>
-        <h1>HR Knowledge Center</h1>
+        <h1>HRInsights KSA</h1>
         <button class="language-button" id="languageToggle">عربي</button>
     </header>
 
     <nav>
         <ul>
-            <li><a href="home">Home</a></li>
-            <li><a href="knowledge-base">Knowledge Base</a></li>
-            <li><a href="discussions">Discussions</a></li>
-            <li><a href="ask-question">Ask a Question</a></li>
-            <li><a href="profile">Profile</a></li>
+            <li><a href="#">Home</a></li>
+            <li><a href="#">Knowledge Base</a></li>
+            <li><a href="#">Community</a></li>
+            <li><a href="#">Job Board</a></li>
+            <li><a href="#">Events</a></li>
+            <li><a href="#">Contact</a></li>
         </ul>
     </nav>
 
     <main>
-    <section class="hero fade-in">
-        <h1>Welcome to HRInsights</h1>
-        <p>Your gateway to HR excellence in the Kingdom of Saudi Arabia</p>
-        <a href="#" class="cta-button">Get Started</a>
-    </section>
+        <section class="hero">
+            <h1>Empowering HR Professionals in Saudi Arabia</h1>
+            <p>Your premier platform for HR insights, collaboration, and career growth in the Kingdom</p>
+            <a href="#" class="cta-button">Join the Community</a>
+        </section>
 
-    <section class="marketing-highlights fade-in">
-        <h2>Why Choose HRInsights?</h2>
-        <ul>
-            <li>Tailored for KSA's unique HR landscape</li>
-            <li>Alignment with Vision 2030 goals</li>
-            <li>Expert-curated content and resources</li>
-            <li>Bilingual support (English &amp; Arabic)</li>
-        </ul>
-    </section>
+        <section class="marketing-highlights">
+            <h2>Why Choose HRInsights?</h2>
+            <ul>
+                <li>Tailored for KSA's unique HR landscape</li>
+                <li>Alignment with Vision 2030 goals</li>
+                <li>Expert-curated content and resources</li>
+                <li>Bilingual support (English & Arabic)</li>
+            </ul>
+        </section>
 
-    <section class="feature-showcase">
-        <div class="feature-card slide-in" style="animation-delay: 0.2s;">
-            <div class="feature-icon">📚</div>
-            <h3>Extensive Knowledge Base</h3>
-            <p>Access a wealth of HR resources tailored for the Saudi market</p>
-        </div>
-        <div class="feature-card slide-in" style="animation-delay: 0.4s;">
-            <div class="feature-icon">💬</div>
-            <h3>Expert Discussions</h3>
-            <p>Engage with HR professionals and share insights</p>
-        </div>
-        <div class="feature-card slide-in" style="animation-delay: 0.6s;">
-            <div class="feature-icon">🎯</div>
-            <h3>Personalized Learning</h3>
-            <p>Customize your HR journey with targeted content</p>
-        </div>
-    </section>
-
-    <section class="interactive-hr-quiz fade-in">
-        <h2>Test Your HR Knowledge</h2>
-        <div id="quiz-container">
-            <div id="question-container"></div>
-            <div id="answer-buttons" class="btn-grid"></div>
-            <button id="next-button" class="cta-button">Next</button>
-        </div>
-    </section>
-
-    <section class="hr-trend-visualizer fade-in">
-        <h2></h2>
-        <canvas></canvas>
-    </section>
-
-    <section class="interactive-case-study fade-in">
-        <h2>Interactive Case Study: Saudization Strategy</h2>
-        <div id="case-study-container">
-            <div id="scenario"></div>
-            <div id="decision-buttons"></div>
-            <div id="feedback"></div>
-        </div>
-    </section>
-
-    <section class="lead-capture fade-in">
-        <h2>Get Your Free HR Strategy Guide</h2>
-        <form id="lead-form">
-            <input type="text" placeholder="Name" required="">
-            <input type="email" placeholder="Email" required="">
-            <input type="text" placeholder="Company" required="">
-            <button type="submit" class="cta-button">Download Now</button>
-        </form>
-    </section>
-
-    <section class="testimonial-slider fade-in">
-        <div class="testimonial">
-            <p class="testimonial-text">"HRInsights has transformed our HR practices, helping us align with Vision 2030 goals."</p>
-            <p class="testimonial-author">- Mohammed Al-Rashid, HR Director at Saudi Telecom</p>
-        </div>
-    </section>
-
-    <section class="social-proof fade-in">
-        <h2>Trusted by Leading KSA Companies</h2>
-        <div class="logo-container">
-            <img src="saudi-aramco-logo.png" alt="Saudi Aramco" width="100" height="50" loading="lazy">
-            <img src="sabic-logo.png" alt="SABIC" width="100" height="50" loading="lazy">
-            <img src="almarai-logo.png" alt="Almarai" width="100" height="50" loading="lazy">
-        </div>
-    </section>
-
-    <div class="social-share">
-        <h3>Share this Knowledge:</h3>
-        <a href="#" class="share-button twitter">Twitter</a>
-        <a href="#" class="share-button linkedin">LinkedIn</a>
-        <a href="#" class="share-button whatsapp">WhatsApp</a>
-    </div>
-
-    <section class="cta-section fade-in">
-        <h2>Ready to elevate your HR strategy?</h2>
-        <a href="#" class="cta-button">Join HRInsights Today</a>
-    </section>
-
-    <section class="blog-preview">
-        <h2>Latest HR Insights</h2>
-        <div class="blog-posts">
-            <div class="blog-post">
-                <h3>Implementing Saudization Effectively</h3>
-                <p>Learn strategies for successful Saudization in your organization...</p>
-                <a href="#">Read More</a>
+        <section class="feature-showcase">
+            <div class="feature-card">
+                <h3>📚 Knowledge Hub</h3>
+                <p>Access a vast library of HR resources tailored to the Saudi market.</p>
+                <a href="#" class="cta-button">Explore Knowledge Base</a>
             </div>
-            <div class="blog-post">
-                <h3>HR Tech Trends in KSA</h3>
-                <p>Discover the latest HR technologies shaping the Saudi market...</p>
-                <a href="#">Read More</a>
+            <div class="feature-card">
+                <h3>💬 Community Forum</h3>
+                <p>Connect with fellow HR professionals and share insights.</p>
+                <a href="#" class="cta-button">Join the Community</a>
             </div>
-        </div>
-    </section>
+            <div class="feature-card">
+                <h3>🚀 Career Development</h3>
+                <p>Enhance your skills with our specialized training programs.</p>
+                <a href="#" class="cta-button">Explore Training</a>
+            </div>
+        </section>
 
-    <script src="chart.js"></script>
-    <script>
-        const quizData = [
-            {
-                question: "What is the current Saudization percentage requirement for most private sector companies?",
-                answers: [
-                    { text: "10%", correct: false },
-                    { text: "30%", correct: true },
-                    { text: "50%", correct: false },
-                    { text: "70%", correct: false }
-                ]
-            },
-            {
-                question: "Which government body is responsible for implementing labor laws in Saudi Arabia?",
-                answers: [
-                    { text: "Ministry of Labor and Social Development", correct: true },
-                    { text: "Ministry of Commerce", correct: false },
-                    { text: "Ministry of Finance", correct: false },
-                    { text: "Saudi Arabian Monetary Authority", correct: false }
-                ]
-            },
-            // Add more questions as needed
-        ];
+        <section class="job-board">
+            <h2>HR Job Board</h2>
+            <div class="feature-card">
+                <h3>Senior HR Manager</h3>
+                <p>TechCorp Inc. • Riyadh, Saudi Arabia</p>
+                <a href="#" class="cta-button">View Details</a>
+            </div>
+            <div class="feature-card">
+                <h3>Talent Acquisition Specialist</h3>
+                <p>Global Enterprises • Jeddah, Saudi Arabia</p>
+                <a href="#" class="cta-button">View Details</a>
+            </div>
+        </section>
 
-        let currentQuestionIndex = 0;
-        const questionContainer = document.getElementById('question-container');
-        const answerButtonsElement = document.getElementById('answer-buttons');
-        const nextButton = document.getElementById('next-button');
+        <section class="events">
+            <h2>Upcoming Events</h2>
+            <div class="feature-card">
+                <h3>Employee Engagement in the Digital Age</h3>
+                <p>Date: May 15, 2023</p>
+                <a href="#" class="cta-button">Register Now</a>
+            </div>
+            <div class="feature-card">
+                <h3>HR Analytics: Turning Data into Insights</h3>
+                <p>Date: June 2, 2023</p>
+                <a href="#" class="cta-button">Register Now</a>
+            </div>
+        </section>
 
-        function startQuiz() {
-            currentQuestionIndex = 0;
-            nextButton.classList.add('hide');
-            showQuestion(quizData[currentQuestionIndex]);
-        }
-
-        function showQuestion(question) {
-            questionContainer.innerText = question.question;
-            while (answerButtonsElement.firstChild) {
-                answerButtonsElement.removeChild(answerButtonsElement.firstChild);
+        <section id="stats" class="py-20 bg-indigo-600 text-white">
+            <div class="container mx-auto px-6 text-center">
+                <h2 class="text-3xl font-bold mb-8">HRInsights KSA in Numbers</h2>
+                <div class="grid grid-cols-2 md:grid-cols-4 gap-8">
+                    <div>
+                        <div class="text-4xl font-bold mb-2" id="members-count">0</div>
+                        <div>Active Members</div>
+                    </div>
+                    <div>
+                        <div class="text-4xl font-bold mb-2" id="resources-count">0</div>
+                        <div>HR Resources</div>
+                    </div>
+                    <div>
+                        <div class="text-4xl font-bold mb-2" id="events-count">0</div>
+                        <div>Annual Events</div>
+                    </div>
+                    <div>
+                        <div class="text-4xl font-bold mb-2" id="jobs-count">0</div>
+                        <div>Job Opportunities</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <script>
+            // Animate counter function
+            function animateCounter(elementId, targetValue, duration) {
+                let current = 0;
+                const element = document.getElementById(elementId);
+                const increment = targetValue / (duration / 16); // 16ms per frame (60fps)
+                const timer = setInterval(() => {
+                    current += increment;
+                    element.textContent = Math.floor(current);
+                    if (current >= targetValue) {
+                        clearInterval(timer);
+                        element.textContent = targetValue;
+                    }
+                }, 16);
             }
-            question.answers.forEach(answer => {
-                const button = document.createElement('button');
-                button.innerText = answer.text;
-                button.classList.add('btn');
-                if (answer.correct) {
-                    button.dataset.correct = answer.correct;
-                }
-                button.addEventListener('click', selectAnswer);
-                answerButtonsElement.appendChild(button);
-            });
-        }
-
-        function selectAnswer(e) {
-            const selectedButton = e.target;
-            const correct = selectedButton.dataset.correct;
-            setStatusClass(document.body, correct);
-            Array.from(answerButtonsElement.children).forEach(button => {
-                setStatusClass(button, button.dataset.correct);
-            });
-            if (quizData.length > currentQuestionIndex + 1) {
-                nextButton.classList.remove('hide');
-            } else {
-                nextButton.innerText = 'Restart';
-                nextButton.classList.remove('hide');
-            }
-        }
-
-        function setStatusClass(element, correct) {
-            clearStatusClass(element);
-            if (correct) {
-                element.classList.add('correct');
-            } else {
-                element.classList.add('wrong');
-            }
-        }
-
-        function clearStatusClass(element) {
-            element.classList.remove('correct');
-            element.classList.remove('wrong');
-        }
-
-        nextButton.addEventListener('click', () => {
-            currentQuestionIndex++;
-            if (currentQuestionIndex < quizData.length) {
-                showQuestion(quizData[currentQuestionIndex]);
-                nextButton.classList.add('hide');
-            } else {
-                startQuiz();
-            }
-        });
-
-        startQuiz();
-
-        // HR Trend Visualizer
-        function initializeChart() {
-            const chartCanvas = document.getElementById('trend-chart');
-            if (chartCanvas) {
-                const ctx = chartCanvas.getContext('2d');
-                new Chart(ctx, {
-                    type: 'line',
-                    data: {
-                        labels: ['2018', '2019', '2020', '2021', '2022'],
-                        datasets: [{
-                            label: 'Saudization Rate',
-                            data: [20, 23, 26, 31, 35],
-                            borderColor: 'rgb(75, 192, 192)',
-                            tension: 0.1
-                        }, {
-                            label: 'Female Workforce Participation',
-                            data: [18, 21, 24, 28, 33],
-                            borderColor: 'rgb(255, 99, 132)',
-                            tension: 0.1
-                        }]
-                    },
-                    options: {
-                        responsive: true,
-                        scales: {
-                            y: {
-                                beginAtZero: true
-                            }
-                        }
+        
+            // Set up Intersection Observer for counter animation
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        animateCounter('members-count', 5000, 2000); // Example target values
+                        animateCounter('resources-count', 1000, 2000);
+                        animateCounter('events-count', 50, 2000);
+                        animateCounter('jobs-count', 500, 2000);
+                        observer.unobserve(entry.target); // Stop observing after animation
                     }
                 });
-            } else {
-                console.error('Chart canvas element not found');
-            }
-        }
-
-        document.addEventListener('DOMContentLoaded', () => {
-            initializeChart();
-        });
-
-        // Interactive Case Study
-        const caseStudy = {
-            scenario: "Your company needs to increase its Saudization rate to meet new government regulations. What strategy do you implement?",
-            options: [
-                { text: "Immediately replace expatriate workers with Saudi nationals", feedback: "This approach might lead to skill gaps and operational challenges. Consider a more gradual transition." },
-                { text: "Implement a comprehensive training program for Saudi employees", feedback: "Excellent choice! This strategy helps build a skilled local workforce while meeting Saudization goals." },
-                { text: "Outsource more jobs to reduce the total workforce", feedback: "While this might help with ratios, it doesn't align with the spirit of Saudization and may face regulatory challenges." }
-            ]
-        };
-
-        const scenarioElement = document.getElementById('scenario');
-        const decisionButtonsElement = document.getElementById('decision-buttons');
-        const feedbackElement = document.getElementById('feedback');
-
-        function loadCaseStudy() {
-            scenarioElement.innerText = caseStudy.scenario;
-            caseStudy.options.forEach(option => {
-                const button = document.createElement('button');
-                button.innerText = option.text;
-                button.classList.add('btn');
-                button.addEventListener('click', () => showFeedback(option.feedback));
-                decisionButtonsElement.appendChild(button);
-            });
-        }
-
-        function showFeedback(feedback) {
-            feedbackElement.innerText = feedback;
-        }
-
-        loadCaseStudy();
-    </script>
-</main>
+            }, { threshold: 0.5 });
+        
+            observer.observe(document.getElementById('stats')); // Observe the stats section
+        </script>
+        
+        <section class="community">
+            <h2>Community Forum</h2>
+            <div class="feature-card">
+                <h3>Implementing Saudization in Your Organization</h3>
+                <p>Started by Abdullah M. • 15 replies • 2 days ago</p>
+                <a href="#" class="cta-button">Join the discussion</a>
+            </div>
+            <div class="feature-card">
+                <h3>Best Practices for Employee Mental Health Support</h3>
+                <p>Started by Layla S. • 8 replies • 3 days ago</p>
+                <a href="#" class="cta-button">Join the discussion</a>
+            </div>
+        </section>
+    </main>
 
     <footer>
-        <div class="newsletter-signup">
-            <h3>Stay Updated with HR Trends</h3>
-            <form id="newsletter-form">
-                <input type="email" placeholder="Your Email" required="">
+        <div>
+            <p>Stay Updated with HR Insights</p>
+            <form>
+                <input type="email" placeholder="Enter your email" required>
                 <button type="submit" class="cta-button">Subscribe</button>
             </form>
         </div>
+
+        <div class="quick-links">
+            <ul>
+                <li><a href="#">Home</a></li>
+                <li><a href="#">Knowledge Base</a></li>
+                <li><a href="#">Community</a></li>
+                <li><a href="#">Job Board</a></li>
+                <li><a href="#">Events</a></li>
+                <li><a href="#">Contact</a></li>
+            </ul>
+        </div>
+
+        <p>© 2023 HRInsights KSA. All rights reserved.</p>
     </footer>
-
-    <div id="cookie-consent">
-        This website uses cookies to ensure you get the best experience. 
-        <button id="accept-cookies" class="cta-button">Accept</button>
-    </div>
-    
-    <button class="back-to-top" id="backToTop" aria-label="Back to top">↑</button>
-  
-    <script>
-        document.addEventListener('DOMContentLoaded', () => {
-            const languageToggle = document.getElementById('languageToggle');
-            const headerTitle = document.querySelector('header h1');
-            const mainTitle = document.querySelector('main h1');
-            let isEnglish = true;
-
-            languageToggle.addEventListener('click', () => {
-                document.body.style.direction = isEnglish ? 'rtl' : 'ltr';
-                document.body.style.textAlign = isEnglish ? 'right' : 'left';
-                languageToggle.textContent = isEnglish ? 'English' : 'عربي';
-                headerTitle.textContent = isEnglish ? 'مركز المعرفة لموارد البشرية' : 'HR Knowledge Center';
-                mainTitle.textContent = isEnglish ? 'مرحبًا بكم في HRInsights' : 'Welcome to HRInsights';
-                isEnglish = !isEnglish;
-            });
-
-            const testimonials = [
-                {
-                    text: "HRInsights has transformed our HR practices, helping us align with Vision 2030 goals.",
-                    author: "Mohammed Al-Rashid, HR Director at Saudi Telecom"
-                },
-                {
-                    text: "The knowledge base is an invaluable resource for staying updated on KSA labor laws.",
-                    author: "Fatima Al-Sulaiman, HR Manager at SABIC"
-                },
-                {
-                    text: "The expert discussions have helped us implement best practices in our organization.",
-                    author: "Abdullah Al-Otaibi, CEO of Al Rajhi Bank"
-                }
-            ];
-
-            let currentTestimonialIndex = 0;
-            const testimonialElement = document.querySelector('.testimonial');
-
-            function updateTestimonial() {
-                const currentTestimonial = testimonials[currentTestimonialIndex];
-                testimonialElement.innerHTML = `
-                    <p class="testimonial-text">"${currentTestimonial.text}"</p>
-                    <p class="testimonial-author">- ${currentTestimonial.author}</p>
-                `;
-                currentTestimonialIndex = (currentTestimonialIndex + 1) % testimonials.length;
-            }
-
-            setInterval(updateTestimonial, 5000);
-            
-            const backToTopButton = document.getElementById('backToTop');
-            
-            window.addEventListener('scroll', () => {
-                if (window.pageYOffset > 300) {
-                    backToTopButton.style.display = 'block';
-                } else {
-                    backToTopButton.style.display = 'none';
-                }
-            });
-            
-            backToTopButton.addEventListener('click', () => {
-                window.scrollTo({ top: 0, behavior: 'smooth' });
-            });
-            
-            const cookieConsent = document.getElementById('cookie-consent');
-            const acceptCookiesButton = document.getElementById('accept-cookies');
-            
-            if (!localStorage.getItem('cookiesAccepted')) {
-                cookieConsent.style.display = 'block';
-            }
-            
-            acceptCookiesButton.addEventListener('click', () => {
-                localStorage.setItem('cookiesAccepted', 'true');
-                cookieConsent.style.display = 'none';
-            });
-            
-            const leadForm = document.getElementById('lead-form');
-            const newsletterForm = document.getElementById('newsletter-form');
-            
-            function handleFormSubmit(event, formId) {
-                event.preventDefault();
-                const form = event.target;
-                const formData = new FormData(form);
-                
-                fetch('/api/submit-form', {
-                    method: 'POST',
-                    body: formData
-                })
-                .then(response => response.json())
-                .then(data => {
-                    alert(`Thank you for your submission to ${formId}!`);
-                    form.reset();
-                })
-                .catch(error => {
-                    console.error('Error:', error);
-                    alert('There was an error submitting the form. Please try again later.');
-                });
-            }
-            
-            leadForm.addEventListener('submit', (e) => handleFormSubmit(e, 'lead-form'));
-            newsletterForm.addEventListener('submit', (e) => handleFormSubmit(e, 'newsletter-form'));
-        });
-    </script>
-
-</body></html>
+</body>
+</html>
