@@ -1,216 +1,286 @@
-<html><head><base disabled-href="homeprofile">
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>HRInsights - User Profile</title>
-<style>
-    :root {
-        --primary-color: #3498db;
-        --secondary-color: #2ecc71;
-        --background-color: #ecf0f1;
-        --text-color: #34495e;
-        --border-color: #bdc3c7;
-    }
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HR Profile - Sarah Johnson</title>
+    <style>
+        :root {
+            --primary-color: #006747;
+            --secondary-color: #3498db;
+            --background-color: #F7F7F7;
+            --text-color: #333333;
+            --border-color: #E0E0E0;
+            --hover-color: #004D35;
+        }
 
-    body {
-        font-family: 'Arial', sans-serif;
-        margin: 0;
-        padding: 0;
-        background-color: var(--background-color);
-        color: var(--text-color);
-        line-height: 1.6;
-    }
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: var(--background-color);
+            color: var(--text-color);
+            line-height: 1.6;
+        }
 
-    header {
-        background-color: var(--primary-color);
-        color: white;
-        text-align: center;
-        padding: 1rem;
-    }
+        header {
+            background-color: var(--primary-color);
+            color: white;
+            display: flex;
+            justify-content: space-between;
+            padding: 1rem 2rem;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
 
-    nav {
-        background-color: #2980b9;
-        padding: 0.5rem;
-    }
+        header h1 {
+            margin: 0;
+            font-size: 1.8rem;
+        }
 
-    nav ul {
-        list-style-type: none;
-        padding: 0;
-        margin: 0;
-        display: flex;
-        justify-content: center;
-    }
+        header .notifications {
+            position: relative;
+            cursor: pointer;
+        }
 
-    nav ul li {
-        margin: 0 1rem;
-    }
+        .notification-count {
+            position: absolute;
+            top: 5px;
+            right: 5px;
+            background: red;
+            color: white;
+            border-radius: 50%;
+            padding: 2px 8px;
+            font-size: 0.8rem;
+        }
 
-    nav ul li a {
-        color: white;
-        text-decoration: none;
-    }
+        nav {
+            background-color: white;
+            padding: 0.5rem 2rem;
+            border-bottom: 1px solid var(--border-color);
+        }
 
-    main {
-        max-width: 1000px;
-        margin: 0 auto;
-        padding: 2rem;
-        background-color: white;
-        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-        display: flex;
-        flex-wrap: wrap;
-        justify-content: space-between;
-    }
+        nav ul {
+            list-style-type: none;
+            padding: 0;
+            margin: 0;
+            display: flex;
+            justify-content: flex-start;
+        }
 
-    .profile-section {
-        flex-basis: 100%;
-        margin-bottom: 2rem;
-    }
+        nav ul li {
+            margin-right: 2rem;
+        }
 
-    .profile-header {
-        display: flex;
-        align-items: center;
-        margin-bottom: 1rem;
-    }
+        nav ul li a {
+            color: var(--text-color);
+            text-decoration: none;
+            font-weight: bold;
+            transition: color 0.3s ease;
+        }
 
-    .profile-picture {
-        width: 150px;
-        height: 150px;
-        border-radius: 50%;
-        object-fit: cover;
-        margin-right: 2rem;
-    }
+        nav ul li a:hover {
+            color: var(--primary-color);
+        }
 
-    .profile-info {
-        flex-grow: 1;
-    }
+        main {
+            max-width: 1200px;
+            margin: 2rem auto;
+            padding: 0 2rem;
+            display: flex;
+            flex-direction: column;
+            gap: 2rem;
+        }
 
-    .profile-name {
-        font-size: 2rem;
-        margin: 0;
-    }
+        .profile-layout {
+            display: flex;
+            gap: 2rem;
+        }
 
-    .profile-title {
-        font-size: 1.2rem;
-        color: #7f8c8d;
-        margin: 0.5rem 0;
-    }
+        .profile-sidebar {
+            flex: 1;
+            min-width: 250px;
+            background-color: white;
+            padding: 2rem;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
 
-    .profile-stats {
-        display: flex;
-        justify-content: space-between;
-        margin-top: 1rem;
-    }
+        .profile-main {
+            flex: 2;
+        }
 
-    .stat {
-        text-align: center;
-    }
+        .profile-section {
+            background-color: white;
+            padding: 2rem;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
 
-    .stat-value {
-        font-size: 1.5rem;
-        font-weight: bold;
-        color: var(--primary-color);
-    }
+        .profile-picture {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            object-fit: cover;
+            margin-bottom: 1rem;
+        }
 
-    .stat-label {
-        font-size: 0.9rem;
-        color: #7f8c8d;
-    }
+        .profile-info p {
+            margin: 0.5rem 0;
+        }
 
-    .content-section {
-        flex-basis: calc(50% - 1rem);
-        margin-bottom: 2rem;
-    }
+        .profile-stats, .impact-stats {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 1rem;
+        }
 
-    h2 {
-        color: var(--primary-color);
-        border-bottom: 2px solid var(--border-color);
-        padding-bottom: 0.5rem;
-    }
+        .stat-item, .impact-item {
+            text-align: center;
+        }
 
-    .badge-container {
-        display: flex;
-        flex-wrap: wrap;
-        gap: 1rem;
-    }
+        .stat-number, .impact-number {
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: var(--primary-color);
+        }
 
-    .badge {
-        width: 80px;
-        height: 80px;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        justify-content: center;
-        background-color: #f1f1f1;
-        border-radius: 50%;
-        font-size: 0.8rem;
-        text-align: center;
-    }
+        .progress-bar {
+            width: 100%;
+            background-color: #e0e0e0;
+            height: 20px;
+            border-radius: 10px;
+            overflow: hidden;
+            margin-top: 1rem;
+        }
 
-    .badge-icon {
-        font-size: 2rem;
-        margin-bottom: 0.2rem;
-    }
+        .progress {
+            width: 75%;
+            height: 100%;
+            background-color: var(--primary-color);
+        }
 
-    .activity-list {
-        list-style-type: none;
-        padding: 0;
-    }
+        .badge-container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1rem;
+            margin-top: 1rem;
+        }
 
-    .activity-item {
-        display: flex;
-        align-items: center;
-        margin-bottom: 1rem;
-        padding-bottom: 1rem;
-        border-bottom: 1px solid var(--border-color);
-    }
+        .badge {
+            background-color: var(--secondary-color);
+            color: white;
+            padding: 0.5rem 1rem;
+            border-radius: 20px;
+            font-size: 0.9rem;
+        }
 
-    .activity-icon {
-        font-size: 1.5rem;
-        margin-right: 1rem;
-        color: var(--primary-color);
-    }
+        .activity-list {
+            list-style-type: none;
+            padding: 0;
+        }
 
-    .activity-content {
-        flex-grow: 1;
-    }
+        .activity-item {
+            display: flex;
+            align-items: center;
+            margin-bottom: 1rem;
+            padding-bottom: 1rem;
+            border-bottom: 1px solid var(--border-color);
+        }
 
-    .activity-title {
-        font-weight: bold;
-        margin: 0;
-    }
+        .activity-icon {
+            font-size: 1.5rem;
+            margin-right: 1rem;
+            color: var(--primary-color);
+        }
 
-    .activity-date {
-        font-size: 0.8rem;
-        color: #7f8c8d;
-    }
+        .activity-content {
+            flex-grow: 1;
+        }
 
-    .skill-list {
-        display: flex;
-        flex-wrap: wrap;
-        gap: 0.5rem;
-    }
+        .activity-title {
+            font-weight: bold;
+            margin: 0;
+        }
 
-    .skill-tag {
-        background-color: var(--primary-color);
-        color: white;
-        padding: 0.3rem 0.6rem;
-        border-radius: 20px;
-        font-size: 0.9rem;
-    }
+        .activity-date {
+            font-size: 0.9rem;
+            color: #7f8c8d;
+        }
 
-    @keyframes fadeIn {
-        from { opacity: 0; }
-        to { opacity: 1; }
-    }
+        .skill-bar {
+            background-color: #e0e0e0;
+            height: 10px;
+            border-radius: 5px;
+            overflow: hidden;
+            margin-bottom: 1rem;
+        }
 
-    .fade-in {
-        animation: fadeIn 0.5s ease-in;
-    }
-</style>
-<link rel="stylesheet" type="text/css" href="saudi_theme.css">
+        .skill-progress {
+            height: 100%;
+            background-color: var(--primary-color);
+        }
+
+        .followers, .connections {
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+            margin-top: 2rem;
+        }
+
+        .connection-item, .follower-item {
+            display: flex;
+            align-items: center;
+        }
+
+        .avatar {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            margin-right: 1rem;
+        }
+
+        .activity-heatmap {
+            display: grid;
+            grid-template-columns: repeat(7, 1fr);
+            gap: 4px;
+        }
+
+        .heatmap-day {
+            width: 20px;
+            height: 20px;
+            background-color: #e0e0e0;
+        }
+
+        .leaderboard {
+            margin-top: 2rem;
+            background-color: white;
+            padding: 1rem;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+
+        .leaderboard-item {
+            display: flex;
+            justify-content: space-between;
+            padding: 0.5rem 0;
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        footer {
+            background-color: var(--primary-color);
+            color: white;
+            text-align: center;
+            padding: 1rem;
+        }
+
+    </style>
 </head>
 <body>
     <header>
-        <h1>HRInsights User Profile</h1>
+        <h1>HR Profile - Sarah Johnson</h1>
+        <div class="notifications">
+            <span>🔔</span>
+            <span class="notification-count">3</span>
+        </div>
     </header>
 
     <nav>
@@ -218,132 +288,214 @@
             <li><a href="home">Home</a></li>
             <li><a href="knowledge-base">Knowledge Base</a></li>
             <li><a href="discussions">Discussions</a></li>
-            <li><a href="ask-question">Ask a Question</a></li>
-            <li><a href="profile">My Profile</a></li>
+            <li><a href="profile">Profile</a></li>
         </ul>
     </nav>
 
     <main>
-        <section class="profile-section fade-in">
-            <div class="profile-header">
-                <img src="65.jpg" alt="Profile picture of Sarah Johnson" class="profile-picture">
+        <div class="profile-layout">
+            <!-- Sidebar with basic information -->
+            <section class="profile-sidebar">
+                <img src="65.jpg" alt="Profile Picture" class="profile-picture">
+                <h2>Sarah Johnson</h2>
                 <div class="profile-info">
-                    <h1 class="profile-name">Sarah Johnson</h1>
-                    <p class="profile-title">Senior HR Manager</p>
-                    <p>Global Tech Solutions Inc.</p>
-                    <div class="profile-stats">
-                        <div class="stat">
-                            <div class="stat-value">152</div>
-                            <div class="stat-label">Contributions</div>
+                    <p><strong>Role:</strong> HR Manager</p>
+                    <p><strong>Company:</strong> Global Tech Solutions Inc.</p>
+                    <p><strong>Location:</strong> Dubai, UAE</p>
+                    <p><strong>Member since:</strong> January 2020</p>
+                </div>
+                <div class="profile-stats">
+                    <div class="stat-item">
+                        <div class="stat-number">152</div>
+                        <div class="stat-label">Contributions</div>
+                    </div>
+                    <div class="stat-item">
+                        <div class="stat-number">1,280</div>
+                        <div class="stat-label">Reputation</div>
+                    </div>
+                    <div class="stat-item">
+                        <div class="stat-number">47</div>
+                        <div class="stat-label">Followers</div>
+                    </div>
+                </div>
+                <h3>Profile Completion</h3>
+                <div class="progress-bar">
+                    <div class="progress"></div>
+                </div>
+                <p>75% Complete</p>
+                <button id="edit-profile">Edit Profile</button>
+            </section>
+
+            <!-- Main profile content -->
+            <div class="profile-main">
+                <section class="profile-section">
+                    <h2>Your Impact</h2>
+                    <div class="impact-stats">
+                        <div class="impact-item">
+                            <span class="impact-number">1,250</span>
+                            <span class="impact-label">People Reached</span>
                         </div>
-                        <div class="stat">
-                            <div class="stat-value">1,280</div>
-                            <div class="stat-label">Reputation</div>
+                        <div class="impact-item">
+                            <span class="impact-number">89</span>
+                            <span class="impact-label">Questions Answered</span>
                         </div>
-                        <div class="stat">
-                            <div class="stat-value">47</div>
-                            <div class="stat-label">Followers</div>
+                        <div class="impact-item">
+                            <span class="impact-number">15</span>
+                            <span class="impact-label">Articles Featured</span>
                         </div>
                     </div>
-                </div>
-            </div>
-        </section>
+                </section>
 
-        <section class="content-section fade-in">
-            <h2>Achievements</h2>
-            <div class="badge-container">
-                <div class="badge">
-                    <span class="badge-icon">🏆</span>
-                    Top Contributor
-                </div>
-                <div class="badge">
-                    <span class="badge-icon">💡</span>
-                    Innovator
-                </div>
-                <div class="badge">
-                    <span class="badge-icon">🤝</span>
-                    Mentor
-                </div>
-                <div class="badge">
-                    <span class="badge-icon">📚</span>
-                    Knowledge Sharer
-                </div>
-            </div>
-        </section>
-
-        <section class="content-section fade-in">
-            <h2>Recent Activity</h2>
-            <ul class="activity-list">
-                <li class="activity-item">
-                    <span class="activity-icon">📝</span>
-                    <div class="activity-content">
-                        <p class="activity-title">Answered a question on Performance Management</p>
-                        <p class="activity-date">2 days ago</p>
+                <section class="profile-section">
+                    <h2>Achievements</h2>
+                    <div class="badge-container">
+                        <span class="badge">Top Contributor</span>
+                        <span class="badge">Innovator</span>
+                        <span class="badge">Mentor</span>
+                        <span class="badge">Knowledge Sharer</span>
                     </div>
-                </li>
-                <li class="activity-item">
-                    <span class="activity-icon">📊</span>
-                    <div class="activity-content">
-                        <p class="activity-title">Shared an article on Employee Engagement Trends</p>
-                        <p class="activity-date">1 week ago</p>
-                    </div>
-                </li>
-                <li class="activity-item">
-                    <span class="activity-icon">💬</span>
-                    <div class="activity-content">
-                        <p class="activity-title">Commented on Diversity and Inclusion Strategies</p>
-                        <p class="activity-date">2 weeks ago</p>
-                    </div>
-                </li>
-            </ul>
-        </section>
+                </section>
 
-        <section class="content-section fade-in">
-            <h2>Areas of Expertise</h2>
-            <div class="skill-list">
-                <span class="skill-tag">Talent Acquisition</span>
-                <span class="skill-tag">Performance Management</span>
-                <span class="skill-tag">Employee Relations</span>
-                <span class="skill-tag">Leadership Development</span>
-                <span class="skill-tag">Compensation & Benefits</span>
-                <span class="skill-tag">HR Analytics</span>
-                <span class="skill-tag">Change Management</span>
+                <section class="profile-section">
+                    <h2>Recent Activity</h2>
+                    <ul class="activity-list">
+                        <li class="activity-item">
+                            <span class="activity-icon">📝</span>
+                            <div class="activity-content">
+                                <p class="activity-title">Answered a question on Performance Management</p>
+                                <p class="activity-date">2 days ago</p>
+                            </div>
+                        </li>
+                        <li class="activity-item">
+                            <span class="activity-icon">📊</span>
+                            <div class="activity-content">
+                                <p class="activity-title">Shared an article on Employee Engagement Trends</p>
+                                <p class="activity-date">1 week ago</p>
+                            </div>
+                        </li>
+                        <li class="activity-item">
+                            <span class="activity-icon">💬</span>
+                            <div class="activity-content">
+                                <p class="activity-title">Commented on Diversity and Inclusion Strategies</p>
+                                <p class="activity-date">2 weeks ago</p>
+                            </div>
+                        </li>
+                    </ul>
+                </section>
+
+                <section class="profile-section">
+                    <h2>Skills & Endorsements</h2>
+                    <div class="skill-bar">
+                        <div class="skill-progress" style="width: 80%;"></div>
+                    </div>
+                    <div class="skill-bar">
+                        <div class="skill-progress" style="width: 65%;"></div>
+                    </div>
+                    <div class="skill-bar">
+                        <div class="skill-progress" style="width: 90%;"></div>
+                    </div>
+                    <p>Endorsed 27 times for "Leadership"</p>
+                    <button>Endorse a Skill</button>
+                </section>
+
+                <section class="profile-section">
+                    <h2>Activity Heatmap</h2>
+                    <div class="activity-heatmap">
+                        <div class="heatmap-day" style="background-color: #c6e48b;"></div>
+                        <div class="heatmap-day" style="background-color: #7bc96f;"></div>
+                        <div class="heatmap-day" style="background-color: #239a3b;"></div>
+                        <div class="heatmap-day" style="background-color: #196127;"></div>
+                        <!-- More heatmap days -->
+                    </div>
+                </section>
+
+                <section class="profile-section">
+                    <h2>Leaderboard Ranking</h2>
+                    <div class="leaderboard">
+                        <div class="leaderboard-item">
+                            <span>1. John Doe</span>
+                            <span>1,520 Points</span>
+                        </div>
+                        <div class="leaderboard-item">
+                            <span>2. Sarah Johnson</span>
+                            <span>1,280 Points</span>
+                        </div>
+                        <div class="leaderboard-item">
+                            <span>3. Jane Smith</span>
+                            <span>1,150 Points</span>
+                        </div>
+                    </div>
+                </section>
+
+                <section class="profile-section">
+                    <h2>Recent Connections</h2>
+                    <div class="connections">
+                        <div class="connection-item">
+                            <img src="avatar1.jpg" class="avatar" alt="John Doe">
+                            <p>John Doe - HR Director</p>
+                        </div>
+                        <div class="connection-item">
+                            <img src="avatar2.jpg" class="avatar" alt="Jane Smith">
+                            <p>Jane Smith - Talent Acquisition</p>
+                        </div>
+                    </div>
+                </section>
             </div>
-        </section>
-
-        <section class="content-section fade-in">
-            <h2>Certifications</h2>
-            <ul>
-                <li>SHRM Senior Certified Professional (SHRM-SCP)</li>
-                <li>HRCI Senior Professional in Human Resources (SPHR)</li>
-                <li>Certified Diversity Professional (CDP)</li>
-            </ul>
-        </section>
+        </div>
     </main>
+
+    <footer>
+        <p>© 2024 HRInsights. All rights reserved.</p>
+    </footer>
 
     <script>
         document.addEventListener('DOMContentLoaded', () => {
-            const sections = document.querySelectorAll('.fade-in');
-            
-            const observerOptions = {
-                root: null,
-                rootMargin: '0px',
-                threshold: 0.1
-            };
-
-            const observer = new IntersectionObserver((entries, observer) => {
-                entries.forEach(entry => {
-                    if (entry.isIntersecting) {
-                        entry.target.style.opacity = 1;
-                        observer.unobserve(entry.target);
-                    }
+            const editProfileButton = document.getElementById('edit-profile');
+            if (editProfileButton) {
+                editProfileButton.addEventListener('click', () => {
+                    alert('Edit profile functionality coming soon!');
                 });
-            }, observerOptions);
+            }
 
-            sections.forEach(section => {
-                section.style.opacity = 0;
-                section.style.transition = 'opacity 0.5s ease-in';
-                observer.observe(section);
+            let completion = 75;
+            setInterval(() => {
+                completion = Math.min(100, completion + 1);
+                document.querySelector('.progress').style.width = `${completion}%`;
+                document.querySelector('.profile-sidebar p:last-of-type').textContent = `${completion}% Complete`;
+            }, 3000);
+
+            const badges = document.querySelectorAll('.badge');
+            badges.forEach(badge => {
+                badge.addEventListener('click', () => {
+                    badge.style.transform = 'scale(1.1)';
+                    setTimeout(() => {
+                        badge.style.transform = 'scale(1)';
+                    }, 200);
+                });
+            });
+
+            const activities = [
+                "Liked article 'The future of AI in HR'",
+                "Joined discussion 'Challenges in cross-cultural team management'",
+                "Shared resource 'Guide to effective performance reviews'"
+            ];
+            const activityContainer = document.querySelector('.recent-activity');
+            setInterval(() => {
+                const newActivity = document.createElement('div');
+                newActivity.className = 'activity-item';
+                newActivity.innerHTML = `
+                    <h3>${activities[Math.floor(Math.random() * activities.length)]}</h3>
+                    <span class="activity-date">Just now</span>
+                `;
+                activityContainer.insertBefore(newActivity, activityContainer.firstChild);
+                if (activityContainer.children.length > 5) {
+                    activityContainer.removeChild(activityContainer.lastChild);
+                }
+            }, 10000);
+
+            const updateSkillsButton = document.getElementById('update-skills');
+            updateSkillsButton.addEventListener('click', () => {
+                alert('Skill update feature coming soon!');
             });
         });
     </script>
