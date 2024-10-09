@@ -5,7 +5,7 @@
 <title>HRInsights - Knowledge Base Categories</title>
 <style>
     :root {
-        --primary-color: #006747;
+        --primary-color: #e29222;
         --secondary-color: #8D734A;
         --background-color: #F7F7F7;
         --text-color: #333333;
@@ -255,13 +255,13 @@
             <div class="category-card">
                 <h2>Recruitment and Selection</h2>
                 <ul>
-                    <li><a href="knowledge-base/recruitment/job-analysis">Job Analysis</a></li>
-                    <li><a href="knowledge-base/recruitment/sourcing">Sourcing Strategies</a></li>
+                    <li><a href="job-analysis">Job Analysis</a></li>
+                    <li><a href="sourcing">Sourcing Strategies</a></li>
                     <li><a href="interviewing">Interviewing Techniques</a></li>
-                    <li><a href="knowledge-base/recruitment/assessment">Assessment Methods</a></li>
-                    <li><a href="knowledge-base/recruitment/job-posting">Job Posting Best Practices</a></li>
+                    <li><a href="assessment">Assessment Methods</a></li>
+                    <li><a href="job-posting">Job Posting Best Practices</a></li>
                     <li><a href="job-descriptions">Writing Effective Job Descriptions</a></li>
-                    <li><a href="knowledge-base/recruitment/resources">Recruitment Resources</a></li>
+                    <li><a href="resources">Recruitment Resources</a></li>
                 </ul>
             </div>
             <div class="category-card">
@@ -269,38 +269,38 @@
                 <ul>
                     <li><a href="conflict-resolution">Conflict Resolution</a></li>
                     <li><a href="performance-management">Performance Management</a></li>
-                    <li><a href="knowledge-base/employee-relations/disciplinary-procedures">Disciplinary Procedures</a></li>
-                    <li><a href="knowledge-base/employee-relations/workplace-culture">Workplace Culture</a></li>
+                    <li><a href="disciplinary-procedures">Disciplinary Procedures</a></li>
+                    <li><a href="workplace-culture">Workplace Culture</a></li>
                     <li><a href="engagement-strategies">Employee Engagement Strategies</a></li>
-                    <li><a href="knowledge-base/employee-relations/onboarding">Onboarding Best Practices</a></li>
+                    <li><a href="onboarding">Onboarding Best Practices</a></li>
                 </ul>
             </div>
             <div class="category-card">
                 <h2>Compensation and Benefits</h2>
                 <ul>
-                    <li><a href="knowledge-base/compensation/salary-structures">Salary Structures</a></li>
-                    <li><a href="knowledge-base/compensation/incentive-plans">Incentive Plans</a></li>
+                    <li><a href="salary-structures">Salary Structures</a></li>
+                    <li><a href="incentive-plans">Incentive Plans</a></li>
                     <li><a href="benefits-packages">Benefits Packages</a></li>
                     <li><a href="retirement-plans">Retirement Plans</a></li>
-                    <li><a href="knowledge-base/compensation/competitive-benefits">Competitive Benefits Packages</a></li>
+                    <li><a href="competitive-benefits">Competitive Benefits Packages</a></li>
                     <li><a href="equity-compensation">Equity Compensation</a></li>
                 </ul>
             </div>
             <div class="category-card">
                 <h2>Training and Development</h2>
                 <ul>
-                    <li><a href="knowledge-base/training/needs-assessment">Training Needs Assessment</a></li>
+                    <li><a href="needs-assessment">Training Needs Assessment</a></li>
                     <li><a href="program-design">Program Design</a></li>
                     <li><a href="e-learning">E-Learning Strategies</a></li>
                     <li><a href="leadership-development">Leadership Development</a></li>
                     <li><a href="digital-training">Effective Approaches for Digital Training and Development</a></li>
-                    <li><a href="knowledge-base/training/understanding-leadership">Understanding Leadership Development</a></li>
+                    <li><a href="understanding-leadership">Understanding Leadership Development</a></li>
                 </ul>
             </div>
             <div class="category-card">
                 <h2>HR Technology and Analytics</h2>
                 <ul>
-                    <li><a href="knowledge-base/technology/hris">HRIS Systems</a></li>
+                    <li><a href="hris">HRIS Systems</a></li>
                     <li><a href="ats">Applicant Tracking Systems</a></li>
                     <li><a href="performance-management-tools">Performance Management Tools</a></li>
                     <li><a href="hr-analytics">HR Analytics</a></li>
@@ -310,10 +310,10 @@
             <div class="category-card">
                 <h2>Labor Laws and Compliance</h2>
                 <ul>
-                    <li><a href="knowledge-base/laws/employment-laws">Employment Laws</a></li>
-                    <li><a href="knowledge-base/laws/anti-discrimination">Anti-Discrimination Policies</a></li>
+                    <li><a href="employment-laws">Employment Laws</a></li>
+                    <li><a href="anti-discrimination">Anti-Discrimination Policies</a></li>
                     <li><a href="workplace-safety">Workplace Safety Regulations</a></li>
-                    <li><a href="knowledge-base/laws/data-privacy">Data Privacy in HR</a></li>
+                    <li><a href="data-privacy">Data Privacy in HR</a></li>
                 </ul>
             </div>
             <div class="category-card">
@@ -887,219 +887,289 @@
 </html>
 
 --- ./Profile.html ---
-<html><head><base disabled-href="homeprofile">
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>HRInsights - User Profile</title>
-<style>
-    :root {
-        --primary-color: #3498db;
-        --secondary-color: #2ecc71;
-        --background-color: #ecf0f1;
-        --text-color: #34495e;
-        --border-color: #bdc3c7;
-    }
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HR Profile - Sarah Johnson</title>
+    <style>
+        :root {
+            --primary-color: #006747;
+            --secondary-color: #3498db;
+            --background-color: #F7F7F7;
+            --text-color: #333333;
+            --border-color: #E0E0E0;
+            --hover-color: #004D35;
+        }
 
-    body {
-        font-family: 'Arial', sans-serif;
-        margin: 0;
-        padding: 0;
-        background-color: var(--background-color);
-        color: var(--text-color);
-        line-height: 1.6;
-    }
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: var(--background-color);
+            color: var(--text-color);
+            line-height: 1.6;
+        }
 
-    header {
-        background-color: var(--primary-color);
-        color: white;
-        text-align: center;
-        padding: 1rem;
-    }
+        header {
+            background-color: var(--primary-color);
+            color: white;
+            display: flex;
+            justify-content: space-between;
+            padding: 1rem 2rem;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
 
-    nav {
-        background-color: #2980b9;
-        padding: 0.5rem;
-    }
+        header h1 {
+            margin: 0;
+            font-size: 1.8rem;
+        }
 
-    nav ul {
-        list-style-type: none;
-        padding: 0;
-        margin: 0;
-        display: flex;
-        justify-content: center;
-    }
+        header .notifications {
+            position: relative;
+            cursor: pointer;
+        }
 
-    nav ul li {
-        margin: 0 1rem;
-    }
+        .notification-count {
+            position: absolute;
+            top: 5px;
+            right: 5px;
+            background: red;
+            color: white;
+            border-radius: 50%;
+            padding: 2px 8px;
+            font-size: 0.8rem;
+        }
 
-    nav ul li a {
-        color: white;
-        text-decoration: none;
-    }
+        nav {
+            background-color: white;
+            padding: 0.5rem 2rem;
+            border-bottom: 1px solid var(--border-color);
+        }
 
-    main {
-        max-width: 1000px;
-        margin: 0 auto;
-        padding: 2rem;
-        background-color: white;
-        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-        display: flex;
-        flex-wrap: wrap;
-        justify-content: space-between;
-    }
+        nav ul {
+            list-style-type: none;
+            padding: 0;
+            margin: 0;
+            display: flex;
+            justify-content: flex-start;
+        }
 
-    .profile-section {
-        flex-basis: 100%;
-        margin-bottom: 2rem;
-    }
+        nav ul li {
+            margin-right: 2rem;
+        }
 
-    .profile-header {
-        display: flex;
-        align-items: center;
-        margin-bottom: 1rem;
-    }
+        nav ul li a {
+            color: var(--text-color);
+            text-decoration: none;
+            font-weight: bold;
+            transition: color 0.3s ease;
+        }
 
-    .profile-picture {
-        width: 150px;
-        height: 150px;
-        border-radius: 50%;
-        object-fit: cover;
-        margin-right: 2rem;
-    }
+        nav ul li a:hover {
+            color: var(--primary-color);
+        }
 
-    .profile-info {
-        flex-grow: 1;
-    }
+        main {
+            max-width: 1200px;
+            margin: 2rem auto;
+            padding: 0 2rem;
+            display: flex;
+            flex-direction: column;
+            gap: 2rem;
+        }
 
-    .profile-name {
-        font-size: 2rem;
-        margin: 0;
-    }
+        .profile-layout {
+            display: flex;
+            gap: 2rem;
+        }
 
-    .profile-title {
-        font-size: 1.2rem;
-        color: #7f8c8d;
-        margin: 0.5rem 0;
-    }
+        .profile-sidebar {
+            flex: 1;
+            min-width: 250px;
+            background-color: white;
+            padding: 2rem;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
 
-    .profile-stats {
-        display: flex;
-        justify-content: space-between;
-        margin-top: 1rem;
-    }
+        .profile-main {
+            flex: 2;
+        }
 
-    .stat {
-        text-align: center;
-    }
+        .profile-section {
+            background-color: white;
+            padding: 2rem;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
 
-    .stat-value {
-        font-size: 1.5rem;
-        font-weight: bold;
-        color: var(--primary-color);
-    }
+        .profile-picture {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            object-fit: cover;
+            margin-bottom: 1rem;
+        }
 
-    .stat-label {
-        font-size: 0.9rem;
-        color: #7f8c8d;
-    }
+        .profile-info p {
+            margin: 0.5rem 0;
+        }
 
-    .content-section {
-        flex-basis: calc(50% - 1rem);
-        margin-bottom: 2rem;
-    }
+        .profile-stats, .impact-stats {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 1rem;
+        }
 
-    h2 {
-        color: var(--primary-color);
-        border-bottom: 2px solid var(--border-color);
-        padding-bottom: 0.5rem;
-    }
+        .stat-item, .impact-item {
+            text-align: center;
+        }
 
-    .badge-container {
-        display: flex;
-        flex-wrap: wrap;
-        gap: 1rem;
-    }
+        .stat-number, .impact-number {
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: var(--primary-color);
+        }
 
-    .badge {
-        width: 80px;
-        height: 80px;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        justify-content: center;
-        background-color: #f1f1f1;
-        border-radius: 50%;
-        font-size: 0.8rem;
-        text-align: center;
-    }
+        .progress-bar {
+            width: 100%;
+            background-color: #e0e0e0;
+            height: 20px;
+            border-radius: 10px;
+            overflow: hidden;
+            margin-top: 1rem;
+        }
 
-    .badge-icon {
-        font-size: 2rem;
-        margin-bottom: 0.2rem;
-    }
+        .progress {
+            width: 75%;
+            height: 100%;
+            background-color: var(--primary-color);
+        }
 
-    .activity-list {
-        list-style-type: none;
-        padding: 0;
-    }
+        .badge-container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1rem;
+            margin-top: 1rem;
+        }
 
-    .activity-item {
-        display: flex;
-        align-items: center;
-        margin-bottom: 1rem;
-        padding-bottom: 1rem;
-        border-bottom: 1px solid var(--border-color);
-    }
+        .badge {
+            background-color: var(--secondary-color);
+            color: white;
+            padding: 0.5rem 1rem;
+            border-radius: 20px;
+            font-size: 0.9rem;
+        }
 
-    .activity-icon {
-        font-size: 1.5rem;
-        margin-right: 1rem;
-        color: var(--primary-color);
-    }
+        .activity-list {
+            list-style-type: none;
+            padding: 0;
+        }
 
-    .activity-content {
-        flex-grow: 1;
-    }
+        .activity-item {
+            display: flex;
+            align-items: center;
+            margin-bottom: 1rem;
+            padding-bottom: 1rem;
+            border-bottom: 1px solid var(--border-color);
+        }
 
-    .activity-title {
-        font-weight: bold;
-        margin: 0;
-    }
+        .activity-icon {
+            font-size: 1.5rem;
+            margin-right: 1rem;
+            color: var(--primary-color);
+        }
 
-    .activity-date {
-        font-size: 0.8rem;
-        color: #7f8c8d;
-    }
+        .activity-content {
+            flex-grow: 1;
+        }
 
-    .skill-list {
-        display: flex;
-        flex-wrap: wrap;
-        gap: 0.5rem;
-    }
+        .activity-title {
+            font-weight: bold;
+            margin: 0;
+        }
 
-    .skill-tag {
-        background-color: var(--primary-color);
-        color: white;
-        padding: 0.3rem 0.6rem;
-        border-radius: 20px;
-        font-size: 0.9rem;
-    }
+        .activity-date {
+            font-size: 0.9rem;
+            color: #7f8c8d;
+        }
 
-    @keyframes fadeIn {
-        from { opacity: 0; }
-        to { opacity: 1; }
-    }
+        .skill-bar {
+            background-color: #e0e0e0;
+            height: 10px;
+            border-radius: 5px;
+            overflow: hidden;
+            margin-bottom: 1rem;
+        }
 
-    .fade-in {
-        animation: fadeIn 0.5s ease-in;
-    }
-</style>
-<link rel="stylesheet" type="text/css" href="saudi_theme.css">
+        .skill-progress {
+            height: 100%;
+            background-color: var(--primary-color);
+        }
+
+        .followers, .connections {
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+            margin-top: 2rem;
+        }
+
+        .connection-item, .follower-item {
+            display: flex;
+            align-items: center;
+        }
+
+        .avatar {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            margin-right: 1rem;
+        }
+
+        .activity-heatmap {
+            display: grid;
+            grid-template-columns: repeat(7, 1fr);
+            gap: 4px;
+        }
+
+        .heatmap-day {
+            width: 20px;
+            height: 20px;
+            background-color: #e0e0e0;
+        }
+
+        .leaderboard {
+            margin-top: 2rem;
+            background-color: white;
+            padding: 1rem;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+
+        .leaderboard-item {
+            display: flex;
+            justify-content: space-between;
+            padding: 0.5rem 0;
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        footer {
+            background-color: var(--primary-color);
+            color: white;
+            text-align: center;
+            padding: 1rem;
+        }
+
+    </style>
 </head>
 <body>
     <header>
-        <h1>HRInsights User Profile</h1>
+        <h1>HR Profile - Sarah Johnson</h1>
+        <div class="notifications">
+            <span>🔔</span>
+            <span class="notification-count">3</span>
+        </div>
     </header>
 
     <nav>
@@ -1107,137 +1177,220 @@
             <li><a href="home">Home</a></li>
             <li><a href="knowledge-base">Knowledge Base</a></li>
             <li><a href="discussions">Discussions</a></li>
-            <li><a href="ask-question">Ask a Question</a></li>
-            <li><a href="profile">My Profile</a></li>
+            <li><a href="profile">Profile</a></li>
         </ul>
     </nav>
 
     <main>
-        <section class="profile-section fade-in">
-            <div class="profile-header">
-                <img src="65.jpg" alt="Profile picture of Sarah Johnson" class="profile-picture">
+        <div class="profile-layout">
+            <!-- Sidebar with basic information -->
+            <section class="profile-sidebar">
+                <img src="65.jpg" alt="Profile Picture" class="profile-picture">
+                <h2>Sarah Johnson</h2>
                 <div class="profile-info">
-                    <h1 class="profile-name">Sarah Johnson</h1>
-                    <p class="profile-title">Senior HR Manager</p>
-                    <p>Global Tech Solutions Inc.</p>
-                    <div class="profile-stats">
-                        <div class="stat">
-                            <div class="stat-value">152</div>
-                            <div class="stat-label">Contributions</div>
+                    <p><strong>Role:</strong> HR Manager</p>
+                    <p><strong>Company:</strong> Global Tech Solutions Inc.</p>
+                    <p><strong>Location:</strong> Dubai, UAE</p>
+                    <p><strong>Member since:</strong> January 2020</p>
+                </div>
+                <div class="profile-stats">
+                    <div class="stat-item">
+                        <div class="stat-number">152</div>
+                        <div class="stat-label">Contributions</div>
+                    </div>
+                    <div class="stat-item">
+                        <div class="stat-number">1,280</div>
+                        <div class="stat-label">Reputation</div>
+                    </div>
+                    <div class="stat-item">
+                        <div class="stat-number">47</div>
+                        <div class="stat-label">Followers</div>
+                    </div>
+                </div>
+                <h3>Profile Completion</h3>
+                <div class="progress-bar">
+                    <div class="progress"></div>
+                </div>
+                <p>75% Complete</p>
+                <button id="edit-profile">Edit Profile</button>
+            </section>
+
+            <!-- Main profile content -->
+            <div class="profile-main">
+                <section class="profile-section">
+                    <h2>Your Impact</h2>
+                    <div class="impact-stats">
+                        <div class="impact-item">
+                            <span class="impact-number">1,250</span>
+                            <span class="impact-label">People Reached</span>
                         </div>
-                        <div class="stat">
-                            <div class="stat-value">1,280</div>
-                            <div class="stat-label">Reputation</div>
+                        <div class="impact-item">
+                            <span class="impact-number">89</span>
+                            <span class="impact-label">Questions Answered</span>
                         </div>
-                        <div class="stat">
-                            <div class="stat-value">47</div>
-                            <div class="stat-label">Followers</div>
+                        <div class="impact-item">
+                            <span class="impact-number">15</span>
+                            <span class="impact-label">Articles Featured</span>
                         </div>
                     </div>
-                </div>
-            </div>
-        </section>
+                </section>
 
-        <section class="content-section fade-in">
-            <h2>Achievements</h2>
-            <div class="badge-container">
-                <div class="badge">
-                    <span class="badge-icon">🏆</span>
-                    Top Contributor
-                </div>
-                <div class="badge">
-                    <span class="badge-icon">💡</span>
-                    Innovator
-                </div>
-                <div class="badge">
-                    <span class="badge-icon">🤝</span>
-                    Mentor
-                </div>
-                <div class="badge">
-                    <span class="badge-icon">📚</span>
-                    Knowledge Sharer
-                </div>
-            </div>
-        </section>
-
-        <section class="content-section fade-in">
-            <h2>Recent Activity</h2>
-            <ul class="activity-list">
-                <li class="activity-item">
-                    <span class="activity-icon">📝</span>
-                    <div class="activity-content">
-                        <p class="activity-title">Answered a question on Performance Management</p>
-                        <p class="activity-date">2 days ago</p>
+                <section class="profile-section">
+                    <h2>Achievements</h2>
+                    <div class="badge-container">
+                        <span class="badge">Top Contributor</span>
+                        <span class="badge">Innovator</span>
+                        <span class="badge">Mentor</span>
+                        <span class="badge">Knowledge Sharer</span>
                     </div>
-                </li>
-                <li class="activity-item">
-                    <span class="activity-icon">📊</span>
-                    <div class="activity-content">
-                        <p class="activity-title">Shared an article on Employee Engagement Trends</p>
-                        <p class="activity-date">1 week ago</p>
-                    </div>
-                </li>
-                <li class="activity-item">
-                    <span class="activity-icon">💬</span>
-                    <div class="activity-content">
-                        <p class="activity-title">Commented on Diversity and Inclusion Strategies</p>
-                        <p class="activity-date">2 weeks ago</p>
-                    </div>
-                </li>
-            </ul>
-        </section>
+                </section>
 
-        <section class="content-section fade-in">
-            <h2>Areas of Expertise</h2>
-            <div class="skill-list">
-                <span class="skill-tag">Talent Acquisition</span>
-                <span class="skill-tag">Performance Management</span>
-                <span class="skill-tag">Employee Relations</span>
-                <span class="skill-tag">Leadership Development</span>
-                <span class="skill-tag">Compensation & Benefits</span>
-                <span class="skill-tag">HR Analytics</span>
-                <span class="skill-tag">Change Management</span>
+                <section class="profile-section">
+                    <h2>Recent Activity</h2>
+                    <ul class="activity-list">
+                        <li class="activity-item">
+                            <span class="activity-icon">📝</span>
+                            <div class="activity-content">
+                                <p class="activity-title">Answered a question on Performance Management</p>
+                                <p class="activity-date">2 days ago</p>
+                            </div>
+                        </li>
+                        <li class="activity-item">
+                            <span class="activity-icon">📊</span>
+                            <div class="activity-content">
+                                <p class="activity-title">Shared an article on Employee Engagement Trends</p>
+                                <p class="activity-date">1 week ago</p>
+                            </div>
+                        </li>
+                        <li class="activity-item">
+                            <span class="activity-icon">💬</span>
+                            <div class="activity-content">
+                                <p class="activity-title">Commented on Diversity and Inclusion Strategies</p>
+                                <p class="activity-date">2 weeks ago</p>
+                            </div>
+                        </li>
+                    </ul>
+                </section>
+
+                <section class="profile-section">
+                    <h2>Skills & Endorsements</h2>
+                    <div class="skill-bar">
+                        <div class="skill-progress" style="width: 80%;"></div>
+                    </div>
+                    <div class="skill-bar">
+                        <div class="skill-progress" style="width: 65%;"></div>
+                    </div>
+                    <div class="skill-bar">
+                        <div class="skill-progress" style="width: 90%;"></div>
+                    </div>
+                    <p>Endorsed 27 times for "Leadership"</p>
+                    <button>Endorse a Skill</button>
+                </section>
+
+                <section class="profile-section">
+                    <h2>Activity Heatmap</h2>
+                    <div class="activity-heatmap">
+                        <div class="heatmap-day" style="background-color: #c6e48b;"></div>
+                        <div class="heatmap-day" style="background-color: #7bc96f;"></div>
+                        <div class="heatmap-day" style="background-color: #239a3b;"></div>
+                        <div class="heatmap-day" style="background-color: #196127;"></div>
+                        <!-- More heatmap days -->
+                    </div>
+                </section>
+
+                <section class="profile-section">
+                    <h2>Leaderboard Ranking</h2>
+                    <div class="leaderboard">
+                        <div class="leaderboard-item">
+                            <span>1. John Doe</span>
+                            <span>1,520 Points</span>
+                        </div>
+                        <div class="leaderboard-item">
+                            <span>2. Sarah Johnson</span>
+                            <span>1,280 Points</span>
+                        </div>
+                        <div class="leaderboard-item">
+                            <span>3. Jane Smith</span>
+                            <span>1,150 Points</span>
+                        </div>
+                    </div>
+                </section>
+
+                <section class="profile-section">
+                    <h2>Recent Connections</h2>
+                    <div class="connections">
+                        <div class="connection-item">
+                            <img src="avatar1.jpg" class="avatar" alt="John Doe">
+                            <p>John Doe - HR Director</p>
+                        </div>
+                        <div class="connection-item">
+                            <img src="avatar2.jpg" class="avatar" alt="Jane Smith">
+                            <p>Jane Smith - Talent Acquisition</p>
+                        </div>
+                    </div>
+                </section>
             </div>
-        </section>
-
-        <section class="content-section fade-in">
-            <h2>Certifications</h2>
-            <ul>
-                <li>SHRM Senior Certified Professional (SHRM-SCP)</li>
-                <li>HRCI Senior Professional in Human Resources (SPHR)</li>
-                <li>Certified Diversity Professional (CDP)</li>
-            </ul>
-        </section>
+        </div>
     </main>
+
+    <footer>
+        <p>© 2024 HRInsights. All rights reserved.</p>
+    </footer>
 
     <script>
         document.addEventListener('DOMContentLoaded', () => {
-            const sections = document.querySelectorAll('.fade-in');
-            
-            const observerOptions = {
-                root: null,
-                rootMargin: '0px',
-                threshold: 0.1
-            };
-
-            const observer = new IntersectionObserver((entries, observer) => {
-                entries.forEach(entry => {
-                    if (entry.isIntersecting) {
-                        entry.target.style.opacity = 1;
-                        observer.unobserve(entry.target);
-                    }
+            const editProfileButton = document.getElementById('edit-profile');
+            if (editProfileButton) {
+                editProfileButton.addEventListener('click', () => {
+                    alert('Edit profile functionality coming soon!');
                 });
-            }, observerOptions);
+            }
 
-            sections.forEach(section => {
-                section.style.opacity = 0;
-                section.style.transition = 'opacity 0.5s ease-in';
-                observer.observe(section);
+            let completion = 75;
+            setInterval(() => {
+                completion = Math.min(100, completion + 1);
+                document.querySelector('.progress').style.width = `${completion}%`;
+                document.querySelector('.profile-sidebar p:last-of-type').textContent = `${completion}% Complete`;
+            }, 3000);
+
+            const badges = document.querySelectorAll('.badge');
+            badges.forEach(badge => {
+                badge.addEventListener('click', () => {
+                    badge.style.transform = 'scale(1.1)';
+                    setTimeout(() => {
+                        badge.style.transform = 'scale(1)';
+                    }, 200);
+                });
+            });
+
+            const activities = [
+                "Liked article 'The future of AI in HR'",
+                "Joined discussion 'Challenges in cross-cultural team management'",
+                "Shared resource 'Guide to effective performance reviews'"
+            ];
+            const activityContainer = document.querySelector('.recent-activity');
+            setInterval(() => {
+                const newActivity = document.createElement('div');
+                newActivity.className = 'activity-item';
+                newActivity.innerHTML = `
+                    <h3>${activities[Math.floor(Math.random() * activities.length)]}</h3>
+                    <span class="activity-date">Just now</span>
+                `;
+                activityContainer.insertBefore(newActivity, activityContainer.firstChild);
+                if (activityContainer.children.length > 5) {
+                    activityContainer.removeChild(activityContainer.lastChild);
+                }
+            }, 10000);
+
+            const updateSkillsButton = document.getElementById('update-skills');
+            updateSkillsButton.addEventListener('click', () => {
+                alert('Skill update feature coming soon!');
             });
         });
     </script>
 </body>
 </html>
+
 
 --- ./Addressing Unconscious Bias.html ---
 <html><head><base disabled-href="homeknowledge-base/diversity/unconscious-bias">
@@ -2469,7 +2622,7 @@
     <link href="https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/2.2.19/tailwind.min.css" rel="stylesheet">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/alpinejs/2.3.0/alpine.js" defer></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.7.0/chart.min.js"></script>
-    <style>
+<style>
 
 .marketing-highlights {
         background-color: #f0f8f6;
@@ -2652,16 +2805,15 @@
                 <a href="contact.html" class="bg-white text-indigo-600 px-8 py-3 rounded-full text-lg font-semibold hover:bg-gray-100 transition duration-300 animate-fade-in-up">Join the Community</a>
             </div>
         </section>
-        <section class="marketing-highlights bg-white rounded-lg shadow-md p-6 hover:shadow-lg transition duration-300 fade-in">
+        <section class="marketing-highlights bg-white rounded-lg shadow-md p-6 hover:shadow-lg transition duration-300 flex items-center justify-between fade-in">
             <h2 class="text-3xl font-bold mb-4">Why Choose HRInsights?</h2>
             <ul class="list-disc pl-8">
-                <li class="mb-2">Tailored for KSA's unique HR landscape</li>
+                <li class="mb-2">Tailored for KSA's unique HR professionals</li>
                 <li class="mb-2">Alignment with Vision 2030 goals</li>
                 <li class="mb-2">Expert-curated content and resources</li>
                 <li>Bilingual support (English &amp; Arabic)</li>
             </ul>
         </section>
-
         
         <section id="features" class="py-20">
             <div class="container mx-auto px-6">
@@ -2894,7 +3046,7 @@
                 <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
                     <div class="bg-white rounded-lg shadow-md p-6">
                         <p class="text-gray-600 mb-4">"HRInsights KSA has revolutionized the way I approach HR in Saudi Arabia. The resources and community support are invaluable."</p>
-                        <p class="font-semibold text-indigo-600">- Fatima Al-Saud, HR Director</p>
+                        <p class="font-semibold text-indigo-600">- Fatima Al-QAHTANI, HR Director</p>
                     </div>
                     <div class="bg-white rounded-lg shadow-md p-6">
                         <p class="text-gray-600 mb-4">"The platform's focus on localized content has helped me navigate the unique challenges of HR in the Kingdom with confidence."</p>
@@ -3421,205 +3573,207 @@
 
 
 --- ./pay_for_performance.html ---
-<html><head><base disabled-href="knowledge-base/compensation/pay-for-performance">
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>HRInsights - Pay for Performance</title>
-<style>
-    :root {
-        --primary-color: #006747;
-        --secondary-color: #8D734A;
-        --background-color: #F7F7F7;
-        --text-color: #333333;
-        --border-color: #E0E0E0;
-        --hover-color: #004D35;
-    }
-
-    body {
-        font-family: 'Tahoma', 'Arial', sans-serif;
-        margin: 0;
-        padding: 0;
-        background-color: var(--background-color);
-        color: var(--text-color);
-        line-height: 1.6;
-        direction: ltr;
-        text-align: left;
-    }
-
-    header {
-        background-color: var(--primary-color);
-        color: white;
-        text-align: left;
-        padding: 1rem 2rem;
-        box-shadow: 0 2px 4px rgba(0,0,0,0.1);
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-    }
-
-    header h1 {
-        margin: 0;
-        font-size: 1.8rem;
-    }
-
-    .language-button {
-        background-color: var(--secondary-color);
-        color: white;
-        border: none;
-        padding: 0.5rem 1rem;
-        border-radius: 4px;
-        cursor: pointer;
-        transition: background-color 0.3s ease;
-        font-size: 0.9rem;
-    }
-
-    .language-button:hover {
-        background-color: #7A6440;
-    }
-
-    nav {
-        background-color: white;
-        padding: 0.5rem 2rem;
-        border-bottom: 1px solid var(--border-color);
-    }
-
-    nav ul {
-        list-style-type: none;
-        padding: 0;
-        margin: 0;
-        display: flex;
-        justify-content: flex-start;
-    }
-
-    nav ul li {
-        margin-right: 2rem;
-    }
-
-    nav ul li a {
-        color: var(--text-color);
-        text-decoration: none;
-        font-weight: bold;
-        transition: color 0.3s ease;
-    }
-
-    nav ul li a:hover {
-        color: var(--primary-color);
-    }
-
-    main {
-        max-width: 1200px;
-        margin: 2rem auto;
-        padding: 0 2rem;
-        background-color: white;
-        border-radius: 8px;
-        box-shadow: 0 0 10px rgba(0,0,0,0.1);
-    }
-
-    .breadcrumb {
-        margin-bottom: 1.5rem;
-        font-size: 0.9rem;
-        padding: 1rem 0;
-    }
-
-    .breadcrumb a {
-        color: var(--primary-color);
-        text-decoration: none;
-    }
-
-    .breadcrumb span {
-        margin: 0 0.5rem;
-        color: var(--text-color);
-    }
-
-    h1, h2, h3 {
-        color: var(--primary-color);
-    }
-
-    h1 {
-        font-size: 2.5rem;
-        margin-bottom: 1.5rem;
-        border-bottom: 2px solid var(--secondary-color);
-        padding-bottom: 0.5rem;
-    }
-
-    h2 {
-        font-size: 1.8rem;
-        margin-top: 2rem;
-        margin-bottom: 1rem;
-    }
-
-    h3 {
-        font-size: 1.3rem;
-        margin-top: 1.5rem;
-        margin-bottom: 0.5rem;
-    }
-
-    p, ul, ol {
-        margin-bottom: 1rem;
-    }
-
-    ul, ol {
-        padding-left: 2rem;
-    }
-
-    .info-box {
-        background-color: #E6F3F0;
-        border-left: 4px solid var(--primary-color);
-        padding: 1rem;
-        margin: 1rem 0;
-        border-radius: 4px;
-    }
-
-    .warning-box {
-        background-color: #FFF3CD;
-        border-left: 4px solid #FFC107;
-        padding: 1rem;
-        margin: 1rem 0;
-        border-radius: 4px;
-    }
-
-    table {
-        width: 100%;
-        border-collapse: collapse;
-        margin-bottom: 1rem;
-    }
-
-    th, td {
-        border: 1px solid var(--border-color);
-        padding: 0.75rem;
-        text-align: left;
-    }
-
-    th {
-        background-color: var(--primary-color);
-        color: white;
-    }
-
-    tr:nth-child(even) {
-        background-color: #f2f2f2;
-    }
-
-    @media (max-width: 768px) {
-        nav ul {
-            flex-direction: column;
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HRInsights - Pay for Performance</title>
+    <style>
+        :root {
+            --primary-color: #006747;
+            --secondary-color: #8D734A;
+            --background-color: #F7F7F7;
+            --text-color: #333333;
+            --border-color: #E0E0E0;
+            --hover-color: #004D35;
         }
 
-        nav ul li {
-            margin-right: 0;
-            margin-bottom: 0.5rem;
+        body {
+            font-family: 'Tahoma', 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: var(--background-color);
+            color: var(--text-color);
+            line-height: 1.6;
+            direction: ltr;
+            text-align: left;
         }
 
         header {
-            flex-direction: column;
-            align-items: flex-start;
+            background-color: var(--primary-color);
+            color: white;
+            text-align: left;
+            padding: 1rem 2rem;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        header h1 {
+            margin: 0;
+            font-size: 1.8rem;
         }
 
         .language-button {
-            margin-top: 1rem;
+            background-color: var(--secondary-color);
+            color: white;
+            border: none;
+            padding: 0.5rem 1rem;
+            border-radius: 4px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+            font-size: 0.9rem;
         }
-    }
-</style>
-<link rel="stylesheet" type="text/css" href="saudi_theme.css">
+
+        .language-button:hover {
+            background-color: #7A6440;
+        }
+
+        nav {
+            background-color: white;
+            padding: 0.5rem 2rem;
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        nav ul {
+            list-style-type: none;
+            padding: 0;
+            margin: 0;
+            display: flex;
+            justify-content: flex-start;
+        }
+
+        nav ul li {
+            margin-right: 2rem;
+        }
+
+        nav ul li a {
+            color: var(--text-color);
+            text-decoration: none;
+            font-weight: bold;
+            transition: color 0.3s ease;
+        }
+
+        nav ul li a:hover {
+            color: var(--primary-color);
+        }
+
+        main {
+            max-width: 1200px;
+            margin: 2rem auto;
+            padding: 0 2rem;
+            background-color: white;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+        }
+
+        .breadcrumb {
+            margin-bottom: 1.5rem;
+            font-size: 0.9rem;
+            padding: 1rem 0;
+        }
+
+        .breadcrumb a {
+            color: var(--primary-color);
+            text-decoration: none;
+        }
+
+        .breadcrumb span {
+            margin: 0 0.5rem;
+            color: var(--text-color);
+        }
+
+        h1, h2, h3 {
+            color: var(--primary-color);
+        }
+
+        h1 {
+            font-size: 2.5rem;
+            margin-bottom: 1.5rem;
+            border-bottom: 2px solid var(--secondary-color);
+            padding-bottom: 0.5rem;
+        }
+
+        h2 {
+            font-size: 1.8rem;
+            margin-top: 2rem;
+            margin-bottom: 1rem;
+        }
+
+        h3 {
+            font-size: 1.3rem;
+            margin-top: 1.5rem;
+            margin-bottom: 0.5rem;
+        }
+
+        p, ul, ol {
+            margin-bottom: 1rem;
+        }
+
+        ul, ol {
+            padding-left: 2rem;
+        }
+
+        .info-box {
+            background-color: #E6F3F0;
+            border-left: 4px solid var(--primary-color);
+            padding: 1rem;
+            margin: 1rem 0;
+            border-radius: 4px;
+        }
+
+        .warning-box {
+            background-color: #FFF3CD;
+            border-left: 4px solid #FFC107;
+            padding: 1rem;
+            margin: 1rem 0;
+            border-radius: 4px;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-bottom: 1rem;
+        }
+
+        th, td {
+            border: 1px solid var(--border-color);
+            padding: 0.75rem;
+            text-align: left;
+        }
+
+        th {
+            background-color: var(--primary-color);
+            color: white;
+        }
+
+        tr:nth-child(even) {
+            background-color: #f2f2f2;
+        }
+
+        @media (max-width: 768px) {
+            nav ul {
+                flex-direction: column;
+            }
+
+            nav ul li {
+                margin-right: 0;
+                margin-bottom: 0.5rem;
+            }
+
+            header {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+
+            .language-button {
+                margin-top: 1rem;
+            }
+        }
+    </style>
+    <link rel="stylesheet" type="text/css" href="saudi_theme.css">
 </head>
 <body>
     <header>
@@ -3766,31 +3920,83 @@
 
         <p>Looking ahead, the future of PFP in KSA is likely to evolve alongside the country's economic development. We may see more sophisticated systems emerge that incorporate AI and data analytics for performance evaluation, as well as a greater emphasis on long-term incentives aligned with the country's strategic goals. As the workforce becomes more diverse and specialized, PFP systems will need to remain flexible and adaptive to meet the changing needs of both employees and organizations in the Kingdom.</p>
     </main>
-
     <script>
         document.addEventListener('DOMContentLoaded', () => {
             const languageToggle = document.getElementById('languageToggle');
             let isEnglish = true;
-
+    
+            // Arabic content
+            const arabicContent = {
+                headerTitle: 'مركز المعرفة لموارد البشرية',
+                pageTitle: 'الدفع مقابل الأداء',
+                breadcrumbHome: 'الرئيسية',
+                breadcrumbKnowledgeBase: 'قاعدة المعرفة',
+                breadcrumbCompensation: 'التعويضات',
+                breadcrumbPayForPerformance: 'الدفع مقابل الأداء',
+                introText: 'الدفع مقابل الأداء (PFP) هو استراتيجية تعويضية تربط أجر الموظف بأدائه أو إنتاجيته. تهدف هذه المقاربة إلى تحفيز الموظفين، وزيادة الإنتاجية، ومواءمة الأهداف الفردية مع أهداف المنظمة. في المملكة العربية السعودية (KSA)، مع سعي الشركات لتعزيز الكفاءة والتنافسية بما يتماشى مع رؤية 2030، تزداد شعبية أنظمة الدفع مقابل الأداء. مع التحول نحو اقتصاد أكثر تنوعًا والتركيز على نمو القطاع الخاص، أصبحت إدارة الأداء الفعالة أمرًا حاسمًا للمنظمات التي تعمل في المملكة.',
+                keyComponentsTitle: 'المكونات الرئيسية للدفع مقابل الأداء',
+                typesTitle: 'أنواع أنظمة الدفع مقابل الأداء',
+                benefitsTitle: 'فوائد الدفع مقابل الأداء',
+                contextTitle: 'السياق السعودي',
+                implementingTitle: 'تنفيذ الدفع مقابل الأداء في المملكة',
+                conclusionTitle: 'الخاتمة',
+            };
+    
+            // English content
+            const englishContent = {
+                headerTitle: 'HR Knowledge Center',
+                pageTitle: 'Pay for Performance',
+                breadcrumbHome: 'Home',
+                breadcrumbKnowledgeBase: 'Knowledge Base',
+                breadcrumbCompensation: 'Compensation',
+                breadcrumbPayForPerformance: 'Pay for Performance',
+                introText: 'Pay for Performance (PFP) is a compensation strategy that links an employee\'s pay to their performance or productivity. This approach aims to motivate employees, increase productivity, and align individual goals with organizational objectives. In the Kingdom of Saudi Arabia (KSA), as businesses strive to enhance efficiency and competitiveness in line with Vision 2030, PFP systems are gaining popularity. The shift towards a more diversified economy and the emphasis on private sector growth have made effective performance management crucial for organizations operating in the Kingdom.',
+                keyComponentsTitle: 'Key Components of Pay for Performance',
+                typesTitle: 'Types of Pay for Performance Systems',
+                benefitsTitle: 'Benefits of Pay for Performance',
+                contextTitle: 'KSA Context',
+                implementingTitle: 'Implementing Pay for Performance in KSA',
+                conclusionTitle: 'Conclusion',
+            };
+    
+            // Function to update content based on language selection
+            function updateContent(language) {
+                const content = language === 'ar' ? arabicContent : englishContent;
+    
+                // Update header and main content
+                document.querySelector('header h1').textContent = content.headerTitle;
+                document.querySelector('main h1').textContent = content.pageTitle;
+                document.querySelector('.breadcrumb a[href="home"]').textContent = content.breadcrumbHome;
+                document.querySelector('.breadcrumb a[href="knowledge-base"]').textContent = content.breadcrumbKnowledgeBase;
+                document.querySelector('.breadcrumb a[href="knowledge-base/compensation"]').textContent = content.breadcrumbCompensation;
+                document.querySelector('.breadcrumb span:last-child').textContent = content.breadcrumbPayForPerformance;
+    
+                // Update introduction text
+                document.querySelector('main p').textContent = content.introText;
+    
+                // Update section titles
+                document.querySelectorAll('main h2')[0].textContent = content.keyComponentsTitle;
+                document.querySelectorAll('main h2')[1].textContent = content.typesTitle;
+                document.querySelectorAll('main h2')[2].textContent = content.benefitsTitle;
+                document.querySelector('main .info-box h3').textContent = content.contextTitle;
+                document.querySelectorAll('main h2')[3].textContent = content.implementingTitle;
+                document.querySelector('main h2:last-child').textContent = content.conclusionTitle;
+            }
+    
+            // Event listener for language toggle
             languageToggle.addEventListener('click', () => {
                 if (isEnglish) {
                     // Switch to Arabic
                     document.body.style.direction = 'rtl';
                     document.body.style.textAlign = 'right';
                     languageToggle.textContent = 'English';
-                    // Update content to Arabic (this is a simplified example)
-                    document.querySelector('header h1').textContent = 'مركز المعرفة لموارد البشرية';
-                    document.querySelector('main h1').textContent = 'الدفع مقابل الأداء';
-                    // Update other elements as needed
+                    updateContent('ar');
                 } else {
                     // Switch to English
                     document.body.style.direction = 'ltr';
                     document.body.style.textAlign = 'left';
                     languageToggle.textContent = 'عربي';
-                    // Update content to English
-                    document.querySelector('header h1').textContent = 'HR Knowledge Center';
-                    document.querySelector('main h1').textContent = 'Pay for Performance';
-                    // Update other elements as needed
+                    updateContent('en');
                 }
                 isEnglish = !isEnglish;
             });
@@ -3798,6 +4004,7 @@
     </script>
 </body>
 </html>
+
 
 --- ./Performance Management.html ---
 <html><head><base disabled-href="homeknowledge-base/employee-relations/performance-management">
@@ -5910,695 +6117,6 @@
     </script>
 </body>
 </html>
-
---- ./profile1.html ---
-<html><head><base disabled-href="profile">
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>HRInsights - Profile</title>
-<style>
-    :root {
-        --primary-color: #006747;
-        --secondary-color: #8D734A;
-        --background-color: #F7F7F7;
-        --text-color: #333333;
-        --border-color: #E0E0E0;
-        --hover-color: #004D35;
-    }
-
-    body {
-        font-family: 'Tahoma', 'Arial', sans-serif;
-        margin: 0;
-        padding: 0;
-        background-color: var(--background-color);
-        color: var(--text-color);
-        line-height: 1.6;
-    }
-
-    header {
-        background-color: var(--primary-color);
-        color: white;
-        text-align: left;
-        padding: 1rem 2rem;
-        box-shadow: 0 2px 4px rgba(0,0,0,0.1);
-    }
-
-    header h1 {
-        margin: 0;
-        font-size: 1.8rem;
-    }
-
-    nav {
-        background-color: white;
-        padding: 0.5rem 2rem;
-        border-bottom: 1px solid var(--border-color);
-    }
-
-    nav ul {
-        list-style-type: none;
-        padding: 0;
-        margin: 0;
-        display: flex;
-        justify-content: flex-start;
-    }
-
-    nav ul li {
-        margin-right: 2rem;
-    }
-
-    nav ul li a {
-        color: var(--text-color);
-        text-decoration: none;
-        font-weight: bold;
-        transition: color 0.3s ease;
-    }
-
-    nav ul li a:hover {
-        color: var(--primary-color);
-    }
-
-    main {
-        max-width: 1200px;
-        margin: 2rem auto;
-        padding: 0 2rem;
-        display: flex;
-        flex-direction: column;
-        gap: 2rem;
-    }
-
-    .profile-layout {
-        display: flex;
-        gap: 2rem;
-    }
-
-    .profile-sidebar {
-        flex: 1;
-        min-width: 250px;
-        background-color: white;
-        padding: 2rem;
-        border-radius: 8px;
-        box-shadow: 0 2px 4px rgba(0,0,0,0.1);
-    }
-
-    .profile-main {
-        flex: 2;
-        min-width: 300px;
-    }
-
-    .profile-section {
-        background-color: white;
-        padding: 2rem;
-        border-radius: 8px;
-        box-shadow: 0 2px 4px rgba(0,0,0,0.1);
-        margin-bottom: 2rem;
-    }
-
-    .profile-picture {
-        width: 150px;
-        height: 150px;
-        border-radius: 50%;
-        object-fit: cover;
-        margin-bottom: 1rem;
-    }
-
-    h2 {
-        color: var(--primary-color);
-        margin-top: 0;
-    }
-
-    .profile-info p {
-        margin: 0.5rem 0;
-    }
-
-    .profile-stats {
-        display: flex;
-        justify-content: space-between;
-        margin-top: 1rem;
-    }
-
-    .stat-item {
-        text-align: center;
-    }
-
-    .stat-number {
-        font-size: 1.5rem;
-        font-weight: bold;
-        color: var(--primary-color);
-    }
-
-    .progress-bar {
-        width: 100%;
-        background-color: #e0e0e0;
-        height: 20px;
-        border-radius: 10px;
-        overflow: hidden;
-        margin-top: 1rem;
-    }
-
-    .progress {
-        width: 75%;
-        height: 100%;
-        background-color: var(--primary-color);
-        transition: width 0.5s ease-in-out;
-    }
-
-    .badges {
-        display: flex;
-        flex-wrap: wrap;
-        gap: 1rem;
-        margin-top: 1rem;
-    }
-
-    .badge {
-        background-color: var(--secondary-color);
-        color: white;
-        padding: 0.5rem 1rem;
-        border-radius: 20px;
-        font-size: 0.9rem;
-    }
-
-    .activity-item {
-        margin-bottom: 1rem;
-        padding-bottom: 1rem;
-        border-bottom: 1px solid var(--border-color);
-    }
-
-    .activity-item:last-child {
-        border-bottom: none;
-    }
-
-    .activity-date {
-        font-size: 0.9rem;
-        color: #777;
-    }
-
-    button {
-        background-color: var(--primary-color);
-        color: white;
-        border: none;
-        padding: 0.5rem 1rem;
-        border-radius: 4px;
-        cursor: pointer;
-        transition: background-color 0.3s ease;
-    }
-
-    button:hover {
-        background-color: var(--hover-color);
-    }
-
-    footer {
-        background-color: var(--primary-color);
-        color: white;
-        text-align: center;
-        padding: 1rem;
-        margin-top: 2rem;
-    }
-
-    @media (max-width: 768px) {
-        main {
-            flex-direction: column;
-        }
-
-        .profile-layout,
-        .expertise-skills-container,
-        .career-container,
-        .engagement-container {
-            flex-direction: column;
-        }
-
-        .profile-sidebar, .profile-main {
-            width: 100%;
-        }
-    }
-
-    .welcome-message {
-        background-color: var(--primary-color);
-        color: white;
-        padding: 1rem 2rem;
-        border-radius: 8px;
-        margin-bottom: 2rem;
-    }
-
-    .reputation-score {
-        text-align: center;
-        margin-top: 2rem;
-    }
-
-    .score {
-        font-size: 2rem;
-        color: var(--primary-color);
-    }
-
-    .impact-stats {
-        display: flex;
-        justify-content: space-between;
-    }
-
-    .impact-item {
-        text-align: center;
-    }
-
-    .impact-number {
-        font-size: 1.5rem;
-        font-weight: bold;
-        color: var(--primary-color);
-    }
-
-    .skill-tracker {
-        margin-bottom: 1rem;
-    }
-
-    .skill-item {
-        margin-bottom: 0.5rem;
-    }
-
-    .skill-bar {
-        background-color: #e0e0e0;
-        height: 10px;
-        border-radius: 5px;
-        overflow: hidden;
-    }
-
-    .skill-progress {
-        height: 100%;
-        background-color: var(--primary-color);
-    }
-
-    .content-recommendations {
-        display: flex;
-        gap: 1rem;
-    }
-
-    .recommendation-item {
-        flex: 1;
-        background-color: #f0f0f0;
-        padding: 1rem;
-        border-radius: 8px;
-    }
-
-    .connections {
-        margin-top: 2rem;
-    }
-
-    .connection-stats {
-        text-align: center;
-        margin-bottom: 1rem;
-    }
-
-    .connection-number {
-        font-size: 1.5rem;
-        font-weight: bold;
-        color: var(--primary-color);
-    }
-
-    .connection-actions {
-        display: flex;
-        gap: 0.5rem;
-    }
-
-    .kudos-list {
-        margin-bottom: 1rem;
-    }
-
-    .kudos-item {
-        display: flex;
-        align-items: center;
-        margin-bottom: 1rem;
-    }
-
-    .kudos-avatar {
-        width: 50px;
-        height: 50px;
-        border-radius: 50%;
-        margin-right: 1rem;
-    }
-
-    .timeline {
-        position: relative;
-        padding-left: 2rem;
-    }
-
-    .timeline::before {
-        content: '';
-        position: absolute;
-        left: 0;
-        top: 0;
-        bottom: 0;
-        width: 2px;
-        background-color: var(--primary-color);
-    }
-
-    .timeline-item {
-        position: relative;
-        margin-bottom: 2rem;
-    }
-
-    .timeline-item::before {
-        content: '';
-        position: absolute;
-        left: -2.4rem;
-        top: 0;
-        width: 1rem;
-        height: 1rem;
-        background-color: var(--primary-color);
-        border-radius: 50%;
-    }
-
-    .timeline-date {
-        font-size: 0.9rem;
-        color: #777;
-    }
-
-    .expertise-skills-container,
-    .career-container,
-    .engagement-container {
-        display: flex;
-        gap: 2rem;
-        margin-bottom: 1rem;
-    }
-
-    .expertise,
-    .skills,
-    .achievements,
-    .milestones,
-    .recent-activity,
-    .kudos {
-        flex: 1;
-    }
-</style>
-<link rel="stylesheet" type="text/css" href="saudi_theme.css">
-</head>
-<body>
-    <header>
-        <h1>HR Knowledge Center</h1>
-    </header>
-
-    <nav>
-        <ul>
-            <li><a href="home">Home</a></li>
-            <li><a href="knowledge-base">Knowledge Base</a></li>
-            <li><a href="discussions">Discussions</a></li>
-            <li><a href="ask-question">Ask a Question</a></li>
-            <li><a href="profile">Profile</a></li>
-        </ul>
-    </nav>
-
-    <main>
-        <section class="welcome-message">
-            <h2>Welcome back, Sarah!</h2>
-            <p>Your contributions are making a difference. Keep up the great work!</p>
-        </section>
-
-        <div class="profile-layout">
-            <section class="profile-sidebar">
-                <img src="65.jpg" alt="Profile Picture" class="profile-picture">
-                <h2>Sarah Al-Mansouri</h2>
-                <div class="profile-info">
-                    <p><strong>Role:</strong> HR Manager</p>
-                    <p><strong>Company:</strong> TechInnovate LLC</p>
-                    <p><strong>Location:</strong> Dubai, UAE</p>
-                    <p><strong>Member since:</strong> January 2020</p>
-                </div>
-                <div class="profile-stats">
-                    <div class="stat-item">
-                        <div class="stat-number">42</div>
-                        <div class="stat-label">Discussions</div>
-                    </div>
-                    <div class="stat-item">
-                        <div class="stat-number">18</div>
-                        <div class="stat-label">Articles</div>
-                    </div>
-                    <div class="stat-item">
-                        <div class="stat-number">156</div>
-                        <div class="stat-label">Contributions</div>
-                    </div>
-                </div>
-                <div class="reputation-score">
-                    <h3>Your Influence</h3>
-                    <div class="score">
-                        <span class="score-number">85</span>
-                        <span class="score-label">/ 100</span>
-                    </div>
-                    <p>You're in the top 10% of contributors!</p>
-                </div>
-                <h3>Profile Completion</h3>
-                <div class="progress-bar">
-                    <div class="progress"></div>
-                </div>
-                <p>75% Complete</p>
-                <button id="edit-profile">Edit Profile</button>
-            </section>
-
-            <div class="profile-main">
-                <section class="profile-section">
-                    <h2>Your Impact</h2>
-                    <div class="impact-stats">
-                        <div class="impact-item">
-                            <span class="impact-number">1,250</span>
-                            <span class="impact-label">People Reached</span>
-                        </div>
-                        <div class="impact-item">
-                            <span class="impact-number">89</span>
-                            <span class="impact-label">Questions Answered</span>
-                        </div>
-                        <div class="impact-item">
-                            <span class="impact-number">15</span>
-                            <span class="impact-label">Articles Featured</span>
-                        </div>
-                    </div>
-                </section>
-
-                <section class="profile-section">
-                    <h2>Expertise & Skills</h2>
-                    <div class="expertise-skills-container">
-                        <div class="expertise">
-                            <h3>Areas of Expertise</h3>
-                            <div class="badges">
-                                <span class="badge">Recruitment</span>
-                                <span class="badge">Employee Engagement</span>
-                                <span class="badge">Performance Management</span>
-                                <span class="badge">HR Analytics</span>
-                                <span class="badge">Talent Development</span>
-                            </div>
-                        </div>
-                        <div class="skills">
-                            <h3>Skill Development</h3>
-                            <div class="skill-tracker">
-                                <div class="skill-item">
-                                    <span class="skill-name">Leadership</span>
-                                    <div class="skill-bar">
-                                        <div class="skill-progress" style="width: 80%;"></div>
-                                    </div>
-                                </div>
-                                <div class="skill-item">
-                                    <span class="skill-name">Data Analysis</span>
-                                    <div class="skill-bar">
-                                        <div class="skill-progress" style="width: 65%;"></div>
-                                    </div>
-                                </div>
-                                <div class="skill-item">
-                                    <span class="skill-name">Conflict Resolution</span>
-                                    <div class="skill-bar">
-                                        <div class="skill-progress" style="width: 90%;"></div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <button id="update-skills">Update Skills</button>
-                </section>
-
-                <section class="profile-section">
-                    <h2>Career Progression</h2>
-                    <div class="career-container">
-                        <div class="achievements">
-                            <h3>Achievements</h3>
-                            <div class="badges">
-                                <span class="badge">Top Contributor 2022</span>
-                                <span class="badge">HR Innovation Award</span>
-                                <span class="badge">Mentorship Excellence</span>
-                            </div>
-                        </div>
-                        <div class="milestones">
-                            <h3>Career Milestones</h3>
-                            <div class="timeline">
-                                <div class="timeline-item">
-                                    <div class="timeline-content">
-                                        <h3>Promoted to HR Manager</h3>
-                                        <p>TechInnovate LLC</p>
-                                        <span class="timeline-date">March 2022</span>
-                                    </div>
-                                </div>
-                                <div class="timeline-item">
-                                    <div class="timeline-content">
-                                        <h3>Led Successful Company-wide DEI Initiative</h3>
-                                        <p>Resulting in 30% increase in diversity hiring</p>
-                                        <span class="timeline-date">September 2021</span>
-                                    </div>
-                                </div>
-                                <div class="timeline-item">
-                                    <div class="timeline-content">
-                                        <h3>Joined TechInnovate LLC as HR Specialist</h3>
-                                        <span class="timeline-date">January 2020</span>
-                                    </div>
-                                </div>
-                            </div>
-                            <button id="add-milestone">Add Milestone</button>
-                        </div>
-                    </div>
-                </section>
-
-                <section class="profile-section">
-                    <h2>Community Engagement</h2>
-                    <div class="engagement-container">
-                        <div class="recent-activity">
-                            <h3>Recent Activity</h3>
-                            <div class="activity-item">
-                                <h3>Commented on "Best practices for remote onboarding"</h3>
-                                <p>Great article! I'd also add that creating a virtual buddy system can significantly improve the onboarding experience for remote employees.</p>
-                                <span class="activity-date">2 days ago</span>
-                            </div>
-                            <div class="activity-item">
-                                <h3>Published article "Implementing effective feedback loops in your organization"</h3>
-                                <p>Shared insights on creating a culture of continuous feedback and its impact on employee performance.</p>
-                                <span class="activity-date">1 week ago</span>
-                            </div>
-                            <div class="activity-item">
-                                <h3>Asked question "Compliance challenges with new labor laws in UAE"</h3>
-                                <p>Seeking advice on navigating recent changes in employment regulations and ensuring organizational compliance.</p>
-                                <span class="activity-date">2 weeks ago</span>
-                            </div>
-                        </div>
-                        <div class="kudos">
-                            <h3>Kudos from Peers</h3>
-                            <div class="kudos-list">
-                                <div class="kudos-item">
-                                    <img src="32.jpg" alt="John Doe" class="kudos-avatar">
-                                    <div class="kudos-content">
-                                        <p>"Sarah's insights on employee engagement strategies were game-changing for our organization!"</p>
-                                        <span class="kudos-author">- John Doe, HR Director</span>
-                                    </div>
-                                </div>
-                                <div class="kudos-item">
-                                    <img src="45.jpg" alt="Jane Smith" class="kudos-avatar">
-                                    <div class="kudos-content">
-                                        <p>"Always providing thoughtful and practical advice. A true HR professional!"</p>
-                                        <span class="kudos-author">- Jane Smith, Talent Acquisition Specialist</span>
-                                    </div>
-                                </div>
-                            </div>
-                            <button id="give-kudos">Give Kudos</button>
-                        </div>
-                    </div>
-                </section>
-
-                <section class="profile-section">
-                    <h2>Recommended for You</h2>
-                    <div class="content-recommendations">
-                        <div class="recommendation-item">
-                            <h3>Article: "The Future of Remote Work in HR"</h3>
-                            <p>Based on your interest in employee engagement and HR analytics.</p>
-                            <a href="#">Read Now</a>
-                        </div>
-                        <div class="recommendation-item">
-                            <h3>Discussion: "Implementing AI in Recruitment Processes"</h3>
-                            <p>Join the conversation on this trending topic in HR technology.</p>
-                            <a href="#">Participate</a>
-                        </div>
-                    </div>
-                </section>
-            </div>
-        </div>
-    </main>
-
-    <footer>
-        <p>© 2023 HRInsights. All rights reserved.</p>
-    </footer>
-
-    <script>
-        document.addEventListener('DOMContentLoaded', () => {
-            const editProfileButton = document.getElementById('edit-profile');
-            if (editProfileButton) {
-                editProfileButton.addEventListener('click', () => {
-                    alert('Edit profile functionality coming soon!');
-                });
-            }
-
-            let completion = 75;
-            setInterval(() => {
-                completion = Math.min(100, completion + 1);
-                document.querySelector('.progress').style.width = `${completion}%`;
-                document.querySelector('.profile-sidebar p:last-of-type').textContent = `${completion}% Complete`;
-            }, 3000);
-
-            const badges = document.querySelectorAll('.badge');
-            badges.forEach(badge => {
-                badge.addEventListener('click', () => {
-                    badge.style.transform = 'scale(1.1)';
-                    setTimeout(() => {
-                        badge.style.transform = 'scale(1)';
-                    }, 200);
-                });
-            });
-
-            const activities = [
-                "Liked article 'The future of AI in HR'",
-                "Joined discussion 'Challenges in cross-cultural team management'",
-                "Shared resource 'Guide to effective performance reviews'"
-            ];
-            const activityContainer = document.querySelector('.recent-activity');
-            setInterval(() => {
-                const newActivity = document.createElement('div');
-                newActivity.className = 'activity-item';
-                newActivity.innerHTML = `
-                    <h3>${activities[Math.floor(Math.random() * activities.length)]}</h3>
-                    <span class="activity-date">Just now</span>
-                `;
-                activityContainer.insertBefore(newActivity, activityContainer.firstChild);
-                if (activityContainer.children.length > 5) {
-                    activityContainer.removeChild(activityContainer.lastChild);
-                }
-            }, 10000);
-
-            const updateSkillsButton = document.getElementById('update-skills');
-            updateSkillsButton.addEventListener('click', () => {
-                alert('Skill update feature coming soon!');
-            });
-
-            const giveKudosButton = document.getElementById('give-kudos');
-            if (giveKudosButton) {
-                giveKudosButton.addEventListener('click', () => {
-                    alert('Give kudos feature coming soon!');
-                });
-            }
-
-            const addMilestoneButton = document.getElementById('add-milestone');
-            if (addMilestoneButton) {
-                addMilestoneButton.addEventListener('click', () => {
-                    alert('Add milestone feature coming soon!');
-                });
-            }
-
-            let reputationScore = 85;
-            setInterval(() => {
-                reputationScore = Math.min(100, reputationScore + 1);
-                document.querySelector('.score-number').textContent = reputationScore;
-                document.querySelector('.reputation-score p').textContent = `You're in the top ${100 - reputationScore}% of contributors!`;
-            }, 5000);
-
-            const recommendationItems = document.querySelectorAll('.recommendation-item');
-            recommendationItems.forEach(item => {
-                item.addEventListener('mouseenter', () => {
-                    item.style.transform = 'scale(1.05)';
-                    item.style.transition = 'transform 0.3s ease';
-                });
-                item.addEventListener('mouseleave', () => {
-                    item.style.transform = 'scale(1)';
-                });
-            });
-        });
-    </script>
-</body></html>
 
 --- ./Understanding Leadership Development.html ---
 <html><head><base disabled-href="homeknowledge-base/training/leadership-development">

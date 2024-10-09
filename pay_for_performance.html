@@ -1,202 +1,204 @@
-<html><head><base disabled-href="knowledge-base/compensation/pay-for-performance">
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>HRInsights - Pay for Performance</title>
-<style>
-    :root {
-        --primary-color: #006747;
-        --secondary-color: #8D734A;
-        --background-color: #F7F7F7;
-        --text-color: #333333;
-        --border-color: #E0E0E0;
-        --hover-color: #004D35;
-    }
-
-    body {
-        font-family: 'Tahoma', 'Arial', sans-serif;
-        margin: 0;
-        padding: 0;
-        background-color: var(--background-color);
-        color: var(--text-color);
-        line-height: 1.6;
-        direction: ltr;
-        text-align: left;
-    }
-
-    header {
-        background-color: var(--primary-color);
-        color: white;
-        text-align: left;
-        padding: 1rem 2rem;
-        box-shadow: 0 2px 4px rgba(0,0,0,0.1);
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-    }
-
-    header h1 {
-        margin: 0;
-        font-size: 1.8rem;
-    }
-
-    .language-button {
-        background-color: var(--secondary-color);
-        color: white;
-        border: none;
-        padding: 0.5rem 1rem;
-        border-radius: 4px;
-        cursor: pointer;
-        transition: background-color 0.3s ease;
-        font-size: 0.9rem;
-    }
-
-    .language-button:hover {
-        background-color: #7A6440;
-    }
-
-    nav {
-        background-color: white;
-        padding: 0.5rem 2rem;
-        border-bottom: 1px solid var(--border-color);
-    }
-
-    nav ul {
-        list-style-type: none;
-        padding: 0;
-        margin: 0;
-        display: flex;
-        justify-content: flex-start;
-    }
-
-    nav ul li {
-        margin-right: 2rem;
-    }
-
-    nav ul li a {
-        color: var(--text-color);
-        text-decoration: none;
-        font-weight: bold;
-        transition: color 0.3s ease;
-    }
-
-    nav ul li a:hover {
-        color: var(--primary-color);
-    }
-
-    main {
-        max-width: 1200px;
-        margin: 2rem auto;
-        padding: 0 2rem;
-        background-color: white;
-        border-radius: 8px;
-        box-shadow: 0 0 10px rgba(0,0,0,0.1);
-    }
-
-    .breadcrumb {
-        margin-bottom: 1.5rem;
-        font-size: 0.9rem;
-        padding: 1rem 0;
-    }
-
-    .breadcrumb a {
-        color: var(--primary-color);
-        text-decoration: none;
-    }
-
-    .breadcrumb span {
-        margin: 0 0.5rem;
-        color: var(--text-color);
-    }
-
-    h1, h2, h3 {
-        color: var(--primary-color);
-    }
-
-    h1 {
-        font-size: 2.5rem;
-        margin-bottom: 1.5rem;
-        border-bottom: 2px solid var(--secondary-color);
-        padding-bottom: 0.5rem;
-    }
-
-    h2 {
-        font-size: 1.8rem;
-        margin-top: 2rem;
-        margin-bottom: 1rem;
-    }
-
-    h3 {
-        font-size: 1.3rem;
-        margin-top: 1.5rem;
-        margin-bottom: 0.5rem;
-    }
-
-    p, ul, ol {
-        margin-bottom: 1rem;
-    }
-
-    ul, ol {
-        padding-left: 2rem;
-    }
-
-    .info-box {
-        background-color: #E6F3F0;
-        border-left: 4px solid var(--primary-color);
-        padding: 1rem;
-        margin: 1rem 0;
-        border-radius: 4px;
-    }
-
-    .warning-box {
-        background-color: #FFF3CD;
-        border-left: 4px solid #FFC107;
-        padding: 1rem;
-        margin: 1rem 0;
-        border-radius: 4px;
-    }
-
-    table {
-        width: 100%;
-        border-collapse: collapse;
-        margin-bottom: 1rem;
-    }
-
-    th, td {
-        border: 1px solid var(--border-color);
-        padding: 0.75rem;
-        text-align: left;
-    }
-
-    th {
-        background-color: var(--primary-color);
-        color: white;
-    }
-
-    tr:nth-child(even) {
-        background-color: #f2f2f2;
-    }
-
-    @media (max-width: 768px) {
-        nav ul {
-            flex-direction: column;
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HRInsights - Pay for Performance</title>
+    <style>
+        :root {
+            --primary-color: #006747;
+            --secondary-color: #8D734A;
+            --background-color: #F7F7F7;
+            --text-color: #333333;
+            --border-color: #E0E0E0;
+            --hover-color: #004D35;
         }
 
-        nav ul li {
-            margin-right: 0;
-            margin-bottom: 0.5rem;
+        body {
+            font-family: 'Tahoma', 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: var(--background-color);
+            color: var(--text-color);
+            line-height: 1.6;
+            direction: ltr;
+            text-align: left;
         }
 
         header {
-            flex-direction: column;
-            align-items: flex-start;
+            background-color: var(--primary-color);
+            color: white;
+            text-align: left;
+            padding: 1rem 2rem;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        header h1 {
+            margin: 0;
+            font-size: 1.8rem;
         }
 
         .language-button {
-            margin-top: 1rem;
+            background-color: var(--secondary-color);
+            color: white;
+            border: none;
+            padding: 0.5rem 1rem;
+            border-radius: 4px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+            font-size: 0.9rem;
         }
-    }
-</style>
-<link rel="stylesheet" type="text/css" href="saudi_theme.css">
+
+        .language-button:hover {
+            background-color: #7A6440;
+        }
+
+        nav {
+            background-color: white;
+            padding: 0.5rem 2rem;
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        nav ul {
+            list-style-type: none;
+            padding: 0;
+            margin: 0;
+            display: flex;
+            justify-content: flex-start;
+        }
+
+        nav ul li {
+            margin-right: 2rem;
+        }
+
+        nav ul li a {
+            color: var(--text-color);
+            text-decoration: none;
+            font-weight: bold;
+            transition: color 0.3s ease;
+        }
+
+        nav ul li a:hover {
+            color: var(--primary-color);
+        }
+
+        main {
+            max-width: 1200px;
+            margin: 2rem auto;
+            padding: 0 2rem;
+            background-color: white;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+        }
+
+        .breadcrumb {
+            margin-bottom: 1.5rem;
+            font-size: 0.9rem;
+            padding: 1rem 0;
+        }
+
+        .breadcrumb a {
+            color: var(--primary-color);
+            text-decoration: none;
+        }
+
+        .breadcrumb span {
+            margin: 0 0.5rem;
+            color: var(--text-color);
+        }
+
+        h1, h2, h3 {
+            color: var(--primary-color);
+        }
+
+        h1 {
+            font-size: 2.5rem;
+            margin-bottom: 1.5rem;
+            border-bottom: 2px solid var(--secondary-color);
+            padding-bottom: 0.5rem;
+        }
+
+        h2 {
+            font-size: 1.8rem;
+            margin-top: 2rem;
+            margin-bottom: 1rem;
+        }
+
+        h3 {
+            font-size: 1.3rem;
+            margin-top: 1.5rem;
+            margin-bottom: 0.5rem;
+        }
+
+        p, ul, ol {
+            margin-bottom: 1rem;
+        }
+
+        ul, ol {
+            padding-left: 2rem;
+        }
+
+        .info-box {
+            background-color: #E6F3F0;
+            border-left: 4px solid var(--primary-color);
+            padding: 1rem;
+            margin: 1rem 0;
+            border-radius: 4px;
+        }
+
+        .warning-box {
+            background-color: #FFF3CD;
+            border-left: 4px solid #FFC107;
+            padding: 1rem;
+            margin: 1rem 0;
+            border-radius: 4px;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-bottom: 1rem;
+        }
+
+        th, td {
+            border: 1px solid var(--border-color);
+            padding: 0.75rem;
+            text-align: left;
+        }
+
+        th {
+            background-color: var(--primary-color);
+            color: white;
+        }
+
+        tr:nth-child(even) {
+            background-color: #f2f2f2;
+        }
+
+        @media (max-width: 768px) {
+            nav ul {
+                flex-direction: column;
+            }
+
+            nav ul li {
+                margin-right: 0;
+                margin-bottom: 0.5rem;
+            }
+
+            header {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+
+            .language-button {
+                margin-top: 1rem;
+            }
+        }
+    </style>
+    <link rel="stylesheet" type="text/css" href="saudi_theme.css">
 </head>
 <body>
     <header>
@@ -343,31 +345,83 @@
 
         <p>Looking ahead, the future of PFP in KSA is likely to evolve alongside the country's economic development. We may see more sophisticated systems emerge that incorporate AI and data analytics for performance evaluation, as well as a greater emphasis on long-term incentives aligned with the country's strategic goals. As the workforce becomes more diverse and specialized, PFP systems will need to remain flexible and adaptive to meet the changing needs of both employees and organizations in the Kingdom.</p>
     </main>
-
     <script>
         document.addEventListener('DOMContentLoaded', () => {
             const languageToggle = document.getElementById('languageToggle');
             let isEnglish = true;
-
+    
+            // Arabic content
+            const arabicContent = {
+                headerTitle: 'مركز المعرفة لموارد البشرية',
+                pageTitle: 'الدفع مقابل الأداء',
+                breadcrumbHome: 'الرئيسية',
+                breadcrumbKnowledgeBase: 'قاعدة المعرفة',
+                breadcrumbCompensation: 'التعويضات',
+                breadcrumbPayForPerformance: 'الدفع مقابل الأداء',
+                introText: 'الدفع مقابل الأداء (PFP) هو استراتيجية تعويضية تربط أجر الموظف بأدائه أو إنتاجيته. تهدف هذه المقاربة إلى تحفيز الموظفين، وزيادة الإنتاجية، ومواءمة الأهداف الفردية مع أهداف المنظمة. في المملكة العربية السعودية (KSA)، مع سعي الشركات لتعزيز الكفاءة والتنافسية بما يتماشى مع رؤية 2030، تزداد شعبية أنظمة الدفع مقابل الأداء. مع التحول نحو اقتصاد أكثر تنوعًا والتركيز على نمو القطاع الخاص، أصبحت إدارة الأداء الفعالة أمرًا حاسمًا للمنظمات التي تعمل في المملكة.',
+                keyComponentsTitle: 'المكونات الرئيسية للدفع مقابل الأداء',
+                typesTitle: 'أنواع أنظمة الدفع مقابل الأداء',
+                benefitsTitle: 'فوائد الدفع مقابل الأداء',
+                contextTitle: 'السياق السعودي',
+                implementingTitle: 'تنفيذ الدفع مقابل الأداء في المملكة',
+                conclusionTitle: 'الخاتمة',
+            };
+    
+            // English content
+            const englishContent = {
+                headerTitle: 'HR Knowledge Center',
+                pageTitle: 'Pay for Performance',
+                breadcrumbHome: 'Home',
+                breadcrumbKnowledgeBase: 'Knowledge Base',
+                breadcrumbCompensation: 'Compensation',
+                breadcrumbPayForPerformance: 'Pay for Performance',
+                introText: 'Pay for Performance (PFP) is a compensation strategy that links an employee\'s pay to their performance or productivity. This approach aims to motivate employees, increase productivity, and align individual goals with organizational objectives. In the Kingdom of Saudi Arabia (KSA), as businesses strive to enhance efficiency and competitiveness in line with Vision 2030, PFP systems are gaining popularity. The shift towards a more diversified economy and the emphasis on private sector growth have made effective performance management crucial for organizations operating in the Kingdom.',
+                keyComponentsTitle: 'Key Components of Pay for Performance',
+                typesTitle: 'Types of Pay for Performance Systems',
+                benefitsTitle: 'Benefits of Pay for Performance',
+                contextTitle: 'KSA Context',
+                implementingTitle: 'Implementing Pay for Performance in KSA',
+                conclusionTitle: 'Conclusion',
+            };
+    
+            // Function to update content based on language selection
+            function updateContent(language) {
+                const content = language === 'ar' ? arabicContent : englishContent;
+    
+                // Update header and main content
+                document.querySelector('header h1').textContent = content.headerTitle;
+                document.querySelector('main h1').textContent = content.pageTitle;
+                document.querySelector('.breadcrumb a[href="home"]').textContent = content.breadcrumbHome;
+                document.querySelector('.breadcrumb a[href="knowledge-base"]').textContent = content.breadcrumbKnowledgeBase;
+                document.querySelector('.breadcrumb a[href="knowledge-base/compensation"]').textContent = content.breadcrumbCompensation;
+                document.querySelector('.breadcrumb span:last-child').textContent = content.breadcrumbPayForPerformance;
+    
+                // Update introduction text
+                document.querySelector('main p').textContent = content.introText;
+    
+                // Update section titles
+                document.querySelectorAll('main h2')[0].textContent = content.keyComponentsTitle;
+                document.querySelectorAll('main h2')[1].textContent = content.typesTitle;
+                document.querySelectorAll('main h2')[2].textContent = content.benefitsTitle;
+                document.querySelector('main .info-box h3').textContent = content.contextTitle;
+                document.querySelectorAll('main h2')[3].textContent = content.implementingTitle;
+                document.querySelector('main h2:last-child').textContent = content.conclusionTitle;
+            }
+    
+            // Event listener for language toggle
             languageToggle.addEventListener('click', () => {
                 if (isEnglish) {
                     // Switch to Arabic
                     document.body.style.direction = 'rtl';
                     document.body.style.textAlign = 'right';
                     languageToggle.textContent = 'English';
-                    // Update content to Arabic (this is a simplified example)
-                    document.querySelector('header h1').textContent = 'مركز المعرفة لموارد البشرية';
-                    document.querySelector('main h1').textContent = 'الدفع مقابل الأداء';
-                    // Update other elements as needed
+                    updateContent('ar');
                 } else {
                     // Switch to English
                     document.body.style.direction = 'ltr';
                     document.body.style.textAlign = 'left';
                     languageToggle.textContent = 'عربي';
-                    // Update content to English
-                    document.querySelector('header h1').textContent = 'HR Knowledge Center';
-                    document.querySelector('main h1').textContent = 'Pay for Performance';
-                    // Update other elements as needed
+                    updateContent('en');
                 }
                 isEnglish = !isEnglish;
             });
