@@ -1,535 +1,530 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" dir="ltr">
 <head>
-    <base href="https://hrinsightsksa.com/">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>HR Insights KSA - Leading HR Excellence in Saudi Arabia</title>
-    <meta name="description" content="HRInsights KSA - Your premier destination for HR excellence in Saudi Arabia. Access cutting-edge resources, networking, and professional development opportunities.">
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Tajawal:wght@400;500;700&display=swap" rel="stylesheet">
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/2.2.19/tailwind.min.css" rel="stylesheet">
+    <title>HR Insights KSA - Empowering Saudi Arabia's HR Professionals</title>
+    <meta name="description" content="HRInsights KSA is the premier platform for HR professionals in Saudi Arabia, offering expert insights, resources, and networking opportunities.">
+    
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&family=Tajawal:wght@400;700&display=swap" rel="stylesheet">
+    
+    <!-- Tailwind CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    
+    <!-- Font Awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/alpinejs/2.3.0/alpine.js" defer></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.7.0/chart.min.js"></script>
+    
+    <!-- Alpine.js -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/alpinejs/3.10.3/cdn.min.js" defer></script>
+    
+    <!-- GSAP -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.9.1/gsap.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.9.1/ScrollTrigger.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.9.1/ScrollToPlugin.min.js"></script>
+    
+    <!-- Custom Styles -->
     <style>
         :root {
-            --primary-color: #0a4d68;
-            --secondary-color: #088395;
-            --accent-color: #05bfdb;
-            --highlight-color: #00ffca;
-            --text-color: #2d3748;
-            --bg-color: #f8fafc;
-            --gradient-primary: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 100%);
-            --gradient-accent: linear-gradient(135deg, var(--accent-color) 0%, var(--highlight-color) 100%);
+            --primary-color: #00843D;
+            --secondary-color: #8CC63F;
+            --accent-color: #FFC72C;
+            --text-color: #333;
+            --bg-color: #F4F4F4;
+            --header-height: 80px;
         }
         
         body {
-            font-family: 'Inter', 'Tajawal', sans-serif;
-            background: var(--bg-color);
+            font-family: 'Poppins', 'Tajawal', Arial, sans-serif;
+            background-color: var(--bg-color);
             color: var(--text-color);
             overflow-x: hidden;
         }
-
-        /* Enhanced Header Styles */
-        header {
-            background: transparent;
-            transition: all 0.4s ease;
+        
+        /* Smooth Scroll Behavior */
+        html {
+            scroll-behavior: smooth;
         }
-
-        header.scrolled {
-            background: rgba(10, 77, 104, 0.95);
-            backdrop-filter: blur(10px);
-            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+        
+        /* Custom Scrollbar */
+        ::-webkit-scrollbar {
+            width: 8px;
         }
-
-        .nav-link {
-            position: relative;
-            padding: 0.5rem 1rem;
-            transition: all 0.3s ease;
+        ::-webkit-scrollbar-track {
+            background: #f1f1f1; 
         }
-
-        .nav-link::after {
-            content: '';
-            position: absolute;
-            width: 0;
-            height: 2px;
-            bottom: -2px;
-            left: 50%;
-            background: var(--highlight-color);
-            transition: all 0.3s ease;
+        ::-webkit-scrollbar-thumb {
+            background: var(--primary-color); 
+            border-radius: 4px;
         }
-
-        .nav-link:hover::after {
-            width: 100%;
-            left: 0;
-        }
-
-        /* Hero Section Styles */
-        .hero {
-            background: var(--gradient-primary);
-            min-height: 100vh;
-            position: relative;
-            overflow: hidden;
-        }
-
-        .hero-pattern {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background-image: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.05'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
-            animation: patternMove 60s linear infinite;
-        }
-
-        @keyframes patternMove {
-            0% { transform: translate(0, 0); }
-            100% { transform: translate(-50%, -50%); }
-        }
-
-        /* Feature Cards */
-        .feature-card {
-            background: white;
-            border-radius: 1rem;
-            padding: 2rem;
-            transition: all 0.4s ease;
-            position: relative;
-            overflow: hidden;
-            border: 1px solid rgba(255, 255, 255, 0.1);
-        }
-
-        .feature-card::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: var(--gradient-accent);
-            opacity: 0;
-            transition: all 0.4s ease;
-            z-index: 0;
-        }
-
-        .feature-card:hover {
-            transform: translateY(-10px) scale(1.02);
-            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
-        }
-
-        .feature-card:hover::before {
-            opacity: 0.05;
-        }
-
-        /* Stats Section */
-        .stats-section {
-            background: var(--gradient-primary);
-            position: relative;
-        }
-
-        .stat-card {
-            background: rgba(255, 255, 255, 0.1);
-            backdrop-filter: blur(10px);
-            border-radius: 1rem;
-            padding: 2rem;
-            transition: all 0.3s ease;
-            border: 1px solid rgba(255, 255, 255, 0.2);
-        }
-
-        .stat-card:hover {
-            transform: translateY(-5px);
-            background: rgba(255, 255, 255, 0.15);
-        }
-
-        /* Testimonials */
-        .testimonial-card {
-            background: white;
-            border-radius: 1rem;
-            padding: 2.5rem;
-            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
-            transition: all 0.4s ease;
-            opacity: 0;
-            transform: translateY(20px);
-        }
-
-        .testimonial-card.active {
-            opacity: 1;
-            transform: translateY(0);
-        }
-
-        /* Contact Form */
-        .contact-form {
-            background: white;
-            border-radius: 1rem;
-            padding: 2.5rem;
-            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
-        }
-
-        .input-field {
-            width: 100%;
-            padding: 0.75rem 1rem;
-            border: 2px solid #e2e8f0;
-            border-radius: 0.5rem;
-            transition: all 0.3s ease;
-            background: #f8fafc;
-        }
-
-        .input-field:focus {
-            border-color: var(--accent-color);
-            box-shadow: 0 0 0 3px rgba(5, 191, 219, 0.1);
-            outline: none;
-        }
-
-        /* Buttons */
-        .btn-primary {
-            background: var(--gradient-accent);
-            color: var(--primary-color);
-            font-weight: 600;
-            padding: 1rem 2rem;
-            border-radius: 0.5rem;
-            transition: all 0.3s ease;
-            position: relative;
-            overflow: hidden;
-        }
-
-        .btn-primary:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 4px 20px rgba(5, 191, 219, 0.2);
-        }
-
-        /* Categories Grid */
-        .category-card {
-            background: white;
-            border-radius: 1rem;
-            padding: 2rem;
-            transition: all 0.4s ease;
-            position: relative;
-            overflow: hidden;
-        }
-
-        .category-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
-        }
-
-        /* Footer */
-        .footer {
-            background: var(--primary-color);
-            color: white;
-        }
-
-        .social-link {
-            width: 40px;
-            height: 40px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            border-radius: 50%;
-            background: rgba(255, 255, 255, 0.1);
-            transition: all 0.3s ease;
-        }
-
-        .social-link:hover {
-            background: var(--accent-color);
-            transform: translateY(-2px) scale(1.1);
-        }
-
-        /* Responsive Design */
-        @media (max-width: 768px) {
-            .nav-menu {
-                display: none;
-            }
-            
-            .nav-menu.active {
-                display: block;
-                position: absolute;
-                top: 100%;
-                left: 0;
-                right: 0;
-                background: var(--primary-color);
-                padding: 1rem;
-            }
+        ::-webkit-scrollbar-thumb:hover {
+            background: var(--secondary-color); 
         }
     </style>
 </head>
-<body>
-    <header id="header" x-data="{ isOpen: false }" class="fixed w-full z-50">
-        <nav class="container mx-auto px-6 py-4">
-            <div class="flex items-center justify-between">
-                <div class="text-2xl font-bold text-white flex items-center">
-                    <i class="fas fa-brain mr-2"></i>
-                    HR Insights KSA
-                </div>
-                <div class="hidden md:flex space-x-8">
-                    <a href="#home" class="nav-link text-white">Home</a>
-                    <a href="#features" class="nav-link text-white">Features</a>
-                    <a href="#categories" class="nav-link text-white">Categories</a>
-                    <a href="#stats" class="nav-link text-white">Impact</a>
-                    <a href="#testimonials" class="nav-link text-white">Testimonials</a>
-                    <a href="#contact" class="nav-link text-white">Contact</a>
-                </div>
-                <button @click="isOpen = !isOpen" class="md:hidden text-white">
-                    <i class="fas fa-bars text-xl"></i>
+<body class="relative">
+    <!-- Header -->
+    <header x-data="{ isOpen: false }" class="fixed w-full bg-white shadow-md z-50 transition-all duration-300" :class="{ 'bg-white shadow-lg': scrolled }" @scroll.window="scrolled = window.scrollY > 50">
+        <nav class="container mx-auto flex justify-between items-center p-4">
+            <a href="#" class="text-2xl font-bold text-primary-color">HR Insights KSA</a>
+            <ul class="hidden md:flex space-x-6">
+                <li><a href="#home" class="hover:text-accent-color transition">Home</a></li>
+                <li><a href="#features" class="hover:text-accent-color transition">Features</a></li>
+                <li><a href="#categories" class="hover:text-accent-color transition">Categories</a></li>
+                <li><a href="#stats" class="hover:text-accent-color transition">Stats</a></li>
+                <li><a href="#testimonials" class="hover:text-accent-color transition">Testimonials</a></li>
+                <li><a href="#contact" class="hover:text-accent-color transition">Contact</a></li>
+            </ul>
+            <div class="hidden md:flex items-center space-x-4">
+                <select class="border border-gray-300 rounded px-2 py-1 focus:outline-none focus:ring-2 focus:ring-primary-color">
+                    <option>English</option>
+                    <option>العربية</option>
+                </select>
+                <button class="px-4 py-2 border border-primary-color text-primary-color rounded hover:bg-primary-color hover:text-white transition">Login</button>
+                <button class="px-4 py-2 bg-primary-color text-white rounded hover:bg-secondary-color transition">Sign Up</button>
+            </div>
+            <!-- Mobile Menu Button -->
+            <div class="md:hidden flex items-center">
+                <button @click="isOpen = !isOpen" class="text-primary-color focus:outline-none">
+                    <i :class="isOpen ? 'fas fa-times' : 'fas fa-bars'" class="text-2xl"></i>
                 </button>
             </div>
-            <div x-show="isOpen" class="md:hidden mt-4">
-                <!-- Mobile menu items -->
-                <a href="#home" class="block text-white py-2">Home</a>
-                <a href="#features" class="block text-white py-2">Features</a>
-                <a href="#categories" class="block text-white py-2">Categories</a>
-                <a href="#stats" class="block text-white py-2">Impact</a>
-                <a href="#testimonials" class="block text-white py-2">Testimonials</a>
-                <a href="#contact" class="block text-white py-2">Contact</a>
-            </div>
         </nav>
+        <!-- Mobile Menu -->
+        <div x-show="isOpen" @click.away="isOpen = false" class="md:hidden bg-white shadow-lg">
+            <ul class="flex flex-col space-y-4 p-4">
+                <li><a href="#home" class="block hover:text-accent-color transition">Home</a></li>
+                <li><a href="#features" class="block hover:text-accent-color transition">Features</a></li>
+                <li><a href="#categories" class="block hover:text-accent-color transition">Categories</a></li>
+                <li><a href="#stats" class="block hover:text-accent-color transition">Stats</a></li>
+                <li><a href="#testimonials" class="block hover:text-accent-color transition">Testimonials</a></li>
+                <li><a href="#contact" class="block hover:text-accent-color transition">Contact</a></li>
+                <li>
+                    <select class="w-full border border-gray-300 rounded px-2 py-1 focus:outline-none focus:ring-2 focus:ring-primary-color">
+                        <option>English</option>
+                        <option>العربية</option>
+                    </select>
+                </li>
+                <li>
+                    <button class="w-full px-4 py-2 border border-primary-color text-primary-color rounded hover:bg-primary-color hover:text-white transition">Login</button>
+                </li>
+                <li>
+                    <button class="w-full px-4 py-2 bg-primary-color text-white rounded hover:bg-secondary-color transition">Sign Up</button>
+                </li>
+            </ul>
+        </div>
     </header>
-
-    <main>
-        <section id="home" class="hero flex items-center justify-center text-white">
-            <div class="hero-pattern"></div>
-            <div class="container mx-auto px-6 text-center relative z-10">
-                <h1 class="text-5xl md:text-7xl font-bold mb-8 leading-tight">
-                    Transforming HR in 
-                    <span class="text-highlight-color">Saudi Arabia</span>
-                </h1>
-                <p class="text-xl md:text-2xl mb-12 max-w-3xl mx-auto opacity-90">
-                    Empowering HR professionals with cutting-edge insights, resources, and a thriving community for success in the modern workplace.
-                </p>
-                <div class="flex flex-col md:flex-row gap-4 justify-center">
-                    <a href="#features" class="btn-primary">
-                        Explore Features
-                        <i class="fas fa-arrow-right ml-2"></i>
-                    </a>
-                    <a href="#contact" class="btn-secondary">
-                        Join Community
-                        <i class="fas fa-users ml-2"></i>
-                    </a>
+    
+    <!-- Hero Section -->
+    <section id="home" class="relative bg-cover bg-center h-screen flex items-center justify-center" style="background-image: url('https://images.unsplash.com/photo-1519337265831-281ec6cc8514?ixlib=rb-4.0.3&auto=format&fit=crop&w=1950&q=80');">
+        <div class="absolute inset-0 bg-black opacity-50"></div>
+        <div class="relative text-center text-white px-4">
+            <h1 class="text-4xl md:text-6xl font-bold mb-4 animate-fade-in-up">Empowering HR Professionals in Saudi Arabia</h1>
+            <p class="text-lg md:text-2xl mb-6 animate-fade-in-up delay-200">Join the premier platform for HR insights, collaboration, and career growth in the Kingdom</p>
+            <div class="space-x-4 animate-fade-in-up delay-400">
+                <a href="#features" class="px-6 py-3 bg-accent-color text-gray-800 font-semibold rounded-lg shadow-md hover:bg-yellow-400 transition">Explore Features</a>
+                <a href="#signup" class="px-6 py-3 border border-accent-color text-accent-color font-semibold rounded-lg shadow-md hover:bg-accent-color hover:text-gray-800 transition">Get Started</a>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Features Section -->
+    <section id="features" class="py-20 bg-gray-100">
+        <div class="container mx-auto px-6">
+            <h2 class="text-3xl md:text-4xl font-bold text-center mb-12">Our Features</h2>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <!-- Feature 1 -->
+                <div class="bg-white p-6 rounded-lg shadow-md hover:shadow-xl transition transform hover:-translate-y-2">
+                    <div class="text-4xl text-secondary-color mb-4">
+                        <i class="fas fa-book"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-2">Knowledge Hub</h3>
+                    <p>Access a vast library of HR resources tailored to the Saudi market.</p>
+                </div>
+                <!-- Feature 2 -->
+                <div class="bg-white p-6 rounded-lg shadow-md hover:shadow-xl transition transform hover:-translate-y-2">
+                    <div class="text-4xl text-secondary-color mb-4">
+                        <i class="fas fa-users"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-2">Community Forum</h3>
+                    <p>Connect with fellow HR professionals and share insights.</p>
+                </div>
+                <!-- Feature 3 -->
+                <div class="bg-white p-6 rounded-lg shadow-md hover:shadow-xl transition transform hover:-translate-y-2">
+                    <div class="text-4xl text-secondary-color mb-4">
+                        <i class="fas fa-chart-line"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-2">HR Analytics</h3>
+                    <p>Leverage data-driven insights for strategic decision-making.</p>
+                </div>
+                <!-- Feature 4 -->
+                <div class="bg-white p-6 rounded-lg shadow-md hover:shadow-xl transition transform hover:-translate-y-2">
+                    <div class="text-4xl text-secondary-color mb-4">
+                        <i class="fas fa-briefcase"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-2">Career Development</h3>
+                    <p>Enhance your skills with our specialized training programs.</p>
+                </div>
+                <!-- Feature 5 -->
+                <div class="bg-white p-6 rounded-lg shadow-md hover:shadow-xl transition transform hover:-translate-y-2">
+                    <div class="text-4xl text-secondary-color mb-4">
+                        <i class="fas fa-calendar-alt"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-2">Events & Webinars</h3>
+                    <p>Stay updated with the latest HR trends and networking opportunities.</p>
+                </div>
+                <!-- Feature 6 -->
+                <div class="bg-white p-6 rounded-lg shadow-md hover:shadow-xl transition transform hover:-translate-y-2">
+                    <div class="text-4xl text-secondary-color mb-4">
+                        <i class="fas fa-search-dollar"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-2">Job Board</h3>
+                    <p>Find and post HR opportunities across the Kingdom.</p>
                 </div>
             </div>
-        </section>
-
-        <section id="features" class="py-20 px-6 bg-white">
-            <div class="container mx-auto">
-                <h2 class="text-4xl font-bold text-center mb-4">Innovative Features</h2>
-                <p class="text-xl text-gray-600 text-center mb-16 max-w-2xl mx-auto">
-                    Discover our comprehensive suite of tools and resources designed to elevate your HR practice
-                </p>
-                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-                    <div class="feature-card">
-                        <div class="text-3xl text-accent-color mb-6">
-                            <i class="fas fa-brain"></i>
-                        </div>
-                        <h3 class="text-xl font-bold mb-4">AI-Powered Insights</h3>
-                        <p class="text-gray-600">Leverage advanced analytics and AI to make data-driven HR decisions</p>
-                    </div>
-                    <div class="feature-card">
-                        <div class="text-3xl text-accent-color mb-6">
-                            <i class="fas fa-users"></i>
-                        </div>
-                        <h3 class="text-xl font-bold mb-4">Community Hub</h3>
-                        <p class="text-gray-600">Connect with fellow HR professionals and share valuable insights</p>
-                    </div>
-                    <div class="feature-card">
-                        <div class="text-3xl text-accent-color mb-6">
-                            <i class="fas fa-graduation-cap"></i>
-                        </div>
-                        <h3 class="text-xl font-bold mb-4">Learning Portal</h3>
-                        <p class="text-gray-600">Access curated courses and certifications for professional growth</p>
-                    </div>
+        </div>
+    </section>
+    
+    <!-- Marketing Highlights Section -->
+    <section class="py-16 bg-white">
+        <div class="container mx-auto px-6">
+            <div class="max-w-4xl mx-auto text-center">
+                <h2 class="text-3xl md:text-4xl font-bold mb-6">Why Choose HRInsights KSA?</h2>
+                <ul class="text-lg space-y-4">
+                    <li class="flex items-center justify-center">
+                        <span class="text-primary-color text-2xl mr-3"><i class="fas fa-check-circle"></i></span>
+                        Tailored for KSA's unique HR professionals
+                    </li>
+                    <li class="flex items-center justify-center">
+                        <span class="text-primary-color text-2xl mr-3"><i class="fas fa-check-circle"></i></span>
+                        Alignment with Vision 2030 goals
+                    </li>
+                    <li class="flex items-center justify-center">
+                        <span class="text-primary-color text-2xl mr-3"><i class="fas fa-check-circle"></i></span>
+                        Expert-curated content and resources
+                    </li>
+                    <li class="flex items-center justify-center">
+                        <span class="text-primary-color text-2xl mr-3"><i class="fas fa-check-circle"></i></span>
+                        Bilingual support (English & العربية)
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Categories Section -->
+    <section id="categories" class="py-20 bg-gray-100">
+        <div class="container mx-auto px-6">
+            <h2 class="text-3xl md:text-4xl font-bold text-center mb-12">Explore HR Categories</h2>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <!-- Category 1 -->
+                <div class="bg-white p-6 rounded-lg shadow-md hover:shadow-xl transition transform hover:-translate-y-2 text-center">
+                    <i class="fas fa-user-plus text-4xl text-secondary-color mb-4"></i>
+                    <h3 class="text-xl font-semibold mb-2">Recruitment</h3>
+                    <p>Streamline your hiring process with our advanced recruitment tools.</p>
+                </div>
+                <!-- Category 2 -->
+                <div class="bg-white p-6 rounded-lg shadow-md hover:shadow-xl transition transform hover:-translate-y-2 text-center">
+                    <i class="fas fa-chalkboard-teacher text-4xl text-secondary-color mb-4"></i>
+                    <h3 class="text-xl font-semibold mb-2">Training & Development</h3>
+                    <p>Enhance your team's skills with our comprehensive training programs.</p>
+                </div>
+                <!-- Category 3 -->
+                <div class="bg-white p-6 rounded-lg shadow-md hover:shadow-xl transition transform hover:-translate-y-2 text-center">
+                    <i class="fas fa-money-bill-wave text-4xl text-secondary-color mb-4"></i>
+                    <h3 class="text-xl font-semibold mb-2">Compensation & Benefits</h3>
+                    <p>Optimize your compensation strategies with our expert insights.</p>
+                </div>
+                <!-- Category 4 -->
+                <div class="bg-white p-6 rounded-lg shadow-md hover:shadow-xl transition transform hover:-translate-y-2 text-center">
+                    <i class="fas fa-chart-line text-4xl text-secondary-color mb-4"></i>
+                    <h3 class="text-xl font-semibold mb-2">Performance Management</h3>
+                    <p>Improve employee performance with our effective management tools.</p>
+                </div>
+                <!-- Category 5 -->
+                <div class="bg-white p-6 rounded-lg shadow-md hover:shadow-xl transition transform hover:-translate-y-2 text-center">
+                    <i class="fas fa-balance-scale text-4xl text-secondary-color mb-4"></i>
+                    <h3 class="text-xl font-semibold mb-2">Legal & Compliance</h3>
+                    <p>Ensure your HR practices comply with the latest regulations.</p>
+                </div>
+                <!-- Category 6 -->
+                <div class="bg-white p-6 rounded-lg shadow-md hover:shadow-xl transition transform hover:-translate-y-2 text-center">
+                    <i class="fas fa-users text-4xl text-secondary-color mb-4"></i>
+                    <h3 class="text-xl font-semibold mb-2">Company Culture</h3>
+                    <p>Build a positive and productive workplace culture with our guidance.</p>
                 </div>
             </div>
-        </section>
-
-        <section id="categories" class="py-20 px-6 bg-gray-50">
-            <div class="container mx-auto">
-                <h2 class="text-4xl font-bold text-center mb-4">HR Categories</h2>
-                <p class="text-xl text-gray-600 text-center mb-16 max-w-2xl mx-auto">Explore specialized resources across key HR domains</p>
-                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-                    <div class="category-card">
-                        <div class="text-3xl text-accent-color mb-6">
-                            <i class="fas fa-user-plus"></i>
-                        </div>
-                        <h3 class="text-xl font-bold mb-4">Talent Acquisition</h3>
-                        <p class="text-gray-600">Modern recruitment strategies and tools</p>
-                        <a href="#" class="inline-block mt-4 text-secondary-color hover:text-accent-color transition-colors">Learn More<i class="fas fa-arrow-right ml-1"></i></a>
-                    </div>
-                    <div class="category-card">
-                        <div class="text-3xl text-accent-color mb-6">
-                            <i class="fas fa-chart-line"></i>
-                        </div>
-                        <h3 class="text-xl font-bold mb-4">Performance Management</h3>
-                        <p class="text-gray-600">Employee evaluation and development frameworks</p>
-                        <a href="#" class="inline-block mt-4 text-secondary-color hover:text-accent-color transition-colors">Learn More<i class="fas fa-arrow-right ml-1"></i></a>
-                    </div>
-                    <div class="category-card">
-                        <div class="text-3xl text-accent-color mb-6">
-                            <i class="fas fa-money-bill-wave"></i>
-                        </div>
-                        <h3 class="text-xl font-bold mb-4">Compensation & Benefits</h3>
-                        <p class="text-gray-600">Competitive reward strategies and packages</p>
-                        <a href="#" class="inline-block mt-4 text-secondary-color hover:text-accent-color transition-colors">Learn More<i class="fas fa-arrow-right ml-1"></i></a>
-                    </div>
+        </div>
+    </section>
+    
+    <!-- Stats Section -->
+    <section id="stats" class="py-20 bg-primary-color text-white">
+        <div class="container mx-auto px-6">
+            <h2 class="text-3xl md:text-4xl font-bold text-center mb-12">HR Insights KSA in Numbers</h2>
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+                <div class="text-center">
+                    <div class="text-4xl font-bold mb-2" id="members-count">0</div>
+                    <p>Active Members</p>
+                </div>
+                <div class="text-center">
+                    <div class="text-4xl font-bold mb-2" id="resources-count">0</div>
+                    <p>HR Resources</p>
+                </div>
+                <div class="text-center">
+                    <div class="text-4xl font-bold mb-2" id="events-count">0</div>
+                    <p>Annual Events</p>
+                </div>
+                <div class="text-center">
+                    <div class="text-4xl font-bold mb-2" id="jobs-count">0</div>
+                    <p>Job Opportunities</p>
                 </div>
             </div>
-        </section>
-
-        <section id="stats" class="stats-section py-20 px-6 text-white">
-            <div class="container mx-auto">
-                <h2 class="text-4xl font-bold text-center mb-16">Our Impact</h2>
-                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-                    <div class="stat-card">
-                        <div class="text-4xl font-bold mb-2" id="members-count">0</div>
-                        <div class="text-lg opacity-90">Active Members</div>
-                    </div>
-                    <div class="stat-card">
-                        <div class="text-4xl font-bold mb-2" id="resources-count">0</div>
-                        <div class="text-lg opacity-90">HR Resources</div>
-                    </div>
-                    <div class="stat-card">
-                        <div class="text-4xl font-bold mb-2" id="events-count">0</div>
-                        <div class="text-lg opacity-90">Annual Events</div>
-                    </div>
-                    <div class="stat-card">
-                        <div class="text-4xl font-bold mb-2" id="jobs-count">0</div>
-                        <div class="text-lg opacity-90">Job Opportunities</div>
-                    </div>
+        </div>
+    </section>
+    
+    <!-- Testimonials Section -->
+    <section id="testimonials" class="py-20 bg-white">
+        <div class="container mx-auto px-6">
+            <h2 class="text-3xl md:text-4xl font-bold text-center mb-12">What Our Members Say</h2>
+            <div class="testimonial-slider relative">
+                <!-- Testimonial 1 -->
+                <div class="testimonial active text-center px-6">
+                    <p class="text-xl italic mb-4">"HR Insights KSA has revolutionized the way I approach HR in Saudi Arabia. The resources and community support are invaluable."</p>
+                    <p class="font-semibold">- Fatima Al-Saud, HR Director</p>
+                </div>
+                <!-- Testimonial 2 -->
+                <div class="testimonial text-center px-6">
+                    <p class="text-xl italic mb-4">"The platform's focus on localized content has helped me navigate the unique challenges of HR in the Kingdom with confidence."</p>
+                    <p class="font-semibold">- Ahmed Al-Ghamdi, HR Manager</p>
+                </div>
+                <!-- Testimonial 3 -->
+                <div class="testimonial text-center px-6">
+                    <p class="text-xl italic mb-4">"From networking opportunities to cutting-edge insights, HR Insights KSA has been instrumental in advancing my career."</p>
+                    <p class="font-semibold">- Noura Al-Zahrani, Talent Acquisition Specialist</p>
                 </div>
             </div>
-        </section>
-
-        <section id="testimonials" class="py-20 px-6 bg-white">
-            <div class="container mx-auto">
-                <h2 class="text-4xl font-bold text-center mb-4">Success Stories</h2>
-                <p class="text-xl text-gray-600 text-center mb-16 max-w-2xl mx-auto">Hear from our community members</p>
-                <div class="testimonial-slider max-w-4xl mx-auto">
-                    <div class="testimonial-card active">
+            <!-- Dots -->
+            <div class="flex justify-center mt-6 space-x-3">
+                <button class="dot w-3 h-3 bg-gray-400 rounded-full focus:outline-none" data-index="0"></button>
+                <button class="dot w-3 h-3 bg-gray-400 rounded-full focus:outline-none" data-index="1"></button>
+                <button class="dot w-3 h-3 bg-gray-400 rounded-full focus:outline-none" data-index="2"></button>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Job Board Section -->
+    <section id="job-board" class="py-20 bg-gray-100">
+        <div class="container mx-auto px-6">
+            <h2 class="text-3xl md:text-4xl font-bold text-center mb-12">HR Job Board</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                <!-- Latest Job Openings -->
+                <div class="bg-white p-6 rounded-lg shadow-md">
+                    <h3 class="text-2xl font-semibold mb-6">Latest Job Openings</h3>
+                    <ul class="space-y-6">
+                        <li class="border-b pb-4">
+                            <h4 class="text-lg font-semibold text-primary-color">Senior HR Manager</h4>
+                            <p class="text-gray-600 mb-2">TechCorp Inc. • Riyadh, Saudi Arabia</p>
+                            <p class="text-gray-700 mb-2">Lead HR initiatives for a rapidly growing tech company. 7+ years of experience required.</p>
+                            <a href="#job-details" class="text-primary-color hover:text-secondary-color font-semibold">View Details &rarr;</a>
+                        </li>
+                        <li class="border-b pb-4">
+                            <h4 class="text-lg font-semibold text-primary-color">Talent Acquisition Specialist</h4>
+                            <p class="text-gray-600 mb-2">Global Enterprises • Jeddah, Saudi Arabia</p>
+                            <p class="text-gray-700 mb-2">Drive recruitment efforts for a multinational corporation. Strong networking skills required.</p>
+                            <a href="#job-details" class="text-primary-color hover:text-secondary-color font-semibold">View Details &rarr;</a>
+                        </li>
+                    </ul>
+                    <div class="mt-6 text-center">
+                        <a href="#job-board" class="px-6 py-3 bg-primary-color text-white font-semibold rounded-lg shadow-md hover:bg-secondary-color transition">View All Jobs</a>
+                    </div>
+                </div>
+                <!-- Post a Job -->
+                <div class="bg-white p-6 rounded-lg shadow-md">
+                    <h3 class="text-2xl font-semibold mb-6">Post a Job</h3>
+                    <form>
+                        <div class="mb-4">
+                            <label for="job-title" class="block text-gray-700 font-bold mb-2">Job Title</label>
+                            <input type="text" id="job-title" name="job-title" class="w-full border border-gray-300 rounded px-3 py-2 focus:outline-none focus:ring-2 focus:ring-primary-color" placeholder="Enter job title" required>
+                        </div>
+                        <div class="mb-4">
+                            <label for="company-name" class="block text-gray-700 font-bold mb-2">Company</label>
+                            <input type="text" id="company-name" name="company-name" class="w-full border border-gray-300 rounded px-3 py-2 focus:outline-none focus:ring-2 focus:ring-primary-color" placeholder="Enter company name" required>
+                        </div>
+                        <div class="mb-4">
+                            <label for="job-location" class="block text-gray-700 font-bold mb-2">Location</label>
+                            <input type="text" id="job-location" name="job-location" class="w-full border border-gray-300 rounded px-3 py-2 focus:outline-none focus:ring-2 focus:ring-primary-color" placeholder="Enter job location" required>
+                        </div>
                         <div class="mb-6">
-                            <i class="fas fa-quote-left text-4xl text-accent-color opacity-50"></i>
+                            <label for="job-description" class="block text-gray-700 font-bold mb-2">Job Description</label>
+                            <textarea id="job-description" name="job-description" rows="4" class="w-full border border-gray-300 rounded px-3 py-2 focus:outline-none focus:ring-2 focus:ring-primary-color" placeholder="Enter job description" required></textarea>
                         </div>
-                        <p class="text-xl mb-6">"HR Insights KSA has revolutionized how we approach talent management. The AI-powered insights have been game-changing for our organization."</p>
-                        <div class="flex items-center">
-                            <img src="/api/placeholder/60/60" alt="Sarah Al-Rashid" class="w-12 h-12 rounded-full mr-4">
-                            <div>
-                                <div class="font-bold">Sarah Al-Rashid</div>
-                                <div class="text-gray-600">HR Director, Tech Innovation Co.</div>
-                            </div>
-                        </div>
-                    </div>
+                        <button type="submit" class="w-full bg-primary-color text-white font-semibold px-4 py-2 rounded-lg shadow-md hover:bg-secondary-color transition">Post Job</button>
+                    </form>
                 </div>
             </div>
-        </section>
-
-        <section id="contact" class="py-20 px-6 bg-gray-50">
-            <div class="container mx-auto">
-                <div class="max-w-4xl mx-auto">
-                    <h2 class="text-4xl font-bold text-center mb-4">Get in Touch</h2>
-                    <p class="text-xl text-gray-600 text-center mb-16 max-w-2xl mx-auto">Have questions? We'd love to hear from you</p>
-                    <div class="contact-form">
-                        <form id="contactForm" class="grid grid-cols-1 md:grid-cols-2 gap-6">
-                            <div class="md:col-span-1">
-                                <label class="block text-sm font-medium text-gray-700 mb-2">First Name</label>
-                                <input type="text" class="input-field" required>
-                            </div>
-                            <div class="md:col-span-1">
-                                <label class="block text-sm font-medium text-gray-700 mb-2">Last Name</label>
-                                <input type="text" class="input-field" required>
-                            </div>
-                            <div class="md:col-span-2">
-                                <label class="block text-sm font-medium text-gray-700 mb-2">Email</label>
-                                <input type="email" class="input-field" required>
-                            </div>
-                            <div class="md:col-span-2">
-                                <label class="block text-sm font-medium text-gray-700 mb-2">Message</label>
-                                <textarea class="input-field" rows="4" required></textarea>
-                            </div>
-                            <div class="md:col-span-2">
-                                <button type="submit" class="btn-primary w-full">Send Message<i class="fas fa-paper-plane ml-2"></i></button>
-                            </div>
-                        </form>
-                    </div>
+        </div>
+    </section>
+    
+    <!-- Events Section -->
+    <section id="events" class="py-20 bg-white">
+        <div class="container mx-auto px-6">
+            <h2 class="text-3xl md:text-4xl font-bold text-center mb-12">Upcoming Events</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                <!-- Event 1 -->
+                <div class="bg-gray-100 p-6 rounded-lg shadow-md hover:shadow-xl transition transform hover:-translate-y-2">
+                    <h3 class="text-xl font-semibold mb-2 text-primary-color">Employee Engagement in the Digital Age</h3>
+                    <p class="text-gray-600 mb-4">Date: May 15, 2024 | Time: 2:00 PM AST</p>
+                    <p class="mb-4">Learn strategies to boost employee engagement in remote and hybrid work environments.</p>
+                    <a href="#register" class="inline-block px-4 py-2 bg-primary-color text-white rounded-lg shadow-md hover:bg-secondary-color transition">Register Now</a>
+                </div>
+                <!-- Event 2 -->
+                <div class="bg-gray-100 p-6 rounded-lg shadow-md hover:shadow-xl transition transform hover:-translate-y-2">
+                    <h3 class="text-xl font-semibold mb-2 text-primary-color">HR Analytics: Turning Data into Insights</h3>
+                    <p class="text-gray-600 mb-4">Date: June 2, 2024 | Time: 11:00 AM AST</p>
+                    <p class="mb-4">Discover how to leverage HR data to make informed decisions and drive organizational success.</p>
+                    <a href="#register" class="inline-block px-4 py-2 bg-primary-color text-white rounded-lg shadow-md hover:bg-secondary-color transition">Register Now</a>
                 </div>
             </div>
-        </section>
-    </main>
-
-    <footer class="footer py-12 px-6">
-        <div class="container mx-auto">
-            <div class="grid grid-cols-1 md:grid-cols-4 gap-8 mb-8">
-                <div>
-                    <h3 class="text-xl font-bold mb-4">HR Insights KSA</h3>
-                    <p class="text-gray-300">Empowering HR excellence in Saudi Arabia</p>
+        </div>
+    </section>
+    
+    <!-- Newsletter Signup Section -->
+    <section id="signup" class="py-20 bg-primary-color text-white">
+        <div class="container mx-auto px-6 text-center">
+            <h2 class="text-3xl md:text-4xl font-bold mb-6">Stay Updated</h2>
+            <p class="text-lg mb-8">Subscribe to our newsletter to receive the latest HR insights, resources, and event updates.</p>
+            <form class="max-w-md mx-auto flex flex-col sm:flex-row items-center">
+                <input type="email" placeholder="Enter your email" class="w-full sm:flex-1 px-4 py-2 rounded-l-lg focus:outline-none focus:ring-2 focus:ring-secondary-color" required>
+                <button type="submit" class="mt-4 sm:mt-0 sm:ml-2 px-6 py-2 bg-secondary-color rounded-lg hover:bg-accent-color transition">Subscribe</button>
+            </form>
+        </div>
+    </section>
+    
+    <!-- Contact Section -->
+    <section id="contact" class="py-20 bg-gray-100">
+        <div class="container mx-auto px-6">
+            <h2 class="text-3xl md:text-4xl font-bold text-center mb-12">Contact Us</h2>
+            <form class="max-w-lg mx-auto bg-white p-8 rounded-lg shadow-md">
+                <div class="mb-4">
+                    <label for="contact-name" class="block text-gray-700 font-bold mb-2">Name</label>
+                    <input type="text" id="contact-name" name="name" class="w-full border border-gray-300 rounded px-3 py-2 focus:outline-none focus:ring-2 focus:ring-primary-color" placeholder="Your name" required>
                 </div>
+                <div class="mb-4">
+                    <label for="contact-email" class="block text-gray-700 font-bold mb-2">Email</label>
+                    <input type="email" id="contact-email" name="email" class="w-full border border-gray-300 rounded px-3 py-2 focus:outline-none focus:ring-2 focus:ring-primary-color" placeholder="Your email" required>
+                </div>
+                <div class="mb-6">
+                    <label for="contact-message" class="block text-gray-700 font-bold mb-2">Message</label>
+                    <textarea id="contact-message" name="message" rows="4" class="w-full border border-gray-300 rounded px-3 py-2 focus:outline-none focus:ring-2 focus:ring-primary-color" placeholder="Your message" required></textarea>
+                </div>
+                <button type="submit" class="w-full bg-primary-color text-white font-semibold px-4 py-2 rounded-lg shadow-md hover:bg-secondary-color transition">Send Message</button>
+            </form>
+        </div>
+    </section>
+    
+    <!-- Footer -->
+    <footer class="bg-primary-color text-white py-10">
+        <div class="container mx-auto px-6">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+                <!-- About -->
                 <div>
-                    <h4 class="font-bold mb-4">Quick Links</h4>
+                    <h3 class="text-xl font-semibold mb-4">About HRInsights</h3>
+                    <p class="text-gray-300">Empowering HR professionals in Saudi Arabia with knowledge, resources, and community support.</p>
+                </div>
+                <!-- Quick Links -->
+                <div>
+                    <h3 class="text-xl font-semibold mb-4">Quick Links</h3>
                     <ul class="space-y-2">
-                        <li><a href="#features" class="text-gray-300 hover:text-white transition-colors">Features</a></li>
-                        <li><a href="#categories" class="text-gray-300 hover:text-white transition-colors">Categories</a></li>
-                        <li><a href="#testimonials" class="text-gray-300 hover:text-white transition-colors">Testimonials</a></li>
+                        <li><a href="#home" class="hover:text-accent-color transition">Home</a></li>
+                        <li><a href="#features" class="hover:text-accent-color transition">Features</a></li>
+                        <li><a href="#categories" class="hover:text-accent-color transition">Categories</a></li>
+                        <li><a href="#job-board" class="hover:text-accent-color transition">Job Board</a></li>
+                        <li><a href="#events" class="hover:text-accent-color transition">Events</a></li>
+                        <li><a href="#contact" class="hover:text-accent-color transition">Contact</a></li>
                     </ul>
                 </div>
+                <!-- Contact Info -->
                 <div>
-                    <h4 class="font-bold mb-4">Resources</h4>
+                    <h3 class="text-xl font-semibold mb-4">Contact Us</h3>
                     <ul class="space-y-2">
-                        <li><a href="#" class="text-gray-300 hover:text-white transition-colors">Blog</a></li>
-                        <li><a href="#" class="text-gray-300 hover:text-white transition-colors">Webinars</a></li>
-                        <li><a href="#" class="text-gray-300 hover:text-white transition-colors">Research</a></li>
+                        <li>Email: <a href="mailto:info@hrinsightsksa.com" class="hover:text-accent-color transition">info@hrinsightsksa.com</a></li>
+                        <li>Phone: +966 12 345 6789</li>
+                        <li>Address: Riyadh, Saudi Arabia</li>
                     </ul>
                 </div>
+                <!-- Follow Us -->
                 <div>
-                    <h4 class="font-bold mb-4">Connect</h4>
+                    <h3 class="text-xl font-semibold mb-4">Follow Us</h3>
                     <div class="flex space-x-4">
-                        <a href="#" class="social-link"><i class="fab fa-linkedin-in"></i></a>
-                        <a href="#" class="social-link"><i class="fab fa-twitter"></i></a>
-                        <a href="#" class="social-link"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" class="text-gray-300 hover:text-accent-color transition">
+                            <i class="fab fa-facebook-f"></i>
+                        </a>
+                        <a href="#" class="text-gray-300 hover:text-accent-color transition">
+                            <i class="fab fa-twitter"></i>
+                        </a>
+                        <a href="#" class="text-gray-300 hover:text-accent-color transition">
+                            <i class="fab fa-linkedin-in"></i>
+                        </a>
+                        <a href="#" class="text-gray-300 hover:text-accent-color transition">
+                            <i class="fab fa-instagram"></i>
+                        </a>
                     </div>
                 </div>
             </div>
-            <div class="border-t border-gray-700 pt-8 text-center text-gray-400">
-                <p>&copy; 2024 HR Insights KSA. All rights reserved.</p>
+            <div class="border-t border-gray-400 mt-8 pt-4 text-center text-gray-400">
+                <p>© 2024 HRInsights KSA. All rights reserved.</p>
             </div>
         </div>
     </footer>
-
+    
+    <!-- JavaScript for Interactivity and Animations -->
     <script>
-        gsap.registerPlugin(ScrollTrigger, ScrollToPlugin);
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function (e) {
-                e.preventDefault();
-                const target = document.querySelector(this.getAttribute('href'));
-                gsap.to(window, {
-                    duration: 1,
-                    scrollTo: target,
-                    ease: "power2.inOut"
-                });
-            });
+        document.addEventListener('alpine:init', () => {
+            Alpine.data('header', () => ({
+                scrolled: false,
+                init() {
+                    window.addEventListener('scroll', () => {
+                        this.scrolled = window.scrollY > 50;
+                    });
+                }
+            }))
         });
-        ScrollTrigger.create({
-            start: "top -80",
-            end: 99999,
-            toggleClass: {
-                className: 'scrolled',
-                targets: 'header'
-            }
-        });
-        gsap.from(".feature-card", {
-            scrollTrigger: {
-                trigger: ".feature-card",
-                start: "top bottom",
-                toggleActions: "play none none reverse"
-            },
-            y: 60,
+        
+        gsap.registerPlugin(ScrollTrigger);
+
+        // Hero Animations
+        gsap.from('.hero h1', {
             opacity: 0,
+            y: 50,
             duration: 1,
-            stagger: 0.2
+            delay: 0.5,
+            ease: 'power3.out'
         });
+
+        gsap.from('.hero p', {
+            opacity: 0,
+            y: 50,
+            duration: 1,
+            delay: 1,
+            ease: 'power3.out'
+        });
+
+        gsap.from('.hero a', {
+            opacity: 0,
+            y: 50,
+            duration: 1,
+            delay: 1.5,
+            stagger: 0.2,
+            ease: 'power3.out'
+        });
+
+        // Stats Counter Animation
         const stats = {
-            members: 7500,
-            resources: 2000,
-            events: 120,
-            jobs: 1500
+            members: 5000,
+            resources: 1000,
+            events: 50,
+            jobs: 500
         };
+
         Object.entries(stats).forEach(([key, value]) => {
             const el = document.getElementById(`${key}-count`);
             gsap.to(el, {
@@ -542,23 +537,36 @@
                 }
             });
         });
-        document.getElementById('contactForm').addEventListener('submit', function(e) {
-            e.preventDefault();
-            alert('Thank you for your message. We will get back to you soon!');
-            this.reset();
-        });
-        gsap.utils.toArray('section').forEach(section => {
-            gsap.from(section, {
-                opacity: 0,
-                y: 30,
-                duration: 1,
-                scrollTrigger: {
-                    trigger: section,
-                    start: "top 80%",
-                    toggleActions: "play none none reverse"
-                }
+
+        // Testimonials Slider
+        const testimonials = document.querySelectorAll('.testimonial');
+        const dots = document.querySelectorAll('.dot');
+        let currentTestimonial = 0;
+
+        function showTestimonial(index) {
+            testimonials.forEach((testimonial, i) => {
+                testimonial.classList.toggle('active', i === index);
+                dots[i].classList.toggle('bg-accent-color', i === index);
+                dots[i].classList.toggle('bg-gray-400', i !== index);
+            });
+            currentTestimonial = index;
+        }
+
+        dots.forEach(dot => {
+            dot.addEventListener('click', () => {
+                const index = parseInt(dot.getAttribute('data-index'));
+                showTestimonial(index);
+                clearInterval(testimonialInterval);
+                testimonialInterval = setInterval(nextTestimonial, 5000);
             });
         });
+
+        function nextTestimonial() {
+            const next = (currentTestimonial + 1) % testimonials.length;
+            showTestimonial(next);
+        }
+
+        let testimonialInterval = setInterval(nextTestimonial, 5000);
     </script>
 </body>
 </html>
