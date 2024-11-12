@@ -6,828 +6,353 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>HR Insights KSA - Empowering Saudi Arabia's HR Professionals</title>
     <meta name="description" content="HRInsights KSA is the premier platform for HR professionals in Saudi Arabia, offering expert insights, resources, and networking opportunities.">
-
-    <!-- Google Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&family=Tajawal:wght@400;700&display=swap" rel="stylesheet">
-
-    <!-- Tailwind CSS -->
     <link href="https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/2.2.19/tailwind.min.css" rel="stylesheet">
-
-    <!-- Font Awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-
-    <!-- Alpine.js -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/alpinejs/2.3.0/alpine.js" defer></script>
-
-    <!-- Chart.js -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.7.0/chart.min.js"></script>
-
-    <!-- GSAP -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.9.1/gsap.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.9.1/ScrollTrigger.min.js"></script>
-
-    <!-- Custom Styles -->
+    <script src="https://cdn.jsdelivr.net/npm/scrollreveal@4.0.9/dist/scrollreveal.min.js"></script>
     <style>
         :root {
-            --primary-color: #00843D;
-            --secondary-color: #8CC63F;
-            --accent-color: #FFC72C;
-            --text-color: #333;
+            --primary-color: #006B3F;
+            --secondary-color: #3D8E24;
+            --accent-color: #FFD600;
+            --text-color: #FFF;
             --bg-color: #F4F4F4;
+            --gradient-bg: linear-gradient(135deg, rgba(34,193,195,1) 0%, rgba(253,187,45,1) 100%);
         }
-
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
         body {
             font-family: 'Poppins', 'Tajawal', Arial, sans-serif;
-            background-color: var(--bg-color);
+            background: var(--bg-color);
             color: var(--text-color);
-            line-height: 1.6;
+            overflow-x: hidden;
         }
-
         header {
-            background-color: var(--primary-color);
-            color: white;
-            padding: 20px 0;
+            background: var(--primary-color);
             position: fixed;
             width: 100%;
             z-index: 1000;
-            transition: background-color 0.3s ease;
+            transition: background 0.3s ease;
         }
-
         header.scrolled {
-            background-color: rgba(0, 132, 61, 0.9);
+            background: rgba(0, 107, 63, 0.9);
         }
-
         nav {
             display: flex;
             justify-content: space-between;
             align-items: center;
+            padding: 16px 24px;
         }
-
         .logo {
-            font-size: 24px;
+            font-size: 28px;
             font-weight: bold;
         }
-
         .nav-links {
             display: flex;
             list-style: none;
         }
-
         .nav-links li {
-            margin-left: 20px;
+            margin-left: 30px;
+            position: relative;
         }
-
         .nav-links a {
-            color: white;
+            color: var(--text-color);
             text-decoration: none;
+            font-weight: 600;
             transition: color 0.3s ease;
         }
-
         .nav-links a:hover {
             color: var(--accent-color);
+            transform: scale(1.1);
         }
-
-        /* Hero Section */
         .hero {
-            background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('https://images.unsplash.com/photo-1577962917302-cd874c4e31d2?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1920&q=80') no-repeat center center/cover;
+            background: url('./hero-image.jpg') no-repeat center center / cover;
             height: 100vh;
             display: flex;
+            flex-direction: column;
             align-items: center;
             justify-content: center;
-            text-align: center;
-            color: white;
-            margin-top: 80px; /* To offset fixed header */
+            color: var(--text-color);
+            position: relative;
         }
-
+        .hero::after {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(0, 0, 0, 0.5);
+            z-index: 1;
+        }
         .hero-content {
-            max-width: 800px;
+            z-index: 2;
+            text-align: center;
+            padding: 20px;
         }
-
         .hero h1 {
-            font-size: 48px;
+            font-size: 52px;
             margin-bottom: 20px;
-            opacity: 0;
-            transform: translateY(50px);
         }
-
         .hero p {
             font-size: 24px;
             margin-bottom: 30px;
-            opacity: 0;
-            transform: translateY(50px);
         }
-
         .cta-button {
-            display: inline-block;
-            background-color: var(--accent-color);
-            color: var(--text-color);
+            background: var(--accent-color);
+            color: #333;
             padding: 12px 30px;
-            text-decoration: none;
-            border-radius: 5px;
+            border-radius: 6px;
             font-weight: bold;
-            transition: background-color 0.3s ease;
-            opacity: 0;
-            transform: translateY(50px);
+            transition: background 0.3s ease;
         }
-
         .cta-button:hover {
-            background-color: #E6B325;
+            background: #E6B325;
         }
-
-        /* Features Section */
         .section {
-            padding: 80px 0;
+            padding: 80px 20px;
+            background: var(--gradient-bg);
         }
-
         .section-title {
             text-align: center;
             font-size: 36px;
             margin-bottom: 40px;
-            color: var(--primary-color);
         }
-
         .features {
-            display: flex;
-            justify-content: space-between;
-            flex-wrap: wrap;
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+            gap: 24px;
         }
-
         .feature {
-            flex-basis: calc(33.333% - 20px);
-            background-color: white;
+            background: white;
             padding: 30px;
             border-radius: 10px;
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
-            margin-bottom: 30px;
-            text-align: center;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
             transition: transform 0.3s ease;
         }
-
         .feature:hover {
-            transform: translateY(-10px);
-        }
-
-        .feature-icon {
-            font-size: 48px;
-            color: var(--secondary-color);
-            margin-bottom: 20px;
-        }
-
-        .feature h3 {
-            font-size: 24px;
-            margin-bottom: 15px;
-        }
-
-        /* Categories Section */
-        .categories {
-            background-color: #f9f9f9;
-        }
-
-        .grid-container {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 20px;
-        }
-
-        .grid-item {
-            background-color: white;
-            border-radius: 10px;
-            padding: 30px;
-            text-align: center;
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
-            cursor: pointer;
-        }
-
-        .grid-item:hover {
             transform: translateY(-10px);
             box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
         }
-
-        .grid-item i {
+        .feature-icon {
             font-size: 48px;
             color: var(--secondary-color);
-            margin-bottom: 20px;
-        }
-
-        .grid-item h3 {
-            font-size: 20px;
             margin-bottom: 10px;
         }
-
-        /* Stats Section */
         .stats {
-            background-color: var(--primary-color);
-            color: white;
+            background: var(--primary-color);
+            color: var(--text-color);
         }
-
         .stats-container {
             display: flex;
             justify-content: space-around;
             flex-wrap: wrap;
         }
-
         .stat-item {
             text-align: center;
-            flex-basis: calc(25% - 20px);
+            flex: 1 1 200px;
             margin-bottom: 30px;
         }
-
         .stat-number {
             font-size: 48px;
             font-weight: bold;
-            margin-bottom: 10px;
         }
-
-        /* Testimonials Section */
         .testimonials {
-            background-color: white;
+            background: white;
+            padding: 40px 20px;
         }
-
         .testimonial-slider {
             max-width: 800px;
             margin: 0 auto;
             text-align: center;
         }
-
         .testimonial {
             display: none;
         }
-
         .testimonial.active {
             display: block;
         }
-
-        .testimonial-text {
-            font-size: 20px;
-            font-style: italic;
-            margin-bottom: 20px;
-        }
-
-        .testimonial-author {
-            font-weight: bold;
-        }
-
-        /* Newsletter Section */
-        #newsletter {
-            background-color: var(--primary-color);
-            color: white;
-        }
-
-        /* Contact Section */
-        #contact {
-            background-color: white;
-        }
-
-        /* CTA Section */
-        #cta {
-            background-color: var(--primary-color);
-            color: white;
-        }
-
-        /* Footer */
-        footer {
-            background-color: var(--primary-color);
-            color: white;
+        .footer {
+            background: var(--primary-color);
+            color: var(--text-color);
             text-align: center;
             padding: 20px 0;
         }
-
-        /* Additional Styles from First HTML */
-        .marketing-highlights {
-            background-color: #f0f8f6;
-            padding: 2rem;
-            margin: 2rem 0;
-            border-radius: 8px;
-        }
-
-        .marketing-highlights ul {
-            list-style-type: none;
-            padding-left: 0;
-        }
-
-        .marketing-highlights li {
-            margin-bottom: 1rem;
-            padding-left: 2rem;
-            position: relative;
-        }
-
-        .marketing-highlights li:before {
-            content: '✓';
-            color: var(--primary-color);
-            position: absolute;
-            left: 0;
-        }
-
-        .fade-in {
-            animation: fadeIn 1s ease-out;
-        }
-
-        .gradient-bg {
-            background: linear-gradient(90deg, #16ab20 0%, #07430e 100%);
-        }
-
-        .animate-fade-in-up {
-            animation: fade-in-up 0.8s ease-out;
-        }
-
-        @keyframes fade-in-up {
-            0% {
-                opacity: 0;
-                transform: translateY(20px);
-            }
-            100% {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
-
-        /* Responsive Adjustments */
-        @media (max-width: 1024px) {
-            .feature {
-                flex-basis: calc(50% - 20px);
-            }
-
-            .stat-item {
-                flex-basis: calc(50% - 20px);
-            }
-        }
-
         @media (max-width: 768px) {
-            .feature {
-                flex-basis: 100%;
-            }
-
-            .stat-item {
-                flex-basis: 100%;
-            }
-
-            .nav-links {
-                display: none;
+            header .nav-links {
                 flex-direction: column;
-                background-color: var(--primary-color);
-                position: absolute;
-                top: 60px;
-                right: 20px;
-                width: 200px;
-                padding: 20px;
-                border-radius: 5px;
-            }
-
-            .nav-links.active {
-                display: flex;
-            }
-
-            .nav-links li {
-                margin: 10px 0;
-            }
-
-            .menu-toggle {
-                display: block;
-                cursor: pointer;
             }
         }
     </style>
 </head>
 <body>
-    <!-- Header -->
-    <header id="header" x-data="{ isOpen: false, showSignup: false, showSignin: false }">
-        <div class="container">
-            <nav class="flex justify-between items-center">
-                <div class="logo text-white text-2xl font-bold">HR Insights KSA</div>
-                <ul class="nav-links flex space-x-6">
-                    <li><a href="#home">Home</a></li>
-                    <li><a href="#features">Features</a></li>
-                    <li><a href="#categories">Categories</a></li>
-                    <li><a href="#stats">Stats</a></li>
-                    <li><a href="#testimonials">Testimonials</a></li>
-                    <li><a href="#contact">Contact</a></li>
-                </ul>
-                <!-- Language Selector & Auth Buttons -->
-                <div class="hidden lg:flex items-center space-x-4">
-                    <select class="mr-4 bg-gray-100 rounded px-2 py-1 focus:outline-none focus:ring-2 focus:ring-indigo-500">
-                        <option>English</option>
-                        <option>العربية</option>
-                    </select>
-                    <button @click="showSignin = true" class="bg-indigo-600 text-white px-4 py-2 rounded hover:bg-indigo-700 transition duration-300">Login</button>
-                    <button @click="showSignup = true" class="bg-transparent text-indigo-600 px-4 py-2 rounded hover:bg-indigo-600 hover:text-white transition duration-300 ml-4">Sign Up</button>
-                </div>
-                <!-- Mobile Menu Toggle -->
-                <div class="lg:hidden">
-                    <button @click="isOpen = !isOpen" class="text-white focus:outline-none">
-                        <i class="fas" :class="isOpen ? 'fa-times' : 'fa-bars'"></i>
-                    </button>
-                </div>
-            </nav>
-            <!-- Mobile Navigation -->
-            <ul :class="{'flex': isOpen, 'hidden': !isOpen}" class="nav-links flex-col absolute top-20 right-4 bg-primary-color p-4 rounded-md space-y-4">
-                <li><a href="#home" class="text-white">Home</a></li>
-                <li><a href="#features" class="text-white">Features</a></li>
-                <li><a href="#categories" class="text-white">Categories</a></li>
-                <li><a href="#stats" class="text-white">Stats</a></li>
-                <li><a href="#testimonials" class="text-white">Testimonials</a></li>
-                <li><a href="#contact" class="text-white">Contact</a></li>
-                <!-- Language Selector & Auth Buttons for Mobile -->
-                <li>
-                    <select class="w-full bg-gray-100 rounded px-2 py-1 focus:outline-none focus:ring-2 focus:ring-indigo-500">
-                        <option>English</option>
-                        <option>العربية</option>
-                    </select>
-                </li>
-                <li>
-                    <button @click="showSignin = true" class="w-full bg-indigo-600 text-white px-4 py-2 rounded hover:bg-indigo-700 transition duration-300">Login</button>
-                </li>
-                <li>
-                    <button @click="showSignup = true" class="w-full bg-transparent text-indigo-600 px-4 py-2 rounded hover:bg-indigo-600 hover:text-white transition duration-300">Sign Up</button>
-                </li>
+    <header id="header" x-data="{ isOpen: false }">
+        <nav>
+            <div class="logo">HR Insights KSA</div>
+            <ul class="nav-links">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#features">Features</a></li>
+                <li><a href="#categories">Categories</a></li>
+                <li><a href="#stats">Stats</a></li>
+                <li><a href="#testimonials">Testimonials</a></li>
+                <li><a href="#contact">Contact</a></li>
             </ul>
-        </div>
-
-        <!-- Sign Up Modal -->
-        <div x-show="showSignup" class="fixed z-50 inset-0 overflow-y-auto" aria-labelledby="modal-title" role="dialog" aria-modal="true">
-            <div class="flex items-center justify-center min-h-screen px-4 text-center">
-                <div class="fixed inset-0 bg-gray-500 bg-opacity-75 transition-opacity" aria-hidden="true"></div>
-                <span class="hidden sm:inline-block sm:align-middle sm:h-screen" aria-hidden="true">&#8203;</span>
-                <div class="inline-block align-middle bg-white rounded-lg text-left overflow-hidden shadow-xl transform transition-all sm:max-w-lg sm:w-full">
-                    <div class="bg-white px-4 pt-5 pb-4 sm:p-6 sm:pb-4">
-                        <div class="sm:flex sm:items-start">
-                            <div class="mt-3 text-center sm:mt-0 sm:ml-4 sm:text-left">
-                                <h3 class="text-lg leading-6 font-medium text-gray-900" id="modal-title">Sign Up</h3>
-                                <div class="mt-2">
-                                    <form>
-                                        <div class="mb-4">
-                                            <label for="name" class="block text-gray-700 font-bold mb-2">Name</label>
-                                            <input type="text" id="name" name="name" class="border rounded px-3 py-2 w-full focus:outline-none focus:ring-2 focus:ring-indigo-500" placeholder="Enter your name" required>
-                                        </div>
-                                        <div class="mb-4">
-                                            <label for="email" class="block text-gray-700 font-bold mb-2">Email</label>
-                                            <input type="email" id="email" name="email" class="border rounded px-3 py-2 w-full focus:outline-none focus:ring-2 focus:ring-indigo-500" placeholder="Enter your email" required>
-                                        </div>
-                                        <div class="mb-4">
-                                            <label for="password" class="block text-gray-700 font-bold mb-2">Password</label>
-                                            <input type="password" id="password" name="password" class="border rounded px-3 py-2 w-full focus:outline-none focus:ring-2 focus:ring-indigo-500" placeholder="Enter a password" required>
-                                        </div>
-                                        <div class="mb-4">
-                                            <label for="confirm-password" class="block text-gray-700 font-bold mb-2">Confirm Password</label>
-                                            <input type="password" id="confirm-password" name="confirm-password" class="border rounded px-3 py-2 w-full focus:outline-none focus:ring-2 focus:ring-indigo-500" placeholder="Confirm your password" required>
-                                        </div>
-                                        <button type="submit" class="bg-indigo-600 text-white px-4 py-2 rounded hover:bg-indigo-700 transition duration-300 w-full">Sign Up</button>
-                                    </form>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="bg-gray-50 px-4 py-3 sm:px-6 sm:flex sm:flex-row-reverse">
-                        <button @click="showSignup = false" type="button" class="w-full inline-flex justify-center rounded-md border border-transparent shadow-sm px-4 py-2 bg-indigo-600 text-base font-medium text-white hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500 sm:ml-3 sm:w-auto sm:text-sm">Close</button>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <!-- Sign In Modal -->
-        <div x-show="showSignin" class="fixed z-50 inset-0 overflow-y-auto" aria-labelledby="modal-title" role="dialog" aria-modal="true">
-            <div class="flex items-center justify-center min-h-screen px-4 text-center">
-                <div class="fixed inset-0 bg-gray-500 bg-opacity-75 transition-opacity" aria-hidden="true"></div>
-                <span class="hidden sm:inline-block sm:align-middle sm:h-screen" aria-hidden="true">&#8203;</span>
-                <div class="inline-block align-middle bg-white rounded-lg text-left overflow-hidden shadow-xl transform transition-all sm:max-w-lg sm:w-full">
-                    <div class="bg-white px-4 pt-5 pb-4 sm:p-6 sm:pb-4">
-                        <div class="sm:flex sm:items-start">
-                            <div class="mt-3 text-center sm:mt-0 sm:ml-4 sm:text-left">
-                                <h3 class="text-lg leading-6 font-medium text-gray-900" id="modal-title">Sign In</h3>
-                                <div class="mt-2">
-                                    <form>
-                                        <div class="mb-4">
-                                            <label for="signin-email" class="block text-gray-700 font-bold mb-2">Email</label>
-                                            <input type="email" id="signin-email" name="email" class="border rounded px-3 py-2 w-full focus:outline-none focus:ring-2 focus:ring-indigo-500" placeholder="Enter your email" required>
-                                        </div>
-                                        <div class="mb-4">
-                                            <label for="signin-password" class="block text-gray-700 font-bold mb-2">Password</label>
-                                            <input type="password" id="signin-password" name="password" class="border rounded px-3 py-2 w-full focus:outline-none focus:ring-2 focus:ring-indigo-500" placeholder="Enter your password" required>
-                                        </div>
-                                        <button type="submit" class="bg-indigo-600 text-white px-4 py-2 rounded hover:bg-indigo-700 transition duration-300 w-full">Sign In</button>
-                                    </form>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="bg-gray-50 px-4 py-3 sm:px-6 sm:flex sm:flex-row-reverse">
-                        <button @click="showSignin = false" type="button" class="w-full inline-flex justify-center rounded-md border border-transparent shadow-sm px-4 py-2 bg-indigo-600 text-base font-medium text-white hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500 sm:ml-3 sm:w-auto sm:text-sm">Close</button>
-                    </div>
-                </div>
-            </div>
-        </div>
+        </nav>
     </header>
-
-    <!-- Main Content -->
     <main class="mt-20">
-        <!-- Home Section -->
         <section id="home" class="hero">
             <div class="hero-content">
-                <h1 class="fade-in-up">Empowering HR Professionals in Saudi Arabia</h1>
-                <p class="fade-in-up">Join the premier platform for HR insights, collaboration, and career growth in the Kingdom</p>
-                <a href="#features" class="cta-button fade-in-up">Explore Features</a>
+                <h1>Empowering HR Professionals in Saudi Arabia</h1>
+                <p>Join the premier platform for HR insights, collaboration, and career growth in the Kingdom</p>
+                <a href="#features" class="cta-button">Explore Features</a>
             </div>
         </section>
-
-        <!-- Features Section -->
         <section id="features" class="section">
-            <div class="container">
-                <h2 class="section-title">Our Features</h2>
-                <div class="features">
-                    <div class="feature">
-                        <div class="feature-icon">📚</div>
-                        <h3>Knowledge Hub</h3>
-                        <p>Access a vast library of HR resources tailored to the Saudi market</p>
-                    </div>
-                    <div class="feature">
-                        <div class="feature-icon">💬</div>
-                        <h3>Community Forum</h3>
-                        <p>Connect with fellow HR professionals and share insights</p>
-                    </div>
-                    <div class="feature">
-                        <div class="feature-icon">🚀</div>
-                        <h3>Career Development</h3>
-                        <p>Enhance your skills with our specialized training programs</p>
-                    </div>
-                    <div class="feature">
-                        <div class="feature-icon">📊</div>
-                        <h3>HR Analytics</h3>
-                        <p>Leverage data-driven insights for strategic decision-making</p>
-                    </div>
-                    <div class="feature">
-                        <div class="feature-icon">🔍</div>
-                        <h3>Job Board</h3>
-                        <p>Find and post HR opportunities across the Kingdom</p>
-                    </div>
-                    <div class="feature">
-                        <div class="feature-icon">📅</div>
-                        <h3>Events & Webinars</h3>
-                        <p>Stay updated with the latest HR trends and networking opportunities</p>
-                    </div>
+            <h2 class="section-title">Our Features</h2>
+            <div class="features">
+                <div class="feature">
+                    <div class="feature-icon">📚</div>
+                    <h3>Knowledge Hub</h3>
+                    <p>Access a vast library of HR resources tailored to the Saudi market</p>
+                </div>
+                <div class="feature">
+                    <div class="feature-icon">💬</div>
+                    <h3>Community Forum</h3>
+                    <p>Connect with fellow HR professionals and share insights</p>
+                </div>
+                <div class="feature">
+                    <div class="feature-icon">🚀</div>
+                    <h3>Career Development</h3>
+                    <p>Enhance your skills with our specialized training programs</p>
+                </div>
+                <div class="feature">
+                    <div class="feature-icon">📊</div>
+                    <h3>HR Analytics</h3>
+                    <p>Leverage data-driven insights for strategic decision-making</p>
+                </div>
+                <div class="feature">
+                    <div class="feature-icon">🔍</div>
+                    <h3>Job Board</h3>
+                    <p>Find and post HR opportunities across the Kingdom</p>
+                </div>
+                <div class="feature">
+                    <div class="feature-icon">📅</div>
+                    <h3>Events & Webinars</h3>
+                    <p>Stay updated with the latest HR trends and networking opportunities</p>
                 </div>
             </div>
         </section>
-
-        <!-- Marketing Highlights Section (from First HTML) -->
-        <section class="marketing-highlights">
-            <h2 class="text-3xl font-bold mb-4">Why Choose HRInsights?</h2>
-            <ul>
-                <li class="mb-2">Tailored for KSA's unique HR professionals</li>
-                <li class="mb-2">Alignment with Vision 2030 goals</li>
-                <li class="mb-2">Expert-curated content and resources</li>
-                <li>Bilingual support (English &amp; Arabic)</li>
-            </ul>
-        </section>
-
-        <!-- Categories Section -->
-        <section id="categories" class="section categories">
-            <div class="container">
-                <h2 class="section-title">Explore HR Categories</h2>
-                <div class="grid-container">
-                    <div class="grid-item" data-category="recruitment">
-                        <i class="fas fa-user-plus"></i>
-                        <h3>Recruitment</h3>
-                    </div>
-                    <div class="grid-item" data-category="training">
-                        <i class="fas fa-chalkboard-teacher"></i>
-                        <h3>Training & Development</h3>
-                    </div>
-                    <div class="grid-item" data-category="compensation">
-                        <i class="fas fa-money-bill-wave"></i>
-                        <h3>Compensation & Benefits</h3>
-                    </div>
-                    <div class="grid-item" data-category="performance">
-                        <i class="fas fa-chart-line"></i>
-                        <h3>Performance Management</h3>
-                    </div>
-                    <div class="grid-item" data-category="legal">
-                        <i class="fas fa-balance-scale"></i>
-                        <h3>Legal & Compliance</h3>
-                    </div>
-                    <div class="grid-item" data-category="culture">
-                        <i class="fas fa-users"></i>
-                        <h3>Company Culture</h3>
-                    </div>
+        <section id="categories" class="section">
+            <h2 class="section-title">Explore HR Categories</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                <div class="bg-white p-6 rounded-lg shadow-md text-center">
+                    <i class="fas fa-user-plus fa-2x mb-4 text-secondary-color"></i>
+                    <h3>Recruitment</h3>
+                </div>
+                <div class="bg-white p-6 rounded-lg shadow-md text-center">
+                    <i class="fas fa-chalkboard-teacher fa-2x mb-4 text-secondary-color"></i>
+                    <h3>Training & Development</h3>
+                </div>
+                <div class="bg-white p-6 rounded-lg shadow-md text-center">
+                    <i class="fas fa-money-bill-wave fa-2x mb-4 text-secondary-color"></i>
+                    <h3>Compensation & Benefits</h3>
+                </div>
+                <div class="bg-white p-6 rounded-lg shadow-md text-center">
+                    <i class="fas fa-chart-line fa-2x mb-4 text-secondary-color"></i>
+                    <h3>Performance Management</h3>
+                </div>
+                <div class="bg-white p-6 rounded-lg shadow-md text-center">
+                    <i class="fas fa-balance-scale fa-2x mb-4 text-secondary-color"></i>
+                    <h3>Legal & Compliance</h3>
+                </div>
+                <div class="bg-white p-6 rounded-lg shadow-md text-center">
+                    <i class="fas fa-users fa-2x mb-4 text-secondary-color"></i>
+                    <h3>Company Culture</h3>
                 </div>
             </div>
         </section>
-
-        <!-- Stats Section -->
         <section id="stats" class="section stats">
-            <div class="container">
-                <h2 class="section-title">HR Insights KSA in Numbers</h2>
-                <div class="stats-container">
-                    <div class="stat-item">
-                        <div class="stat-number" id="members-count">0</div>
-                        <div>Active Members</div>
-                    </div>
-                    <div class="stat-item">
-                        <div class="stat-number" id="resources-count">0</div>
-                        <div>HR Resources</div>
-                    </div>
-                    <div class="stat-item">
-                        <div class="stat-number" id="events-count">0</div>
-                        <div>Annual Events</div>
-                    </div>
-                    <div class="stat-item">
-                        <div class="stat-number" id="jobs-count">0</div>
-                        <div>Job Opportunities</div>
-                    </div>
+            <h2 class="section-title">HR Insights KSA in Numbers</h2>
+            <div class="stats-container">
+                <div class="stat-item">
+                    <div class="stat-number" id="members-count">0</div>
+                    <div>Active Members</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-number" id="resources-count">0</div>
+                    <div>HR Resources</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-number" id="events-count">0</div>
+                    <div>Annual Events</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-number" id="jobs-count">0</div>
+                    <div>Job Opportunities</div>
                 </div>
             </div>
         </section>
-
-        <!-- Testimonials Section -->
         <section id="testimonials" class="section testimonials">
-            <div class="container">
-                <h2 class="section-title">What Our Members Say</h2>
-                <div class="testimonial-slider">
-                    <div class="testimonial active">
-                        <p class="testimonial-text">"HR Insights KSA has revolutionized the way I approach HR in Saudi Arabia. The resources and community support are invaluable."</p>
-                        <p class="testimonial-author">- Fatima Al-Saud, HR Director</p>
-                    </div>
-                    <div class="testimonial">
-                        <p class="testimonial-text">"The platform's focus on localized content has helped me navigate the unique challenges of HR in the Kingdom with confidence."</p>
-                        <p class="testimonial-author">- Ahmed Al-Ghamdi, HR Manager</p>
-                    </div>
-                    <div class="testimonial">
-                        <p class="testimonial-text">"From networking opportunities to cutting-edge insights, HR Insights KSA has been instrumental in advancing my career."</p>
-                        <p class="testimonial-author">- Noura Al-Zahrani, Talent Acquisition Specialist</p>
-                    </div>
+            <h2 class="section-title">What Our Members Say</h2>
+            <div class="testimonial-slider">
+                <div class="testimonial active">
+                    <p class="testimonial-text">"HR Insights KSA has revolutionized the way I approach HR in Saudi Arabia. The resources and community support are invaluable."</p>
+                    <p class="testimonial-author">- Fatima Al-Saud, HR Director</p>
+                </div>
+                <div class="testimonial">
+                    <p class="testimonial-text">"The platform's focus on localized content has helped me navigate the unique challenges of HR in the Kingdom with confidence."</p>
+                    <p class="testimonial-author">- Ahmed Al-Ghamdi, HR Manager</p>
+                </div>
+                <div class="testimonial">
+                    <p class="testimonial-text">"From networking opportunities to cutting-edge insights, HR Insights KSA has been instrumental in advancing my career."</p>
+                    <p class="testimonial-author">- Noura Al-Zahrani, Talent Acquisition Specialist</p>
                 </div>
             </div>
         </section>
-        <section id="job-board" class="bg-gray-100 py-20">
+        <section id="contact" class="section">
+            <h2 class="section-title">Contact Us</h2>
+            <form class="max-w-lg mx-auto">
+                <div class="mb-4">
+                    <label class="block text-gray-700 text-sm font-bold mb-2" for="name">Name</label>
+                    <input class="input-field" id="name" type="text" placeholder="Your name">
+                </div>
+                <div class="mb-4">
+                    <label class="block text-gray-700 text-sm font-bold mb-2" for="email">Email</label>
+                    <input class="input-field" id="email" type="email" placeholder="Your email">
+                </div>
+                <div class="mb-6">
+                    <label class="block text-gray-700 text-sm font-bold mb-2" for="message">Message</label>
+                    <textarea class="input-field" id="message" placeholder="Your message" rows="4"></textarea>
+                </div>
+                <div class="flex items-center justify-between">
+                    <button class="bg-indigo-600 hover:bg-indigo-700 text-white font-bold py-2 px-4 rounded transition duration-300" type="button">Send Message</button>
+                </div>
+            </form>
+        </section>
+        <footer class="footer">
             <div class="container mx-auto px-6">
-                <h2 class="text-3xl font-bold text-center mb-12">HR Job Board</h2>
-                <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
-                    <div class="bg-white rounded-lg shadow-md p-6">
-                        <h3 class="text-2xl font-semibold mb-6">Latest Job Openings</h3>
-                        <ul class="space-y-6">
-                            <li class="border-b pb-4">
-                                <h4 class="text-lg font-semibold text-indigo-600">Senior HR Manager</h4>
-                                <p class="text-gray-600 mb-2">TechCorp Inc. • Riyadh, Saudi Arabia</p>
-                                <p class="text-gray-700 mb-2">Lead HR initiatives for a rapidly growing tech company. 7+ years of experience required.</p>
-                                <a href="job-details.html" class="text-indigo-600 hover:text-indigo-800 font-semibold">View Details →</a>
-                            </li>
-                            <li class="border-b pb-4">
-                                <h4 class="text-lg font-semibold text-indigo-600">Talent Acquisition Specialist</h4>
-                                <p class="text-gray-600 mb-2">Global Enterprises • Jeddah, Saudi Arabia</p>
-                                <p class="text-gray-700 mb-2">Drive recruitment efforts for a multinational corporation. Strong networking skills required.</p>
-                                <a href="job-details.html" class="text-indigo-600 hover:text-indigo-800 font-semibold">View Details →</a>
-                            </li>
-                        </ul>
-                        <div class="mt-6">
-                            <a href="job-board.html" class="bg-indigo-600 text-white px-4 py-2 rounded hover:bg-indigo-700 transition duration-300">View All Jobs</a>
-                        </div>
-                    </div>
-                    <div class="bg-white rounded-lg shadow-md p-6">
-                        <h3 class="text-2xl font-semibold mb-6">Post a Job</h3>
-                        <form>
-                            <div class="mb-4">
-                                <label class="block text-gray-700 text-sm font-bold mb-2" for="job-title">
-                                    Job Title
-                                </label>
-                                <input class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:ring-2 focus:ring-indigo-500" id="job-title" type="text" placeholder="Enter job title">
-                            </div>
-                            <div class="mb-4">
-                                <label class="block text-gray-700 text-sm font-bold mb-2" for="company">
-                                    Company
-                                </label>
-                                <input class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:ring-2 focus:ring-indigo-500" id="company" type="text" placeholder="Enter company name">
-                            </div>
-                            <div class="mb-6">
-                                <label class="block text-gray-700 text-sm font-bold mb-2" for="job-description">
-                                    Job Description
-                                </label>
-                                <textarea class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:ring-2 focus:ring-indigo-500" id="job-description" placeholder="Enter job description" rows="4"></textarea>
-                            </div>
-                            <div class="flex items-center justify-between">
-                                <button class="bg-indigo-600 hover:bg-indigo-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline transition duration-300" type="button">
-                                    Post Job
-                                </button>
-                            </div>
-                        </form>
-                    </div>
+                <h3 class="text-lg font-semibold mb-4">Follow Us</h3>
+                <div class="flex justify-center space-x-4">
+                    <a href="#" class="text-gray-400 hover:text-white transition duration-300">
+                        <i class="fab fa-facebook-f"></i>
+                    </a>
+                    <a href="#" class="text-gray-400 hover:text-white transition duration-300">
+                        <i class="fab fa-twitter"></i>
+                    </a>
+                    <a href="#" class="text-gray-400 hover:text-white transition duration-300">
+                        <i class="fab fa-linkedin-in"></i>
+                    </a>
                 </div>
             </div>
-        </section>
-
-        <!-- Events Section -->
-        <section id="events" class="py-20">
-            <div class="container mx-auto px-6">
-                <h2 class="text-3xl font-bold text-center mb-12">Upcoming Events</h2>
-                <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
-                    <div class="bg-white rounded-lg shadow-md p-6">
-                        <h3 class="text-xl font-semibold mb-2 text-indigo-600">Employee Engagement in the Digital Age</h3>
-                        <p class="text-gray-600 mb-4">Date: May 15, 2023 | Time: 2:00 PM AST</p>
-                        <p class="mb-4">Learn strategies to boost employee engagement in remote and hybrid work environments.</p>
-                        <a href="events.html" class="bg-indigo-600 text-white px-4 py-2 rounded hover:bg-indigo-700 transition duration-300">Register Now</a>
-                    </div>
-                    <div class="bg-white rounded-lg shadow-md p-6">
-                        <h3 class="text-xl font-semibold mb-2 text-indigo-600">HR Analytics: Turning Data into Insights</h3>
-                        <p class="text-gray-600 mb-4">Date: June 2, 2023 | Time: 11:00 AM AST</p>
-                        <p class="mb-4">Discover how to leverage HR data to make informed decisions and drive organizational success.</p>
-                        <a href="events.html" class="bg-indigo-600 text-white px-4 py-2 rounded hover:bg-indigo-700 transition duration-300">Register Now</a>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- Contact Section -->
-        <section id="contact" class="py-20">
-            <div class="container mx-auto px-6">
-                <h2 class="text-3xl font-bold text-center mb-8">Contact Us</h2>
-                <form class="max-w-lg mx-auto">
-                    <div class="mb-4">
-                        <label class="block text-gray-700 text-sm font-bold mb-2" for="name">
-                            Name
-                        </label>
-                        <input class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:ring-2 focus:ring-indigo-500" id="name" type="text" placeholder="Your name">
-                    </div>
-                    <div class="mb-4">
-                        <label class="block text-gray-700 text-sm font-bold mb-2" for="email">
-                            Email
-                        </label>
-                        <input class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:ring-2 focus:ring-indigo-500" id="email" type="email" placeholder="Your email">
-                    </div>
-                    <div class="mb-6">
-                        <label class="block text-gray-700 text-sm font-bold mb-2" for="message">
-                            Message
-                        </label>
-                        <textarea class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:ring-2 focus:ring-indigo-500" id="message" placeholder="Your message" rows="4"></textarea>
-                    </div>
-                    <div class="flex items-center justify-between">
-                        <button class="bg-indigo-600 hover:bg-indigo-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline transition duration-300" type="button">
-                            Send Message
-                        </button>
-                    </div>
-                </form>
-            </div>
-        </section>
-
-        <!-- Footer -->
-        <footer class="bg-gray-800 text-white py-10">
-            <div class="container mx-auto px-6">
-                <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
-                    <div>
-                        <h3 class="text-lg font-semibold mb-4">About HRInsights</h3>
-                        <p class="text-gray-400">Empowering HR professionals in Saudi Arabia with knowledge, resources, and community support.</p>
-                    </div>
-                    <div>
-                        <h3 class="text-lg font-semibold mb-4">Quick Links</h3>
-                        <ul class="space-y-2">
-                            <li><a href="index.html" class="text-gray-400 hover:text-white transition duration-300">Home</a></li>
-                            <li><a href="knowledge-base.html" class="text-gray-400 hover:text-white transition duration-300">Knowledge Base</a></li>
-                            <li><a href="community.html" class="text-gray-400 hover:text-white transition duration-300">Community</a></li>
-                            <li><a href="job-board.html" class="text-gray-400 hover:text-white transition duration-300">Job Board</a></li>
-                            <li><a href="events.html" class="text-gray-400 hover:text-white transition duration-300">Events</a></li>
-                            <li><a href="contact.html" class="text-gray-400 hover:text-white transition duration-300">Contact</a></li>
-                        </ul>
-                    </div>
-                    <div>
-                        <h3 class="text-lg font-semibold mb-4">Contact Us</h3>
-                        <ul class="space-y-2 text-gray-400">
-                            <li>Email: info@hrinsightsksa.com</li>
-                            <li>Phone: +966 12 345 6789</li>
-                            <li>Address: Riyadh, Saudi Arabia</li>
-                        </ul>
-                    </div>
-                    <div>
-                        <h3 class="text-lg font-semibold mb-4">Follow Us</h3>
-                        <div class="flex space-x-4">
-                            <a href="#" class="text-gray-400 hover:text-white transition duration-300">
-                                <i class="fab fa-facebook-f"></i>
-                            </a>
-                            <a href="#" class="text-gray-400 hover:text-white transition duration-300">
-                                <i class="fab fa-twitter"></i>
-                            </a>
-                            <a href="#" class="text-gray-400 hover:text-white transition duration-300">
-                                <i class="fab fa-linkedin-in"></i>
-                            </a>
-                        </div>
-                    </div>
-                </div>
-                <div class="border-t border-gray-700 mt-8 pt-8 text-center text-gray-400">
-                    <p>© 2023 HRInsights KSA. All rights reserved.</p>
-                </div>
+            <div class="border-t border-gray-700 mt-8 pt-8 text-center text-gray-400">
+                <p>© 2023 HRInsights KSA. All rights reserved.</p>
             </div>
         </footer>
     </main>
-
-    <!-- JS Scripts -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.9.1/gsap.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.9.1/ScrollTrigger.min.js"></script>
     <script>
         gsap.registerPlugin(ScrollTrigger);
-
-        // Animate header on scroll
         window.addEventListener('scroll', () => {
             const header = document.getElementById('header');
             if (window.scrollY > 50) {
@@ -836,8 +361,6 @@
                 header.classList.remove('scrolled');
             }
         });
-
-        // Smooth scroll for navigation links
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
             anchor.addEventListener('click', function (e) {
                 e.preventDefault();
@@ -846,15 +369,12 @@
                 });
             });
         });
-
-        // Stats counter animation
         const stats = {
             members: 5000,
             resources: 1000,
             events: 50,
             jobs: 500
         };
-
         Object.entries(stats).forEach(([key, value]) => {
             const el = document.getElementById(`${key}-count`);
             gsap.to(el, {
@@ -867,17 +387,13 @@
                 }
             });
         });
-
-        // Testimonial slider
         const testimonials = document.querySelectorAll('.testimonial');
         let currentTestimonial = 0;
-
         function showNextTestimonial() {
             testimonials[currentTestimonial].classList.remove('active');
             currentTestimonial = (currentTestimonial + 1) % testimonials.length;
             testimonials[currentTestimonial].classList.add('active');
         }
-
         setInterval(showNextTestimonial, 5000);
     </script>
 </body>
