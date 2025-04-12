@@ -1,387 +1,263 @@
-<html><head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>HRInsights - Knowledge Base Categories</title>
-<style>
-    :root {
-        --primary-color: #e29222;
-        --secondary-color: #8D734A;
-        --background-color: #F7F7F7;
-        --text-color: #333333;
-        --border-color: #E0E0E0;
-        --hover-color: #004D35;
-    }
-
-    body {
-        font-family: 'Tahoma', 'Arial', sans-serif;
-        margin: 0;
-        padding: 0;
-        background-color: var(--background-color);
-        color: var(--text-color);
-        line-height: 1.6;
-        direction: ltr;
-        text-align: left;
-    }
-
-    header {
-        background-color: var(--primary-color);
-        color: white;
-        text-align: left;
-        padding: 1rem 2rem;
-        box-shadow: 0 2px 4px rgba(0,0,0,0.1);
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-    }
-
-    header h1 {
-        margin: 0;
-        font-size: 1.8rem;
-    }
-
-    .language-button {
-        background-color: var(--secondary-color);
-        color: white;
-        border: none;
-        padding: 0.5rem 1rem;
-        border-radius: 4px;
-        cursor: pointer;
-        transition: background-color 0.3s ease;
-        font-size: 0.9rem;
-    }
-
-    .language-button:hover {
-        background-color: #7A6440;
-    }
-
-    nav {
-        background-color: white;
-        padding: 0.5rem 2rem;
-        border-bottom: 1px solid var(--border-color);
-    }
-
-    nav ul {
-        list-style-type: none;
-        padding: 0;
-        margin: 0;
-        display: flex;
-        justify-content: flex-start;
-    }
-
-    nav ul li {
-        margin-right: 2rem;
-    }
-
-    nav ul li a {
-        color: var(--text-color);
-        text-decoration: none;
-        font-weight: bold;
-        transition: color 0.3s ease;
-    }
-
-    nav ul li a:hover {
-        color: var(--primary-color);
-    }
-
-    main {
-        max-width: 1200px;
-        margin: 2rem auto;
-        padding: 0 2rem;
-    }
-
-    .category-grid {
-        display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-        gap: 2rem;
-    }
-
-    .category-card {
-        background-color: white;
-        border-radius: 8px;
-        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-        padding: 1.5rem;
-        transition: all 0.3s ease;
-    }
-
-    .category-card:hover {
-        transform: translateY(-5px);
-        box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
-    }
-
-    .category-card h2 {
-        color: var(--primary-color);
-        margin-top: 0;
-        font-size: 1.4rem;
-        border-bottom: 2px solid var(--secondary-color);
-        padding-bottom: 0.5rem;
-    }
-
-    .category-card ul {
-        list-style-type: none;
-        padding: 0;
-    }
-
-    .category-card li {
-        margin-bottom: 0.8rem;
-    }
-
-    .category-card a {
-        color: var(--text-color);
-        text-decoration: none;
-        transition: color 0.3s ease;
-    }
-
-    .category-card a:hover {
-        color: var(--primary-color);
-    }
-
-    .search-bar {
-        display: flex;
-        margin-bottom: 2rem;
-    }
-
-    .search-bar input {
-        flex-grow: 1;
-        padding: 0.8rem;
-        border: 1px solid var(--border-color);
-        border-radius: 4px 0 0 4px;
-        font-size: 1rem;
-    }
-
-    .search-bar button {
-        background-color: var(--primary-color);
-        color: white;
-        border: none;
-        padding: 0.8rem 1.5rem;
-        border-radius: 0 4px 4px 0;
-        cursor: pointer;
-        transition: background-color 0.3s ease;
-    }
-
-    .search-bar button:hover {
-        background-color: var(--hover-color);
-    }
-
-    .breadcrumb {
-        margin-bottom: 1.5rem;
-        font-size: 0.9rem;
-    }
-
-    .breadcrumb a {
-        color: var(--primary-color);
-        text-decoration: none;
-    }
-
-    .breadcrumb span {
-        margin: 0 0.5rem;
-        color: var(--text-color);
-    }
-
-    @keyframes fadeIn {
-        from { opacity: 0; }
-        to { opacity: 1; }
-    }
-
-    .fade-in {
-        animation: fadeIn 0.5s ease-in;
-    }
-
-    h1 {
-        color: var(--primary-color);
-        font-size: 2rem;
-        margin-bottom: 1.5rem;
-    }
-
-    @media (max-width: 768px) {
-        nav ul {
-            flex-direction: column;
-        }
-
-        nav ul li {
-            margin-right: 0;
-            margin-bottom: 0.5rem;
-        }
-
-        .category-grid {
-            grid-template-columns: 1fr;
-        }
-
-        header {
-            flex-direction: column;
-            align-items: flex-start;
-        }
-
-        .language-button {
-            margin-top: 1rem;
-        }
-    }
-</style>
-<link rel="stylesheet" type="text/css" href="saudi_theme.css">
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Knowledge Center - HRInsights KSA</title>
+    <link rel="stylesheet" href="css/tttstyles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 </head>
 <body>
-    <header>
-        <h1>HR Knowledge Center</h1>
-        <button class="language-button" id="languageToggle">عربي</button>
+    <!-- Header with Navigation -->
+    <header class="header">
+        <div class="container">
+            <div class="logo">
+                <h1>HRInsights<span>KSA</span></h1>
+            </div>
+            <nav class="main-nav">
+                <ul>
+                    <li><a href="home.html"><i class="fas fa-home"></i> Home</a></li>
+                    <li><a href="knowledge-base.html" class="active"><i class="fas fa-book"></i> Knowledge Base</a></li>
+                    <li><a href="discussions.html"><i class="fas fa-comments"></i> Community</a></li>
+                    <li><a href="Profile.html"><i class="fas fa-user"></i> Profile</a></li>
+                </ul>
+            </nav>
+        </div>
     </header>
 
-    <nav>
-        <ul>
-            <li><a href="home">Home</a></li>
-            <li><a href="knowledge-base">Knowledge Base</a></li>
-            <li><a href="discussions">Discussions</a></li>
-            <li><a href="ask-question">Ask a Question</a></li>
-            <li><a href="profile">Profile</a></li>
-        </ul>
-    </nav>
-
-    <main>
-        <div class="breadcrumb">
-            <a href="home">Home</a>
-            <span>></span>
-            <a href="knowledge-base">Knowledge Base</a>
-            <span>></span>
-            <span>Categories</span>
-        </div>
-
-        <h1>Knowledge Base Categories</h1>
-
-        <div class="search-bar">
-            <input type="text" placeholder="Search the knowledge base...">
-            <button>Search</button>
-        </div>
-
-        <div class="category-grid fade-in">
-            <div class="category-card">
-                <h2>Recruitment and Selection</h2>
-                <ul>
-                    <li><a href="job-analysis">Job Analysis</a></li>
-                    <li><a href="sourcing">Sourcing Strategies</a></li>
-                    <li><a href="interviewing">Interviewing Techniques</a></li>
-                    <li><a href="assessment">Assessment Methods</a></li>
-                    <li><a href="job-posting">Job Posting Best Practices</a></li>
-                    <li><a href="job-descriptions">Writing Effective Job Descriptions</a></li>
-                    <li><a href="resources">Recruitment Resources</a></li>
-                </ul>
-            </div>
-            <div class="category-card">
-                <h2>Employee Relations</h2>
-                <ul>
-                    <li><a href="conflict-resolution">Conflict Resolution</a></li>
-                    <li><a href="performance-management">Performance Management</a></li>
-                    <li><a href="disciplinary-procedures">Disciplinary Procedures</a></li>
-                    <li><a href="workplace-culture">Workplace Culture</a></li>
-                    <li><a href="engagement-strategies">Employee Engagement Strategies</a></li>
-                    <li><a href="onboarding">Onboarding Best Practices</a></li>
-                </ul>
-            </div>
-            <div class="category-card">
-                <h2>Compensation and Benefits</h2>
-                <ul>
-                    <li><a href="salary-structures">Salary Structures</a></li>
-                    <li><a href="incentive-plans">Incentive Plans</a></li>
-                    <li><a href="benefits-packages">Benefits Packages</a></li>
-                    <li><a href="retirement-plans">Retirement Plans</a></li>
-                    <li><a href="competitive-benefits">Competitive Benefits Packages</a></li>
-                    <li><a href="equity-compensation">Equity Compensation</a></li>
-                </ul>
-            </div>
-            <div class="category-card">
-                <h2>Training and Development</h2>
-                <ul>
-                    <li><a href="needs-assessment">Training Needs Assessment</a></li>
-                    <li><a href="program-design">Program Design</a></li>
-                    <li><a href="e-learning">E-Learning Strategies</a></li>
-                    <li><a href="leadership-development">Leadership Development</a></li>
-                    <li><a href="digital-training">Effective Approaches for Digital Training and Development</a></li>
-                    <li><a href="understanding-leadership">Understanding Leadership Development</a></li>
-                </ul>
-            </div>
-            <div class="category-card">
-                <h2>HR Technology and Analytics</h2>
-                <ul>
-                    <li><a href="hris">HRIS Systems</a></li>
-                    <li><a href="ats">Applicant Tracking Systems</a></li>
-                    <li><a href="performance-management-tools">Performance Management Tools</a></li>
-                    <li><a href="hr-analytics">HR Analytics</a></li>
-                    <li><a href="advanced-analytics">Advanced HR Analytics</a></li>
-                </ul>
-            </div>
-            <div class="category-card">
-                <h2>Labor Laws and Compliance</h2>
-                <ul>
-                    <li><a href="employment-laws">Employment Laws</a></li>
-                    <li><a href="anti-discrimination">Anti-Discrimination Policies</a></li>
-                    <li><a href="workplace-safety">Workplace Safety Regulations</a></li>
-                    <li><a href="data-privacy">Data Privacy in HR</a></li>
-                </ul>
-            </div>
-            <div class="category-card">
-                <h2>Diversity, Equity, and Inclusion</h2>
-                <ul>
-                    <li><a href="unconscious-bias">Addressing Unconscious Bias</a></li>
-                    <li><a href="measuring-impact">Measuring the Impact of DEI Initiatives</a></li>
-                </ul>
-            </div>
-            <div class="category-card">
-                <h2>Community and Resources</h2>
-                <ul>
-                    <li><a href="discussions">Discussions</a></li>
-                    <li><a href="open-chat">Open Chat</a></li>
-                    <li><a href="profile">Profile</a></li>
-                </ul>
+    <!-- Knowledge Base Hero -->
+    <section class="kb-hero">
+        <div class="container">
+            <h1>HR Knowledge Center</h1>
+            <p>Access comprehensive resources to enhance your HR practices</p>
+            <div class="kb-search">
+                <input type="text" placeholder="Search knowledge base...">
+                <button><i class="fas fa-search"></i> Search</button>
             </div>
         </div>
-    </main>
+    </section>
+
+    <!-- Knowledge Base Categories -->
+    <section class="section">
+        <div class="container">
+            <h2 class="section-title">Knowledge Base Categories</h2>
+            <div class="kb-categories">
+                <div class="kb-category">
+                    <h3><i class="fas fa-users"></i> Recruitment & Selection</h3>
+                    <ul>
+                        <li><a href="Interviewing Techniques.html">Interviewing Techniques</a></li>
+                        <li><a href="Job Posting Best Practices.html">Job Posting Best Practices</a></li>
+                        <li><a href="Writing Effective Job Descriptions.html">Writing Effective Job Descriptions</a></li>
+                        <li><a href="ATS.html">Applicant Tracking Systems</a></li>
+                        <li><a href="Recruitment Resources.html">Recruitment Resources</a></li>
+                    </ul>
+                </div>
+                <div class="kb-category">
+                    <h3><i class="fas fa-handshake"></i> Employee Relations</h3>
+                    <ul>
+                        <li><a href="conflict_resolution.html">Conflict Resolution</a></li>
+                        <li><a href="Performance Management.html">Performance Management</a></li>
+                        <li><a href="employee_engagment_strategies.html">Employee Engagement Strategies</a></li>
+                        <li><a href="onboarding best practices.html">Onboarding Best Practices</a></li>
+                    </ul>
+                </div>
+                <div class="kb-category">
+                    <h3><i class="fas fa-money-bill-wave"></i> Compensation & Benefits</h3>
+                    <ul>
+                        <li><a href="salary structure.html">Salary Structures</a></li>
+                        <li><a href="pay_for_performance.html">Pay for Performance</a></li>
+                        <li><a href="Competitive Benefits Packages.html">Competitive Benefits Packages</a></li>
+                        <li><a href="Equity Compensation.html">Equity Compensation</a></li>
+                    </ul>
+                </div>
+                <div class="kb-category">
+                    <h3><i class="fas fa-graduation-cap"></i> Training & Development</h3>
+                    <ul>
+                        <li><a href="Effective Approaches for Digital Training and Development.html">E-Learning Strategies</a></li>
+                        <li><a href="Training Needs Assessment.html">Training Needs Assessment</a></li>
+                        <li><a href="Understanding Leadership Development.html">Leadership Development Programs</a></li>
+                    </ul>
+                </div>
+                <div class="kb-category">
+                    <h3><i class="fas fa-balance-scale"></i> Diversity & Inclusion</h3>
+                    <ul>
+                        <li><a href="Addressing Unconscious Bias.html">Addressing Unconscious Bias</a></li>
+                        <li><a href="Measuring the Impact of DEI Initiatives.html">Measuring DEI Impact</a></li>
+                    </ul>
+                </div>
+                <div class="kb-category">
+                    <h3><i class="fas fa-chart-line"></i> HR Analytics</h3>
+                    <ul>
+                        <li><a href="advanced hr analytics.html">Advanced HR Metrics</a></li>
+                        <li><a href="#">HR Cost Management and Budgeting</a></li>
+                        <li><a href="#">HR Analytics and Data-Driven Decision Making</a></li>
+                    </ul>
+                </div>
+                <div class="kb-category">
+                    <h3><i class="fas fa-laptop"></i> Remote Work</h3>
+                    <ul>
+                        <li><a href="#">Remote Work Best Practices</a></li>
+                        <li><a href="#">Virtual Team Management</a></li>
+                        <li><a href="#">Digital Communication Tools</a></li>
+                    </ul>
+                </div>
+                <div class="kb-category">
+                    <h3><i class="fas fa-heartbeat"></i> Employee Wellness</h3>
+                    <ul>
+                        <li><a href="#">Employee Wellness Programs</a></li>
+                        <li><a href="#">Mental Health Support</a></li>
+                        <li><a href="#">Work-Life Balance Strategies</a></li>
+                    </ul>
+                </div>
+                <div class="kb-category">
+                    <h3><i class="fas fa-gavel"></i> HR Compliance</h3>
+                    <ul>
+                        <li><a href="#">Saudi Labor Law Updates</a></li>
+                        <li><a href="#">HR Compliance and Legal Updates</a></li>
+                        <li><a href="#">Ethical HR Practices</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Recent Additions -->
+    <section class="section light-bg">
+        <div class="container">
+            <h2 class="section-title">Recent Additions</h2>
+            <div class="topic-grid">
+                <div class="topic-card">
+                    <img src="https://via.placeholder.com/300x200" alt="Employee Wellness">
+                    <div class="topic-content">
+                        <h3>Employee Wellness and Mental Health Programs</h3>
+                        <p>Comprehensive guide to implementing wellness initiatives that boost productivity and employee satisfaction.</p>
+                        <a href="#" class="btn btn-sm">Read Article</a>
+                    </div>
+                </div>
+                <div class="topic-card">
+                    <img src="https://via.placeholder.com/300x200" alt="Remote Work">
+                    <div class="topic-content">
+                        <h3>Remote Work Best Practices and Policies</h3>
+                        <p>Strategies for implementing effective remote work policies that maintain productivity and employee engagement.</p>
+                        <a href="#" class="btn btn-sm">Read Article</a>
+                    </div>
+                </div>
+                <div class="topic-card">
+                    <img src="https://via.placeholder.com/300x200" alt="HR Analytics">
+                    <div class="topic-content">
+                        <h3>HR Technology and Digital Transformation</h3>
+                        <p>Guide to selecting and implementing HR technology to streamline processes and enhance strategic decision-making.</p>
+                        <a href="#" class="btn btn-sm">Read Article</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section class="section">
+        <div class="container">
+            <h2 class="section-title">Frequently Asked Questions</h2>
+            <div class="faq-container">
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <h3>How often is the knowledge base updated?</h3>
+                        <span class="faq-toggle"><i class="fas fa-chevron-down"></i></span>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Our knowledge base is updated monthly with new articles, and existing content is reviewed quarterly to ensure accuracy and relevance.</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <h3>Can I contribute to the knowledge base?</h3>
+                        <span class="faq-toggle"><i class="fas fa-chevron-down"></i></span>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Yes! We welcome contributions from HR professionals. Please contact us through the community section to submit your article for review.</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <h3>Are the templates in the resource section editable?</h3>
+                        <span class="faq-toggle"><i class="fas fa-chevron-down"></i></span>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Yes, all templates are provided in editable formats. You can download and modify them to suit your organization's needs.</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <h3>Is content available in both English and Arabic?</h3>
+                        <span class="faq-toggle"><i class="fas fa-chevron-down"></i></span>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Currently, most articles are available in English, with key resources available in Arabic. We are working to provide bilingual versions of all content.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-logo">
+                    <h2>HRInsights<span>KSA</span></h2>
+                    <p>Empowering HR professionals across Saudi Arabia</p>
+                </div>
+                <div class="footer-links">
+                    <div class="footer-column">
+                        <h3>Quick Links</h3>
+                        <ul>
+                            <li><a href="home.html">Home</a></li>
+                            <li><a href="knowledge-base.html">Knowledge Base</a></li>
+                            <li><a href="discussions.html">Community</a></li>
+                            <li><a href="Profile.html">Profile</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer-column">
+                        <h3>Resources</h3>
+                        <ul>
+                            <li><a href="pdfs/">HR Templates</a></li>
+                            <li><a href="#">Webinars</a></li>
+                            <li><a href="#">Case Studies</a></li>
+                            <li><a href="#">Regulatory Updates</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer-column">
+                        <h3>Contact Us</h3>
+                        <ul class="contact-info">
+                            <li><i class="fas fa-envelope"></i> info@hrinsightsksa.com</li>
+                            <li><i class="fas fa-phone"></i> +966 12 345 6789</li>
+                            <li><i class="fas fa-map-marker-alt"></i> Riyadh, Saudi Arabia</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 HRInsights KSA. All rights reserved.</p>
+                <div class="social-icons">
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                    <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                    <a href="#"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                </div>
+            </div>
+        </div>
+    </footer>
 
     <script>
-        document.addEventListener('DOMContentLoaded', () => {
-            const languageToggle = document.getElementById('languageToggle');
-            let isEnglish = true;
-
-            languageToggle.addEventListener('click', () => {
-                if (isEnglish) {
-                    document.body.style.direction = 'rtl';
-                    document.body.style.textAlign = 'right';
-                    languageToggle.textContent = 'English';
-                    document.querySelector('header h1').textContent = 'مركز المعرفة لموارد البشرية';
-                    document.querySelector('h1').textContent = 'فئات مركز المعرفة';
-                } else {
-                    document.body.style.direction = 'ltr';
-                    document.body.style.textAlign = 'left';
-                    languageToggle.textContent = 'عربي';
-                    document.querySelector('header h1').textContent = 'HR Knowledge Center';
-                    document.querySelector('h1').textContent = 'Knowledge Base Categories';
-                }
-                isEnglish = !isEnglish;
-            });
-
-            const searchInput = document.querySelector('.search-bar input');
-            const searchButton = document.querySelector('.search-bar button');
-
-            searchButton.addEventListener('click', () => {
-                const searchTerm = searchInput.value.toLowerCase();
-                const categoryCards = document.querySelectorAll('.category-card');
-
-                categoryCards.forEach(card => {
-                    const cardContent = card.textContent.toLowerCase();
-                    if (cardContent.includes(searchTerm)) {
-                        card.style.display = 'block';
-                    } else {
-                        card.style.display = 'none';
-                    }
-                });
-            });
-
-            const categoryCards = document.querySelectorAll('.category-card');
-            categoryCards.forEach(card => {
-                card.addEventListener('mouseenter', () => {
-                    card.style.transform = 'translateY(-5px)';
-                    card.style.boxShadow = '0 6px 12px rgba(0, 0, 0, 0.15)';
-                });
-                card.addEventListener('mouseleave', () => {
-                    card.style.transform = 'translateY(0)';
-                    card.style.boxShadow = '0 4px 6px rgba(0, 0, 0, 0.1)';
-                });
+        // FAQ Toggle
+        document.querySelectorAll('.faq-question').forEach(question => {
+            question.addEventListener('click', () => {
+                const answer = question.nextElementSibling;
+                const icon = question.querySelector('.faq-toggle i');
+                
+                answer.style.display = answer.style.display === 'block' ? 'none' : 'block';
+                icon.classList.toggle('fa-chevron-down');
+                icon.classList.toggle('fa-chevron-up');
             });
         });
     </script>
