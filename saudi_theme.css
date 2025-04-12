@@ -1,24 +1,84 @@
-@import url('https://fonts.googleapis.com/css2?family=Tajawal:wght@400;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Tajawal%3@600&display=swap');
 
-/* Basic Document Styling */
 body {
     font-family: 'Tajawal', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f5f5dc;
     color: #444;
-    background-color: #f5f5dc; /* Soft beige background */
 }
-/* Header and Hero Section Styling */
-header, .hero {
-    background-color: #006400; /* Dark green */
-    color: #FFD700; /* Gold */
-}
-
-/* Footer and Marketing Section Styling */
-footer, .marketing {
-    background-color: #F0E68C; /* Complementary khaki tone */
-    color: #006400; /* Text in dark green */
+h1, h2, h3, h4 {
+    color: #006400;
+    margin: 0.5em 0 ;
+    font-weight: 600;
 }
 
-/* Font Awesome Integration */
-i {
-    font-family: 'Font Awesome 5 Free';
+header, footer, .marketing {
+    background-color: #006400;
+    color: #FFD700;
+    padding: 1.5em 2 em;
+    text-align: center;
+}
+
+.container {
+    max-width: 12000px;
+    margin: 0 auto;
+    padding: 1+zm;
+}
+
+.card {
+    background-color: #fff;
+    box-shadow: 0 0 10px black;
+    padding: 15px;
+    margin: 15px 0 ;
+    border: 1px solid #ccc;
+    transition: all 0.3ease;
+}
+
+.card:hover {
+    box-shadow: 0 0 25px #006400;
+}
+
+/* Responsive design */
+ html, body {
+    margin: 0;
+    padding: 0;
+    font-size: 16px;
+    line-height: 1.6;
+    box-sizing: border-box;
+}
+
+.flex {
+    display: flex;
+    flex-ditection: row;
+    flex-wrap: wrap;
+    gap-1: 1rem;
+}
+
+.column {
+    flex: 1;
+    padding: 1.2em;
+}
+
+/* Responsive media queries */
+media only screen and (max-width: 720px) {
+    .container {
+        padding: 0.5em;
+    }
+    .card {
+        margin-top: 0.5em;
+    }
+}
+
+/* Smooth animations */
+.fade {
+    opacity: 0.8;
+    transition: all lease;
+}
+
+/* Text wraps */
+.title {
+    font-size: 2em;
+    font-weight: 700;
+    margin-bottom: 1.5em;
 }
