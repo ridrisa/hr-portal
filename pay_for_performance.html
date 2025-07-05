@@ -208,21 +208,21 @@
 
     <nav>
         <ul>
-            <li><a href="home">Home</a></li>
-            <li><a href="knowledge-base">Knowledge Base</a></li>
-            <li><a href="discussions">Discussions</a></li>
-            <li><a href="ask-question">Ask a Question</a></li>
-            <li><a href="profile">Profile</a></li>
+            <li><a href="home.html">Home</a></li>
+            <li><a href="knowledge-base.html">Knowledge Base</a></li>
+            <li><a href="discussions.html">Discussions</a></li>
+            <li><a href="open_chat.html">Ask a Question</a></li>
+            <li><a href="Profile.html">Profile</a></li>
         </ul>
     </nav>
 
     <main>
         <div class="breadcrumb">
-            <a href="home">Home</a>
+            <a href="home.html">Home</a>
             <span>></span>
-            <a href="knowledge-base">Knowledge Base</a>
+            <a href="knowledge-base.html">Knowledge Base</a>
             <span>></span>
-            <a href="knowledge-base/compensation">Compensation</a>
+            <a href="knowledge-base.html">Compensation</a>
             <span>></span>
             <span>Pay for Performance</span>
         </div>
@@ -391,9 +391,9 @@
                 // Update header and main content
                 document.querySelector('header h1').textContent = content.headerTitle;
                 document.querySelector('main h1').textContent = content.pageTitle;
-                document.querySelector('.breadcrumb a[href="home"]').textContent = content.breadcrumbHome;
-                document.querySelector('.breadcrumb a[href="knowledge-base"]').textContent = content.breadcrumbKnowledgeBase;
-                document.querySelector('.breadcrumb a[href="knowledge-base/compensation"]').textContent = content.breadcrumbCompensation;
+                document.querySelector('.breadcrumb a[href="home.html"]').textContent = content.breadcrumbHome;
+                document.querySelector('.breadcrumb a[href="knowledge-base.html"]').textContent = content.breadcrumbKnowledgeBase;
+                document.querySelector('.breadcrumb a[href="knowledge-base.html"]').textContent = content.breadcrumbCompensation;
                 document.querySelector('.breadcrumb span:last-child').textContent = content.breadcrumbPayForPerformance;
     
                 // Update introduction text
