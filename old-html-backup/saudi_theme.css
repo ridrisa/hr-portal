@@ -1,0 +1,174 @@
+/*
+  Saudi 2030 Youth & HR Future Theme
+  Author: Gemini
+  Date: 2025-07-18
+*/
+
+/* --- CSS Variables for Easy Theming --- */
+:root {
+  --primary-green: #006A4E; /* A deep, modern Saudi green */
+  --accent-gold: #D4AF37;   /* Bright, ambitious gold */
+  --dark-blue-text: #0A2342;  /* Professional, deep blue for text */
+  --light-sand-bg: #F8F6F2;   /* A very light, clean sand color for backgrounds */
+  --neutral-gray: #888888;   /* For secondary text, borders */
+  --white-card: #FFFFFF;      /* For cards and elevated surfaces */
+  --danger-red: #D9534F;
+
+  --font-primary: 'Tajawal', sans-serif; /* Modern, readable Arabic & Latin font */
+  --font-secondary: 'Poppins', sans-serif; /* For headings and emphasis */
+
+  --border-radius: 8px;
+  --box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+  --transition-speed: 0.3s;
+}
+
+/* --- General Body & Typography --- */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&family=Tajawal:wght@400;700&display=swap');
+
+body {
+  font-family: var(--font-primary);
+  background-color: var(--light-sand-bg);
+  color: var(--dark-blue-text);
+  line-height: 1.7;
+  margin: 0;
+  padding: 20px;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-secondary);
+  color: var(--primary-green);
+  font-weight: 700;
+  margin-top: 1.5em;
+  margin-bottom: 0.5em;
+}
+
+h1 { font-size: 2.8em; }
+h2 { font-size: 2.2em; }
+h3 { font-size: 1.8em; }
+
+a {
+  color: var(--primary-green);
+  text-decoration: none;
+  transition: color var(--transition-speed);
+}
+
+a:hover {
+  color: var(--accent-gold);
+  text-decoration: underline;
+}
+
+/* --- Layout & Structure --- */
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+  background-color: var(--white-card);
+  border-radius: var(--border-radius);
+  box-shadow: var(--box-shadow);
+}
+
+/* --- Component Styling --- */
+
+/* Tables */
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 2em 0;
+  font-size: 0.95em;
+}
+
+table th, table td {
+  padding: 12px 15px;
+  border: 1px solid #e0e0e0;
+  text-align: left;
+}
+
+table th {
+  background-color: var(--primary-green);
+  color: var(--white-card);
+  font-family: var(--font-secondary);
+}
+
+table tr:nth-of-type(even) {
+  background-color: var(--light-sand-bg);
+}
+
+/* Code blocks and Mermaid diagrams */
+pre, code, .mermaid {
+  background-color: #2d333b; /* A dark theme for code */
+  color: #c9d1d9;
+  padding: 1.5em;
+  border-radius: var(--border-radius);
+  font-family: 'Courier New', Courier, monospace;
+  white-space: pre-wrap;       
+  word-wrap: break-word;      
+  margin: 1.5em 0;
+}
+
+.mermaid {
+    background-color: var(--white-card);
+}
+
+/* Blockquotes */
+blockquote {
+  border-left: 5px solid var(--accent-gold);
+  background-color: #fdfcf9;
+  padding: 15px 20px;
+  margin: 1.5em 0;
+  font-style: italic;
+}
+
+/* Buttons */
+.btn {
+  display: inline-block;
+  padding: 10px 20px;
+  border-radius: var(--border-radius);
+  font-family: var(--font-secondary);
+  font-weight: 600;
+  text-align: center;
+  cursor: pointer;
+  transition: all var(--transition-speed);
+  border: none;
+}
+
+.btn-primary {
+  background-color: var(--primary-green);
+  color: var(--white-card);
+}
+
+.btn-primary:hover {
+  background-color: #004a38;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 16px rgba(0,0,0,0.1);
+}
+
+.btn-secondary {
+  background-color: var(--accent-gold);
+  color: var(--dark-blue-text);
+}
+
+.btn-secondary:hover {
+  background-color: #c09e26;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 16px rgba(0,0,0,0.1);
+}
+
+/* Add a simple wrapper class to apply container styles */
+body > * {
+    max-width: 1200px;
+    margin: 40px auto;
+    padding: 40px;
+    background-color: var(--white-card);
+    border-radius: var(--border-radius);
+    box-shadow: var(--box-shadow);
+}
+
+/* RTL support */
+[dir="rtl"] body {
+    text-align: right;
+}
+
+[dir="rtl"] blockquote {
+    border-left: none;
+    border-right: 5px solid var(--accent-gold);
+}
