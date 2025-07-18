@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Tajawal%3@600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Tajawal:wght@600&display=swap');
 
 body {
     font-family: 'Tajawal', sans-serif;
@@ -16,14 +16,14 @@ h1, h2, h3, h4 {
 header, footer, .marketing {
     background-color: #006400;
     color: #FFD700;
-    padding: 1.5em 2 em;
+    padding: 1.5em 2em;
     text-align: center;
 }
 
 .container {
-    max-width: 12000px;
+    max-width: 1200px;
     margin: 0 auto;
-    padding: 1+zm;
+    padding: 1em;
 }
 
 .card {
@@ -32,7 +32,7 @@ header, footer, .marketing {
     padding: 15px;
     margin: 15px 0 ;
     border: 1px solid #ccc;
-    transition: all 0.3ease;
+    transition: all 0.3s ease;
 }
 
 .card:hover {
@@ -40,7 +40,7 @@ header, footer, .marketing {
 }
 
 /* Responsive design */
- html, body {
+html, body {
     margin: 0;
     padding: 0;
     font-size: 16px;
@@ -50,9 +50,9 @@ header, footer, .marketing {
 
 .flex {
     display: flex;
-    flex-ditection: row;
+    flex-direction: row;
     flex-wrap: wrap;
-    gap-1: 1rem;
+    gap: 1rem;
 }
 
 .column {
@@ -61,7 +61,7 @@ header, footer, .marketing {
 }
 
 /* Responsive media queries */
-media only screen and (max-width: 720px) {
+@media only screen and (max-width: 720px) {
     .container {
         padding: 0.5em;
     }
@@ -73,7 +73,7 @@ media only screen and (max-width: 720px) {
 /* Smooth animations */
 .fade {
     opacity: 0.8;
-    transition: all lease;
+    transition: all 0.3s ease;
 }
 
 /* Text wraps */
