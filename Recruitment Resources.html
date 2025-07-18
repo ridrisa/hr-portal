@@ -1,15 +1,31 @@
-<script>
-document.addEventListener("DOMContentLoaded", function() {
-    // Store Hr category when a user clicks an element with data-hr-category
-    function storeHrSelection(category) {
-        sessionStorage.setItem("hr-selection", category);
-        window.location.href = "index.html"; // Redirect to index.html so routing can occur
-    }
-
-    // Attach listeners to elements with data-Hr-category
-    document.querySelectorAll("[ data-hr-category]").forEach(function(element) {
-        element.addEventListener("click", function() {
-            storeHrSelection(element.getAttribute("data-Hr-category"));
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/tttstyles.css">
+    <link rel="stylesheet" type="text/css" href="saudi_theme.css">
+    <title>Recruitment Resources</title>
+</head>
+<body>
+    <header>
+        <h1>Recruitment Resources</h1>
+    </header>
+    <main class="container">
+        <p>Content coming soon.</p>
+    </main>
+    <script>
+    document.addEventListener("DOMContentLoaded", function() {
+        function storeHrSelection(category) {
+            sessionStorage.setItem("hr-selection", category);
+            window.location.href = "index.html";
+        }
+        document.querySelectorAll("[ data-hr-category]").forEach(function(element) {
+            element.addEventListener("click", function() {
+                storeHrSelection(element.getAttribute("data-Hr-category"));
+            });
         });
     });
-</script>
+    </script>
+</body>
+</html>
