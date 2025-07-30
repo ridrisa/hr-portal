@@ -9,6 +9,7 @@ import OpenChat from './pages/OpenChat';
 import HRTools from './pages/HRTools';
 import Profile from './pages/Profile';
 import KnowledgeArticle from './pages/KnowledgeArticle';
+import NotFound from './pages/NotFound';
 
 // Import Font Awesome
 import '@fortawesome/fontawesome-free/css/all.min.css';
@@ -28,6 +29,7 @@ function App() {
             <Route path="/open-chat" element={<OpenChat />} />
             <Route path="/hr-tools" element={<HRTools />} />
             <Route path="/profile" element={<Profile />} />
+            <Route path="*" element={<NotFound />} />
           </Routes>
         </main>
         <Footer />
