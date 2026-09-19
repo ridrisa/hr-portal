@@ -1,3 +1,5 @@
+> **Consolidated into Minassa HR.** This HRInsights KSA prototype is archived; see [CONSOLIDATED.md](CONSOLIDATED.md) and https://github.com/ridrisa/ultimate-hr-platform.
+
 # HRInsights KSA - React Application
 
 A modern HR platform designed specifically for Saudi Arabia, empowering HR professionals with knowledge, tools, and community.
