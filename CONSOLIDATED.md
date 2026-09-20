@@ -22,4 +22,4 @@ What moved where is documented in that repository under
 | Job board, ATS | `/job-board`, `/recruitment/ats` |
 | Arabic/English toggle and RTL | i18next with full `en.json` / `ar.json` and RTL layouts |
 
-No further pull requests should target this repository. It is kept read-only for history.
+The complete tracked source of this repository is also archived inside the canonical product at `legacy/hr-portal/`, so nothing depends on this repository any more. No further pull requests should target it; it is kept read-only for history.
